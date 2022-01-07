@@ -1,15 +1,11 @@
 import styled from "styled-components";
 
 export const ContainerPrincipal = styled.div`
-  font-family: Arial;
   margin-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media screen and (max-width: 860px) {
-    display: flex;
-  }
 `
 
 export const LogoContainer = styled.div`
@@ -29,9 +25,6 @@ export const ContainerForm = styled.div`
   border-radius: 5px;
   padding: 30px;
   margin-top: 20px;
-  @media screen and (max-width: 860px) {
-    border: 1px solid gray;
-  }
 `
 
 export const ContainerInputs = styled.div`
@@ -39,9 +32,6 @@ export const ContainerInputs = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  @media screen and (max-width: 860px) {
-    display: flex;
-  }
 `
 
 export const Labels = styled.label`
