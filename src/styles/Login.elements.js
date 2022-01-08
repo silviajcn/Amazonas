@@ -6,6 +6,7 @@ export const ContainerPrincipal = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 `
 
 export const LogoContainer = styled.div`

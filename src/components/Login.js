@@ -5,7 +5,6 @@ import { loginEmailPassword, loginGoogle } from '../actions/actionLogin';
 import { Link } from "react-router-dom";
 import { ContainerPrincipal, LogoContainer, Logo, ContainerForm, ContainerInputs, Labels, Inputs, BtnContinue, Pconditions, BtnOtherAcount, LogoOtherAcount, RegisterRedirect, Predirect, BtnRegister } from '../styles/Login.elements';
 
-
 const Login = () => {
 
     const dispatch = useDispatch();
@@ -91,7 +90,10 @@ const Login = () => {
             </ContainerForm>
 
             <RegisterRedirect>
-                <Predirect>¿Eres nuevo en Amazonas?</Predirect>
+                <Predirect>
+                    ¿Eres nuevo en Amazonas?
+                </Predirect>
+
                 <Link to="/register">
                         <BtnRegister>Crea tu cuenta en Amazonas</BtnRegister>
                 </Link>

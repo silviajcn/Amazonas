@@ -9,6 +9,7 @@ import { DashboardRoutes } from './DashboardRoutes';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 import IconSpinner from '../components/IconSpinner';
+import NavBarTwo from '../components/NavBarTwo';
 
 const AppRouter = () => {
 
@@ -41,6 +42,7 @@ const AppRouter = () => {
     return (
         <Router>
             <NavBar />
+            <NavBarTwo />
 
             <Routes>
                 <Route path="/*" element={
