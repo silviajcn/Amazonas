@@ -27,7 +27,7 @@ export const Menu = styled.ul`
     position: absolute;
     top: 89px;
     width: 20vw;
-    height: 97vh;
+    height: 99vh;
     flex-direction: column;
     transition: 0.5s all ease;
     border-right: 1px solid #D3DEDC;
@@ -99,6 +99,7 @@ export const LinksMenu = styled.a`
   font-weight: 700;
   color: #fff;
   margin-right: 20px;
+  text-decoration: none;
   &:hover {
     border: 1px solid #fff;
     border-radius: 2px;

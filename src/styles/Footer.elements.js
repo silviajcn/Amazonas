@@ -7,9 +7,6 @@ export const ContainerPrincipal = styled.div`
   align-items: center;
   background: #242F3E;
   color: #fff;
-  @media screen and (max-width: 860px) {
-    display: flex;
-  }
 `
 
 export const FirstContainer = styled.div`
@@ -50,6 +47,9 @@ export const LogoContainer = styled.div`
 export const Logo = styled.img`
   width: 100px;
   height: auto;
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 export const Credits = styled.p`

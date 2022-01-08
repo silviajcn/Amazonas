@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Container, Wrapper, Menu, MenuItem, MenuItemLink, MobileIcon, Items, ContainerLinks, LinksMenu } from "../styles/NavBarTwo.elements";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IconContext } from "react-icons";

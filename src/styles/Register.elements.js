@@ -6,6 +6,7 @@ export const ContainerPrincipal = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 `
 
 export const LogoContainer = styled.div`
@@ -50,7 +51,7 @@ export const BtnContinue = styled.button`
   width: 309px;
   height: 30px;
   margin: 8px 0px;
-  background: #FFBD35;
+  background: #F0AD64;
   border: 1px solid #000000;
   border-radius: 3px;
   &:hover {

@@ -51,7 +51,7 @@ export const BtnContinue = styled.button`
   width: 309px;
   height: 30px;
   margin: 8px 0px;
-  background: #FFBD35;
+  background: #F0AD64;
   border: 1px solid #000000;
   border-radius: 3px;
   &:hover {
@@ -97,6 +97,7 @@ export const RegisterRedirect = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 15px;
 `
 
 export const Predirect = styled.p`
