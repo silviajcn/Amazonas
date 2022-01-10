@@ -2,6 +2,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../actions/actionLogin';
+import NewComent from './NewComent';
+import NewProduct from './NewProduct';
 
 const Home = () => {
 
@@ -17,10 +19,18 @@ const Home = () => {
     return (
         <div>
             <h1>Holi</h1>
+
+            <NewProduct />
+
+            <NewComent />
+
+
             <img src="https://res.cloudinary.com/silviajcn/image/upload/v1641583841/SPRING-3/logo-footer_zysgvs.png" alt="logo"/>
             <button onClick={() => handleLogout()}>
                 Logout
             </button>
+
+
         </div>
     )
 }

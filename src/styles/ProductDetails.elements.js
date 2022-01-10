@@ -41,8 +41,8 @@ export const ContainerThree = styled.div`
   margin-right: 10px;
 `
 
-export const ImgProduct = styled.img`
-  width: 590px;
+export const ImgProduct = styled.div`
+  width: 580px;
   height: auto;
 `
 

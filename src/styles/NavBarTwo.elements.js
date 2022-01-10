@@ -51,16 +51,13 @@ export const MenuItemLink = styled.a`
   text-decoration: none;
 `
 
-export const Items = styled.a`
+export const Items = styled.p`
   width: 100%;
-  display: flex;
-  justify-content: start;
-  align-items: center;
   color: #000000;
   font-size: 12px;
   font-weight: bold;
   text-decoration: none;
-  padding: 10px;
+  padding: 2px;
   cursor: pointer;
   transition: 0.5s all ease;
   &:hover {

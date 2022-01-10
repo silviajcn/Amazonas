@@ -1,9 +1,19 @@
 import React from 'react';
-import { ContainerPrincipal, ContainerTitle, Title, ContainerUser, ImgUser, NameUser, ContainerComent, Coment, Options, ContainerComentario } from '../styles/Opinions.elements';
+import { ContainerPrincipal, ContainerTitle, Title, ContainerUser, ImgUser, NameUser, ContainerComent, Coment, Options, ContainerComentario, ContainerNewOp, NewOpTitle, NewOpText, BtnNew } from '../styles/Opinions.elements';
 
 const Opinions = () => {
     return (
         <ContainerPrincipal>
+
+            <ContainerNewOp>
+                <NewOpTitle><strong>Escribir opinión de este producto</strong></NewOpTitle>
+
+                <NewOpText>Comparte tu opinión con otros clientes</NewOpText>
+
+                <BtnNew type="button">Escribir mi opinión</BtnNew>
+            </ContainerNewOp>
+
+            <div>
             <ContainerTitle>
                 <Title>Opiniones de clientes</Title>
             </ContainerTitle>
@@ -26,10 +36,10 @@ const Opinions = () => {
             </ContainerComentario>
 
             <ContainerComentario>
-                <div>
+                <ContainerUser>
                     <ImgUser src="https://res.cloudinary.com/silviajcn/image/upload/v1641651067/SPRING-3/users/Ellipse_15_tqfoyl.png" alt="user" />
                     <NameUser>Right Emboyo</NameUser>
-                </div>
+                </ContainerUser>
 
                 <ContainerComent>
                     <Coment>Long-time Canon DSLR user finally made the switch to mirrorless and now won't look back. Amazing piece of technology - focus system and low-light performance are astounding. Love that I can use my EF lenses with adapter and 24-105 f4 L "kit lens" is a worthy successor to its EF counterpart.</Coment>
@@ -41,6 +51,7 @@ const Opinions = () => {
                     <Options>Informar de un abuso</Options>
                 </div>
             </ContainerComentario>
+            </div>
         </ContainerPrincipal>
     )
 }

@@ -82,7 +82,7 @@ export const Predirect = styled.p`
   margin-right: 8px;
 `
 
-export const PredirectLogin = styled.a`
+export const PredirectLogin = styled.p`
   font-size: 12px;
   color: #5C7AEA;
   text-decoration: none;

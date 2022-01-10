@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const ContainerPrincipal = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: start;
-  align-items: center;
+  align-items: start;
   margin-left: 24px;
   margin-bottom: 30px;
 `
@@ -70,5 +70,45 @@ export const Options = styled.p`
   color: #565959;
 `
 
+// Agregar nueva opinion--------------------------
 
+export const ContainerNewOp = styled.div`
+  border-bottom: 1px solid #D3DEDC;
+  border-top: 1px solid #D3DEDC;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  margin-right: 100px;
+  margin-top: 24px;
+`
 
+export const NewOpTitle = styled.h3`
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: #333333;
+`
+
+export const NewOpText = styled.p`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+`
+
+export const BtnNew = styled.button`
+  background: #fff;
+  border: 1px solid #D3DEDC;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 300px;
+  height: 32px;
+  margin-bottom: 30px;
+  box-shadow: 0px 10px 20px -15px black;
+  &:hover {
+    cursor: pointer;
+    background:  rgba(228, 228, 228, 0.2);
+  }
+`

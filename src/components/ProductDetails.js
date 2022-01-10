@@ -2,6 +2,7 @@ import React from 'react';
 import { RiShoppingCartLine, RiPlayFill } from "react-icons/ri";
 import { ContainerPrincipal, ContainerBack, Containers, ContainerOne, ImgsProduct, ContainerTwo, ContainerThree, DivOne, NameProduct, MarcaProduct, DivTwo, PriceInfo, PriceProduct, Price, Envio, LinksBlue, PagoInfo, PagoCuotas, TitleCaracteristicas, Caracteristicas, ContainerFour, ImgProduct, Buttons, BtnOne, BtnTwo, ContainerIcon, Transaccion } from '../styles/ProductDetails.elements';
 import { RiArrowLeftSLine } from "react-icons/ri";
+import ReactImageMagnify from 'react-image-magnify';
 
 const ProductDetails = () => {
     return (
@@ -21,7 +22,27 @@ const ProductDetails = () => {
                 </ContainerOne>
 
                 <ContainerTwo>
-                    <ImgProduct src="https://res.cloudinary.com/silviajcn/image/upload/v1641654716/SPRING-3/productos/camara/Rectangle_36_fvehjl.png" alt="product" />
+                    
+                    <ImgProduct>
+                        <ReactImageMagnify {...{
+                        smallImage: {
+                            alt: 'product',
+                            isFluidWidth: true,
+                            src: "https://res.cloudinary.com/silviajcn/image/upload/v1641654716/SPRING-3/productos/camara/Rectangle_36_fvehjl.png",
+                        },
+                        largeImage: {
+                            src: "https://res.cloudinary.com/silviajcn/image/upload/v1641654716/SPRING-3/productos/camara/Rectangle_36_fvehjl.png",
+                            width: 1200,
+                            height: 1800
+                        },
+                        shouldUsePositiveSpaceLens: true,
+                        enlargedImageContainerDimensions: {
+                            width: '110%',
+                            height: '80%'
+                        }
+                        }} />
+                    </ImgProduct>
+               
                 </ContainerTwo>
 
                     <ContainerThree>
