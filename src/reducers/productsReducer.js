@@ -13,7 +13,7 @@ export const productsReducer = (state = initialState, action) => {
         
         case typesProducts.list:
             return {
-                ...state
+                products: [...action.payload]
             }
         
         case typesProducts.delete:

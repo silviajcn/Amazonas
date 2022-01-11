@@ -31,6 +31,33 @@ export const ImgLogo = styled.img`
   }
 `
 
+export const ContainerLocation = styled.div`
+  display: flex;
+  flex-direction: row;
+  &:hover {
+    border: 1px solid #fff;
+    border-radius: 2px;
+    padding: 3px;
+    cursor: pointer;
+  }
+`
+
+export const BtnLocation = styled.button`
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 3px;
+  height: 30px;
+  background: none;
+  &:hover {
+    cursor: pointer;
+  }
+  svg {
+      fill: #fff;
+      font-size: 40px;
+    }
+`
+
 // SearchInput -----------------------------------------
 export const ContainerBuscador = styled.div`
   width: 600px;
@@ -89,7 +116,7 @@ export const BtnCar = styled.button`
     }
 `
 
-export const LinksMenu = styled.a`
+export const LinksMenu = styled.p`
   font-size: 15px;
   font-weight: 700;
   color: #fff;

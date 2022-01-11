@@ -18,6 +18,7 @@ export const Wrapper = styled.div`
 `
 
 export const Menu = styled.ul`
+  z-index: 50;
   display: flex;
   justify-content: start;
   align-items: start;

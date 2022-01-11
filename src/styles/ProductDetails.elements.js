@@ -42,7 +42,7 @@ export const ContainerThree = styled.div`
 `
 
 export const ImgProduct = styled.div`
-  width: 580px;
+  width: 550px;
   height: auto;
 `
 
@@ -79,6 +79,14 @@ export const PriceInfo = styled.div`
   flex-direction: row;
   justify-content: start;
   align-items: center;
+`
+
+export const PlusContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 10px;
 `
 
 export const PriceProduct = styled.p`
@@ -125,7 +133,7 @@ export const PagoInfo = styled.div`
   align-items: center;
 `
 
-export const PagoCuotas = styled.div`
+export const PagoCuotas = styled.p`
   font-style: normal;
   font-weight: normal;
   font-size: 12px;

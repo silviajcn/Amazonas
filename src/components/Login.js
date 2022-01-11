@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from '../hooks/useForm';
-import { loginEmailPassword, loginGoogle } from '../actions/actionLogin';
+import { loginEmailPassword, loginGoogle, loginFacebook } from '../actions/actionLogin';
 import { Link } from "react-router-dom";
 import { ContainerPrincipal, LogoContainer, Logo, ContainerForm, ContainerInputs, Labels, Inputs, BtnContinue, Pconditions, BtnOtherAcount, LogoOtherAcount, RegisterRedirect, Predirect, BtnRegister } from '../styles/Login.elements';
 
@@ -23,6 +23,10 @@ const Login = () => {
 
     const handleGoogle = () => {
         dispatch(loginGoogle());
+    }
+
+    const handleFacebook = () => {
+        dispatch(loginFacebook());
     }
 
     return (
@@ -75,7 +79,7 @@ const Login = () => {
                         </div>
 
                         <div>
-                            <BtnOtherAcount>
+                            <BtnOtherAcount onClick={() => handleFacebook()}>
                                 <LogoOtherAcount src="https://res.cloudinary.com/silviajcn/image/upload/v1641573711/SPRING-3/facebook-logo_etvlmw.png" />
                                 <p>Continuar con mi cuenta de Facebook</p>
                             </BtnOtherAcount>

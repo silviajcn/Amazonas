@@ -58,7 +58,7 @@ export const Coment = styled.p`
   color: #333333;
 `
 
-export const ContainerComentario = styled.p`
+export const ContainerComentario = styled.div`
   border-bottom: 1px solid #D3DEDC;
   width: 760px;
 `

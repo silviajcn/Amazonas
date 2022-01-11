@@ -1,10 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { RiShoppingCartLine, RiPlayFill } from "react-icons/ri";
-import { ContainerPrincipal, ContainerBack, Containers, ContainerOne, ImgsProduct, ContainerTwo, ContainerThree, DivOne, NameProduct, MarcaProduct, DivTwo, PriceInfo, PriceProduct, Price, Envio, LinksBlue, PagoInfo, PagoCuotas, TitleCaracteristicas, Caracteristicas, ContainerFour, ImgProduct, Buttons, BtnOne, BtnTwo, ContainerIcon, Transaccion } from '../styles/ProductDetails.elements';
+import { ContainerPrincipal, ContainerBack, Containers, ContainerOne, ImgsProduct, ContainerTwo, ContainerThree, DivOne, NameProduct, MarcaProduct, DivTwo, PriceInfo, PriceProduct, Price, Envio, LinksBlue, PagoInfo, PagoCuotas, TitleCaracteristicas, Caracteristicas, ContainerFour, ImgProduct, Buttons, BtnOne, BtnTwo, ContainerIcon, Transaccion, PlusContainer } from '../styles/ProductDetails.elements';
 import { RiArrowLeftSLine } from "react-icons/ri";
 import ReactImageMagnify from 'react-image-magnify';
 
 const ProductDetails = () => {
+
+    const { products } = useSelector(store => store.products);
+    console.log(products)
+
     return (
         <div>
 
@@ -37,7 +42,7 @@ const ProductDetails = () => {
                         },
                         shouldUsePositiveSpaceLens: true,
                         enlargedImageContainerDimensions: {
-                            width: '110%',
+                            width: '120%',
                             height: '80%'
                         }
                         }} />
@@ -69,13 +74,13 @@ const ProductDetails = () => {
                                 <PagoCuotas>y obtén $100 de descuento en tu primera compra mayor a $500</PagoCuotas>
                             </PagoInfo>
 
-                            <PriceProduct>
+                            <PlusContainer>
                                 <PagoCuotas>Color: <strong>Negro</strong></PagoCuotas>
-                            </PriceProduct>
+                            </PlusContainer>
 
-                            <PriceProduct>
+                            <PlusContainer>
                                 <PagoCuotas>Estilo: <strong>24-105mm USM Kit</strong></PagoCuotas>
-                            </PriceProduct>
+                            </PlusContainer>
                         </DivTwo>
 
                         <TitleCaracteristicas><strong>Acerca de este artículo</strong></TitleCaracteristicas>

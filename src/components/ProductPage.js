@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBarThree from './NavBarThree';
 import ProductDetails from './ProductDetails';
+//import ExampleListar from './ExampleListar';
 import Opinions from './Opinions';
 
 const ProductPage = () => {
@@ -9,6 +10,8 @@ const ProductPage = () => {
             <NavBarThree />
 
             <ProductDetails />
+
+            {/* <ExampleListar /> */}
 
             <Opinions />
         </div>

@@ -1,4 +1,4 @@
-export const FileUpload = async (file) => {
+export const fileUpload = async (file) => {
     
     const cloudUrl = 'https://api.cloudinary.com/v1_1/silviajcn/upload';
     const formData = new FormData();
