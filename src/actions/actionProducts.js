@@ -27,24 +27,24 @@ export const listProductsAsync = () => {
         const querySnapshot = await getDocs(collection(db, "productos"));
         //console.log(querySnapshot);
 
-        const products = [];
+        const productos = [];
         querySnapshot.forEach((doc) => {
             //console.log(doc);
-            //console.log(doc.data());
-            products.push({
+            console.log(doc.data());
+            productos.push({
                 ...doc.data()
             })
         });
-        console.log(products);
-        dispatch(listProductsSync(products));
+        console.log(productos);
+        dispatch(listProductsSync(productos));
     }
 }
 
 //Action List Product Sync
-export const listProductsSync = (products) => {
+export const listProductsSync = (productos) => {
     return {
         type: typesProducts.list,
-        payload: products
+        payload: productos
     }
 }
 
@@ -60,8 +60,8 @@ export const registerProductAsync = (newProduct) => {
             dispatch(registerProductSync(newProduct))
             dispatch(listProductsAsync())
         })
-        .catch(e => {
-            console.log(e);
+        .catch(error => {
+            console.log(error);
         })
     }
 }

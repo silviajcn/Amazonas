@@ -1,8 +1,7 @@
 import React from 'react';
-import NavBarThree from './NavBarThree';
-import ProductDetails from './ProductDetails';
-//import ExampleListar from './ExampleListar';
-import Opinions from './Opinions';
+import NavBarThree from '../components/NavBarThree';
+import ProductDetails from '../components/ProductDetails';
+import Opinions from '../components/Opinions';
 
 const ProductPage = () => {
     return (
@@ -10,8 +9,6 @@ const ProductPage = () => {
             <NavBarThree />
 
             <ProductDetails />
-
-            {/* <ExampleListar /> */}
 
             <Opinions />
         </div>

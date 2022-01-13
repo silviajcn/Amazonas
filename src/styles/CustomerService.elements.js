@@ -66,7 +66,8 @@ export const TextItems = styled.p`
 
 export const ContainerInput = styled.div`
   border-top: 1px solid #D3DEDC;
-  margin-top: 30px;
+  padding: 20px;
+  margin-top: 20px;
   margin-bottom: 60px;
   width: 100%;
   height: auto;

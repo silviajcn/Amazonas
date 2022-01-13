@@ -26,7 +26,7 @@ export const Menu = styled.ul`
     left: ${({ open }) => (open ? "0" : "-110%")}; //Import
     background-color: #fff;
     position: absolute;
-    top: 89px;
+    top: 104px;
     width: 20vw;
     height: 99vh;
     flex-direction: column;
@@ -41,7 +41,7 @@ export const MenuItem = styled.li`
   width: 100%;
 `
 
-export const MenuItemLink = styled.a`
+export const MenuItemLink = styled.div`
   width: 100%;
   display: flex;
   justify-content: start;
@@ -50,6 +50,16 @@ export const MenuItemLink = styled.a`
   font-size: 15px;
   font-weight: bold;
   text-decoration: none;
+  margin-top: 20px;
+`
+
+export const SubTitles = styled.h4`
+  width: 100%;
+  color: #000000;
+  font-size: 13px;
+  font-weight: 900;
+  text-decoration: none;
+  padding: 2px;
 `
 
 export const Items = styled.p`
@@ -90,7 +100,7 @@ export const ContainerLinks = styled.div`
   margin-left: 40px;
 `
 
-export const LinksMenu = styled.a`
+export const LinksMenu = styled.p`
   display: flex;
   align-items: center;
   font-size: 12px;
@@ -98,6 +108,7 @@ export const LinksMenu = styled.a`
   color: #fff;
   margin-right: 20px;
   text-decoration: none;
+
   &:hover {
     border: 1px solid #fff;
     border-radius: 2px;

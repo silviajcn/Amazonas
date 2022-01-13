@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Container, Wrapper, Menu, MenuItem, MenuItemLink, MobileIcon, Items, ContainerLinks, LinksMenu } from "../styles/NavBarTwo.elements";
+import { Link } from "react-router-dom";
+import { Container, Wrapper, Menu, MenuItem, MenuItemLink, MobileIcon, SubTitles, Items, ContainerLinks, LinksMenu } from "../styles/NavBarTwo.elements";
+import '../styles/index.css';
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IconContext } from "react-icons";
 
@@ -20,7 +22,7 @@ const NavBarTwo = () => {
                         <MenuItem>
                             <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
                                 <div>
-                                    <h4>Contenido Y Dispositivos Digitales</h4>
+                                    <SubTitles>Contenido Y Dispositivos Digitales</SubTitles>
                                     <Items>Amazonas music</Items>
                                     <Items>E-Readers Kindle y libros</Items>
                                     <Items>Appstore Para Android</Items>
@@ -31,7 +33,7 @@ const NavBarTwo = () => {
                         <MenuItem>
                             <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
                                 <div>
-                                    <h4>Buscar Por Departamento</h4>
+                                    <SubTitles>Buscar Por Departamento</SubTitles>
                                     <Items>Electrónicos</Items>
                                     <Items>Software</Items>
                                     <Items>Salud y Hogar</Items>
@@ -45,9 +47,9 @@ const NavBarTwo = () => {
                         <MenuItem>
                             <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
                                 <div>
-                                    <h4>Ayuda Y Configuración</h4>
+                                    <SubTitles>Ayuda Y Configuración</SubTitles>
                                     <Items>Tu cuenta</Items>
-                                    <Items>Servicio al cliente</Items>
+                                    <Link to="/help" className="links"><Items>Servicio al cliente</Items></Link>
                                     <Items>Identifícate</Items>
                                 </div>
                             </MenuItemLink>
@@ -58,13 +60,18 @@ const NavBarTwo = () => {
                 <ContainerLinks>
                     <LinksMenu>Ofertas del día</LinksMenu>
 
-                    <LinksMenu>Servicio al cliente</LinksMenu>
+                    <Link to="/help" className="links">
+                        <LinksMenu>Servicio al cliente</LinksMenu>
+                    </Link>
 
                     <LinksMenu>Listas</LinksMenu>
 
                     <LinksMenu>Tarjetas de regalo</LinksMenu>
 
-                    <LinksMenu>Vender</LinksMenu>
+                    <Link to="/registerp" className="links">
+                        <LinksMenu>Vender</LinksMenu>
+                    </Link>
+                    
 
                     <LinksMenu>Prime</LinksMenu>
                 </ContainerLinks>

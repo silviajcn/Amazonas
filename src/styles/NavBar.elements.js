@@ -31,9 +31,25 @@ export const ImgLogo = styled.img`
   }
 `
 
+
+
+// GeoLocation BTN -------------------------------------------------------------------------------------------
 export const ContainerLocation = styled.div`
   display: flex;
   flex-direction: row;
+  margin-left: 40px;
+  width: 130px;
+`
+
+export const BtnLocation = styled.button`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  border-radius: 3px;
+  height: 30px;
+  background: none;
+  color: #fff;
   &:hover {
     border: 1px solid #fff;
     border-radius: 2px;
@@ -42,27 +58,59 @@ export const ContainerLocation = styled.div`
   }
 `
 
-export const BtnLocation = styled.button`
+export const ContainerIcon = styled.div`
   display: flex;
   align-items: center;
-  border: none;
-  border-radius: 3px;
-  height: 30px;
-  background: none;
-  &:hover {
-    cursor: pointer;
-  }
   svg {
       fill: #fff;
-      font-size: 40px;
+      font-size: 20px;
     }
 `
 
-// SearchInput -----------------------------------------
-export const ContainerBuscador = styled.div`
-  width: 600px;
+export const ContainerGeolocation = styled.div`
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: start;
+  margin-left: 5px;
 `
 
+export const TextEnviar = styled.p`
+  margin: 0px;
+  font-size: 12px;
+`
+
+export const Location = styled.p`
+  margin: 0px;
+  font-weight: bold;
+  font-size: 14px;
+`
+
+
+
+// SearchInput -----------------------------------------------------------------------------------------------
+export const ContainerBuscador = styled.div`
+  width: 628px;
+  margin-left: 30px;
+  margin-right: 0px;
+`
+
+//select
+export const SelectOption = styled.select`
+  width: 140px;
+  height: 40px;
+  font-size: 12px;
+  border: none;
+  border-radius: 3px 0px 0px 3px;
+  padding: 8px;
+  background: #FAFAFA;
+  &:hover {
+    cursor: pointer;
+    background:  rgba(228, 228, 228, 0.9);
+  }
+`
+
+//form
 export const FormContainer = styled(Form)`
   display: flex;
   flex-direction: row;
@@ -71,31 +119,73 @@ export const FormContainer = styled(Form)`
 `
 
 export const InputSearch = styled(FormControl)`
-  width: 400px;
+  width: 450px;
   height: 40px;
+  border-radius: 0px;
 `
 
+//btn
 export const BtnSearch = styled(Button)`
   display: flex;
   align-items: center;
   justify-content: center;
   background: #F0AD64;
   border: none;
-  border-radius: 3px;
+  border-radius: 0px 3px 3px 0px;
   width: 48px;
-  height: 45px;
+  height: 40px;
   &:hover {
     cursor: pointer;
   }
 `
 
+// Acount -----------------------------------------------------------------------------------------------
+export const ContainerAcount = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  margin-right: 40px;
+  &:hover {
+    border: 1px solid #fff;
+    border-radius: 2px;
+    padding: 2px;
+    cursor: pointer;
+  }
+`
+
+// Acount -----------------------------------------------------------------------------------------------
+export const ContainerDevolucion = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  margin-right: 40px;
+  &:hover {
+    border: 1px solid #fff;
+    border-radius: 2px;
+    padding: 2px;
+    cursor: pointer;
+  }
+`
+
+export const TextPequenio = styled.span`
+  margin: 0px;
+  font-size: 12px;
+`
+
+export const TextNegrita = styled.p`
+  margin: 0px;
+  font-weight: bold;
+  font-size: 14px;
+`
+
+// Carrito -----------------------------------------------------------------------------------------------
 export const ContainerCar = styled.div`
   display: flex;
   flex-direction: row;
   &:hover {
     border: 1px solid #fff;
     border-radius: 2px;
-    padding: 3px;
+    padding: 2x;
     cursor: pointer;
   }
 `
@@ -107,9 +197,6 @@ export const BtnCar = styled.button`
   border-radius: 3px;
   height: 30px;
   background: none;
-  &:hover {
-    cursor: pointer;
-  }
   svg {
       fill: #fff;
       font-size: 40px;

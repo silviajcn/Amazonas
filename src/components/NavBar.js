@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import SearchWords from '../components/SearchWords';
-import { ContainerPrincipal, LogoContainer, ImgLogo, ContainerCar, BtnCar, LinksMenu } from '../styles/NavBar.elements';
-import { RiShoppingCartLine } from "react-icons/ri";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import GeoLocation from './GeoLocation';
+import SearchWords from './SearchWords';
+import { ContainerPrincipal, LogoContainer, ImgLogo, ContainerCar, BtnCar, LinksMenu, ContainerAcount, TextPequenio, TextNegrita, TextEnviar, Location, ContainerDevolucion } from '../styles/NavBar.elements';
+import '../styles/index.css';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const NavBar = () => {
     return (
@@ -15,16 +16,35 @@ const NavBar = () => {
                 </Link>
             </LogoContainer>
 
-            <FaMapMarkerAlt />
+            <GeoLocation />
 
             <SearchWords />
 
-            <ContainerCar>
-                <BtnCar>
-                    <RiShoppingCartLine />
-                    <LinksMenu>Carrito</LinksMenu>
-                </BtnCar>
-            </ContainerCar>
+            <Link to="/login" className="links">
+                <ContainerAcount>
+                    <TextPequenio>Hola, identificate</TextPequenio>
+
+                    <TextNegrita>Cuentas y Listas</TextNegrita>
+                </ContainerAcount>
+            </Link>
+
+            <Link to="/login" className="links">
+                <ContainerDevolucion>
+                    <TextEnviar>Devoluciones</TextEnviar>
+
+                    <Location>y Pedidos</Location>
+                </ContainerDevolucion>
+            </Link>
+
+            <Link to="car" className="links">
+                <ContainerCar>
+                    <BtnCar>
+                        <ShoppingCartOutlinedIcon />
+                        <LinksMenu>Carrito</LinksMenu>
+                    </BtnCar>
+                </ContainerCar>
+            </Link>
+            
         </ContainerPrincipal>
     )
 }

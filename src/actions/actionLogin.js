@@ -46,7 +46,7 @@ export const loginEmailPassword = (email, password) => {
 export const loginFacebook = () => {
     return (dispatch) => {
         const auth = getAuth();
-        signInWithPopup(auth, facebook)
+        signInWithPopup(auth,facebook)
             .then(({ user }) => {
                 console.log(user);
                 dispatch(loginSync(user.uid,user.displayName))

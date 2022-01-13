@@ -1,4 +1,5 @@
 import React from 'react';
+import Rating from './Rating';
 import { ContainerPrincipal, ContainerTitle, Title, ContainerUser, ImgUser, NameUser, ContainerComent, Coment, Options, ContainerComentario, ContainerNewOp, NewOpTitle, NewOpText, BtnNew } from '../styles/Opinions.elements';
 
 const Opinions = () => {
@@ -22,6 +23,7 @@ const Opinions = () => {
                 <ContainerUser>
                     <ImgUser src="https://res.cloudinary.com/silviajcn/image/upload/v1641651073/SPRING-3/users/Ellipse_15_1_ucj9pn.png" alt="user" />
                     <NameUser>Amazon Customer</NameUser>
+                    
                 </ContainerUser>
 
                 <ContainerComent>
@@ -30,6 +32,7 @@ const Opinions = () => {
                 </ContainerComent>
 
                 <div>
+                    <Rating />
                     <Options>A 45 personas les resultó útil</Options>
                     <Options>Informar de un abuso</Options>
                 </div>
@@ -47,6 +50,7 @@ const Opinions = () => {
                 </ContainerComent>
 
                 <div>
+                    <Rating />
                     <Options>A 26 personas les resultó útil</Options>
                     <Options>Informar de un abuso</Options>
                 </div>

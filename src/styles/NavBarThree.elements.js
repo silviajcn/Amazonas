@@ -12,11 +12,12 @@ export const Container = styled.div`
 
 export const ContainerLinks = styled.div`
   display: flex;
+  margin-top: 18px;
   flex-direction: row;
   margin-left: 30px;
 `
 
-export const LinksMenu = styled.a`
+export const LinksMenu = styled.p`
   font-size: 12px;
   font-weight: 500;
   line-height: 24px;
