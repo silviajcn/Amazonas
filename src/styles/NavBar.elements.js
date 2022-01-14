@@ -37,8 +37,8 @@ export const ImgLogo = styled.img`
 export const ContainerLocation = styled.div`
   display: flex;
   flex-direction: row;
-  margin-left: 40px;
-  width: 130px;
+  margin-left: 20px;
+  width: 170px;
 `
 
 export const BtnLocation = styled.button`
@@ -90,8 +90,8 @@ export const Location = styled.p`
 
 // SearchInput -----------------------------------------------------------------------------------------------
 export const ContainerBuscador = styled.div`
-  width: 628px;
-  margin-left: 30px;
+  width: 618px;
+  margin-left: 20px;
   margin-right: 0px;
 `
 
@@ -119,7 +119,7 @@ export const FormContainer = styled(Form)`
 `
 
 export const InputSearch = styled(FormControl)`
-  width: 450px;
+  width: 440px;
   height: 40px;
   border-radius: 0px;
 `

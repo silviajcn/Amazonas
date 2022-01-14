@@ -1,7 +1,7 @@
 import { typesLogin } from '../types/types';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
-//action reister async
+//action register async
 export const registerEmailPasswordName = (email, password, name) => {
     return (dispatch) => {
         const auth = getAuth();

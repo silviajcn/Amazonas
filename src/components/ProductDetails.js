@@ -1,5 +1,6 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+//import { addItemCar } from '../actions/actionAddCar';
 import { RiShoppingCartLine, RiPlayFill } from "react-icons/ri";
 import { ContainerPrincipal, ContainerBack, Containers, ContainerOne, ImgsProduct, ContainerTwo, ContainerThree, DivOne, NameProduct, MarcaProduct, DivTwo, PriceInfo, PriceProduct, Price, Envio, LinksBlue, PagoInfo, PagoCuotas, TitleCaracteristicas, Caracteristicas, ContainerFour, ImgProduct, Buttons, BtnOne, BtnTwo, ContainerIcon, Transaccion, PlusContainer } from '../styles/ProductDetails.elements';
 import { RiArrowLeftSLine } from "react-icons/ri";
@@ -9,6 +10,16 @@ const ProductDetails = () => {
 
     const { products } = useSelector(store => store.products);
     console.log(products)
+
+    //Agregar al carrito
+    // const dispatch = useDispatch();
+
+    // const addItemToCar = () => {
+    //     const item = {
+
+    //     }
+    //       dispatch(addItemCar(item));
+    // }
 
     return (
         <div>
@@ -109,7 +120,10 @@ const ProductDetails = () => {
                     </PriceInfo>
 
                     <Buttons>
-                        <BtnOne type="button">
+                        <BtnOne
+                           type="button"
+                        //    onClick={addItemToCar}
+                        >
                             <ContainerIcon>
                                 <RiShoppingCartLine />
                             </ContainerIcon>

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useEffect} from 'react';
 import { useFormik } from 'formik';
 import { fileUpload } from '../helpers/FileUpload';
 import { useDispatch } from 'react-redux';
@@ -6,8 +6,6 @@ import { registerProductAsync, listProductsAsync } from '../actions/actionProduc
 import { Textarea } from '../styles/New.elements';
 
 const NewProduct = () => {
-
-    const [enable, setEnable] = useState(false)
 
     const dispatch = useDispatch();
 
@@ -310,7 +308,7 @@ const NewProduct = () => {
                                 placeholder="Correo electronico"
                                 onChange={formik.handleChange}
                                 required
-                                disabled={!enable} />
+                                 />
                                 </div>
                             </div>
 

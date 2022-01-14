@@ -90,7 +90,7 @@ const Register = () => {
 
                 <RegisterRedirect>
                     <Predirect>¿Ya tienes una cuenta?</Predirect>
-                    <Link to="/login">
+                    <Link to="/login" className="links">
                         <PredirectLogin>Iniciar sesión</PredirectLogin>
                     </Link>
                 </RegisterRedirect>

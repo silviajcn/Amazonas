@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useForm } from '../hooks/useForm';
 import { loginEmailPassword, loginGoogle, loginFacebook } from '../actions/actionLogin';
 import { Link } from "react-router-dom";
-import { ContainerPrincipal, LogoContainer, Logo, ContainerForm, ContainerInputs, Labels, Inputs, BtnContinue, Pconditions, BtnOtherAcount, LogoOtherAcount, RegisterRedirect, Predirect, BtnRegister } from '../styles/Login.elements';
+import { ContainerPrincipal, LogoContainer, Logo, ContainerForm, ContainerInputs, Labels, Inputs, BtnContinue, Pconditions, BtnOtherAcount, LogoOtherAcount, RegisterRedirect, Predirect, BtnRegister, BtnOtherAcountP } from '../styles/Login.elements';
 
 const Login = () => {
 
@@ -74,14 +74,14 @@ const Login = () => {
                         <div>
                             <BtnOtherAcount onClick={() => handleGoogle()}>
                                 <LogoOtherAcount src="https://res.cloudinary.com/silviajcn/image/upload/v1641572950/SPRING-3/kisspng-scalable-vector-graphics-g-suite-computer-icons-go-5bf7e7dcea2093.503845701542973404959_daquwm.jpg" />
-                                <p>Continuar con mi cuenta de Google</p>
+                                <BtnOtherAcountP>Continuar con mi cuenta de Google</BtnOtherAcountP>
                             </BtnOtherAcount>
                         </div>
 
                         <div>
                             <BtnOtherAcount onClick={() => handleFacebook()}>
                                 <LogoOtherAcount src="https://res.cloudinary.com/silviajcn/image/upload/v1641573711/SPRING-3/facebook-logo_etvlmw.png" />
-                                <p>Continuar con mi cuenta de Facebook</p>
+                                <BtnOtherAcountP>Continuar con mi cuenta de Facebook</BtnOtherAcountP>
                             </BtnOtherAcount>
                         </div>
                     </div>
@@ -98,7 +98,7 @@ const Login = () => {
                     ¿Eres nuevo en Amazonas?
                 </Predirect>
 
-                <Link to="/register">
+                <Link to="/register" className="links">
                         <BtnRegister>Crea tu cuenta en Amazonas</BtnRegister>
                 </Link>
             </RegisterRedirect>

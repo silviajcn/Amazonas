@@ -28,7 +28,7 @@ export const Containers = styled.div`
 
 export const Title = styled.h5`
   font-size: 12px;
-  margin: 0px;
+  margin-bottom: 5px;
 `
 
 export const Items = styled.p`

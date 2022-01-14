@@ -15,3 +15,9 @@ export const typesComents = {
     list: 'List',
     delete: 'Delete'
 }
+
+export const typesAddCar = {
+    add: 'Add',
+    delete: 'Delete',
+    update: 'Update'
+}

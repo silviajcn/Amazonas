@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import UserData from '../hooks/dataUser';
 import GeoLocation from './GeoLocation';
 import SearchWords from './SearchWords';
 import { ContainerPrincipal, LogoContainer, ImgLogo, ContainerCar, BtnCar, LinksMenu, ContainerAcount, TextPequenio, TextNegrita, TextEnviar, Location, ContainerDevolucion } from '../styles/NavBar.elements';
@@ -7,6 +8,9 @@ import '../styles/index.css';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const NavBar = () => {
+
+    const useUser = UserData();
+
     return (
         <ContainerPrincipal>
           
@@ -22,7 +26,11 @@ const NavBar = () => {
 
             <Link to="/login" className="links">
                 <ContainerAcount>
-                    <TextPequenio>Hola, identificate</TextPequenio>
+                    <TextPequenio>
+                        Hola, {
+                              useUser.name!==undefined?useUser.name:" identifícate"
+                              }
+                    </TextPequenio>
 
                     <TextNegrita>Cuentas y Listas</TextNegrita>
                 </ContainerAcount>

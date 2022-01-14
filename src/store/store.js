@@ -3,7 +3,8 @@ import thunk from 'redux-thunk';
 import { loginReducer } from '../reducers/loginReducer';
 import { registerReducer } from '../reducers/registerReducer';
 import { productsReducer } from '../reducers/productsReducer';
-import { comentsReducer } from '../reducers/comentsReducer'
+import { comentsReducer } from '../reducers/comentsReducer';
+import { carReducer } from '../reducers/carReducer';
 
 //Redux Devtools
 const composeEnhancers = (typeof window !== 'undefined' && 
@@ -13,6 +14,7 @@ const reducers = combineReducers({
     login: loginReducer,
     register: registerReducer,
     products: productsReducer,
+    car: carReducer,
     coments: comentsReducer
 })
 

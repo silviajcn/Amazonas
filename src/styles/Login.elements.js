@@ -85,6 +85,11 @@ export const BtnOtherAcount = styled.button`
   }
 `
 
+export const BtnOtherAcountP = styled.p`
+  font-size: 12px;
+  margin-top: 15px;
+`
+
 export const LogoOtherAcount = styled.img`
   width: 20px;
   height: auto;

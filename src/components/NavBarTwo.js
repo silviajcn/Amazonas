@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import { Container, Wrapper, Menu, MenuItem, MenuItemLink, MobileIcon, SubTitles, Items, ContainerLinks, LinksMenu } from "../styles/NavBarTwo.elements";
+import UserData from '../hooks/dataUser';
+import { Container, Wrapper, Menu, MenuIdentification, ContainerIconIdent, Identification, MenuItem, MenuItemLink, MobileIcon, SubTitles, Items, ContainerLinks, LinksMenu } from "../styles/NavBarTwo.elements";
 import '../styles/index.css';
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
 import { IconContext } from "react-icons";
 
 const NavBarTwo = () => {
 
     const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+    const useUser = UserData();
 
     return (
         <Container>
@@ -18,7 +21,20 @@ const NavBarTwo = () => {
                         {showMobileMenu ? <FaTimes />  : <FaBars />}
                     </MobileIcon>
 
-                    <Menu open = {showMobileMenu}>
+                    <Menu open={showMobileMenu}>
+                        
+                        <MenuIdentification>
+                            <ContainerIconIdent>
+                                    <FaUserCircle />
+                            </ContainerIconIdent>
+                            
+                            <Identification>
+                                Hola, {
+                                        useUser.name!==undefined?useUser.name:" identifícate"
+                                      }
+                            </Identification>
+                        </MenuIdentification>
+
                         <MenuItem>
                             <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
                                 <div>

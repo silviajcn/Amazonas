@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import UserData from '../hooks/dataUser';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { ContainerLocation, BtnLocation, ContainerIcon, ContainerGeolocation, TextEnviar, Location } from '../styles/NavBar.elements';
 
@@ -16,6 +17,7 @@ const GeoLocation = () => {
             });
     };
     
+    const useUser = UserData();
 
     return (
         <>
@@ -26,7 +28,11 @@ const GeoLocation = () => {
                     </ContainerIcon>
 
                     <ContainerGeolocation>
-                        <TextEnviar>Enviar a</TextEnviar>
+                        <TextEnviar>
+                            Enviar a {
+                              useUser.name!==undefined?useUser.name:" "
+                              }
+                        </TextEnviar>
                         {details && (
                             <Location>
                                 <strong>

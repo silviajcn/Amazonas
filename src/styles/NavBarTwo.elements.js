@@ -34,6 +34,35 @@ export const Menu = styled.ul`
     border-right: 1px solid #D3DEDC;
 `
 
+export const MenuIdentification = styled.div`
+  width: 100%;
+  background: #131921;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  text-aling: center;
+  margin-left: -32px;
+  width: 273px;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`
+
+export const ContainerIconIdent = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-left: -40px;
+  color: #fff;
+`
+
+export const Identification = styled.p`
+  margin-left: 10px;
+  margin-top: 16px;
+`
+
 export const MenuItem = styled.li`
   display: flex;
   justify-content: start;

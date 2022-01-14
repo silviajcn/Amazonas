@@ -1,13 +1,26 @@
-.home {
-    max-width: 1500px;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    display: flex;
-}
 
-.home-container {
-    display: flex;
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    animation: fadeIn 700ms ease-in-out 1s both;
+    cursor: pointer;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .back-top-container {
+    height: 40px;
+    text-align: center;
+    width: 1470px;
+    background-color: #242F3E;
     color: white;
-    background-color: #2b2727
-}
+    margin-right: 15px;
+  }
