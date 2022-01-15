@@ -1,5 +1,6 @@
 import React, { useEffect} from 'react';
 import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import { fileUpload } from '../helpers/FileUpload';
 import { useDispatch } from 'react-redux';
 import { registerProductAsync, listProductsAsync } from '../actions/actionProducts';
@@ -15,8 +16,11 @@ const NewProduct = () => {
 
     const formik = useFormik({
         initialValues: {
-            username: "",
-            useremail: "",
+            oneimage: "",
+            twoimage: "",
+            threeimage: "",
+            banner: "",
+            codeproduct: "",
             categoryproduct: "",
             nameproduct: "",
             marcaproduct: "",
@@ -24,11 +28,23 @@ const NewProduct = () => {
             colorproduct: "",
             styleproduct: "",
             descripcionproduct: "",
-            oneimage: "",
-            twoimage: "",
-            threeimage: "",
-            banner: ""
+            rate: "",
         },
+        validationSchema: Yup.object({
+            oneimage: Yup.string().required(),
+            twoimage: Yup.string().required(),
+            threeimage: Yup.string().required(),
+            banner: Yup.string().required(),
+            codeproduct: Yup.string().required(),
+            categoryproduct: Yup.string().required(),
+            nameproduct: Yup.string().required(),
+            marcaproduct: Yup.string().required(),
+            priceproduct: Yup.string().required(),
+            colorproduct: Yup.string().required(),
+            styleproduct: Yup.string().required(),
+            descripcionproduct: Yup.string().required(),
+            rate: Yup.string().required()
+        }),
         onSubmit: (data) => {
             console.log(data);
             dispatch(registerProductAsync(data))
@@ -138,7 +154,6 @@ const NewProduct = () => {
                                         name="oneimage"
                                         style={{ display: 'none' }}
                                         onChange={handleFileChanged1}
-                                        required
                                     />
 
                                     <button
@@ -211,11 +226,22 @@ const NewProduct = () => {
                                     <input
                                         type="text"
                                         className="form-control mt-2"
+                                        name="codeproduct"
+                                        autoComplete="off"
+                                        placeholder="Codigo del producto"
+                                        onChange={formik.handleChange}
+                                    />
+                                </div>
+
+                                <div>
+                                    <input
+                                        type="text"
+                                        className="form-control mt-2"
                                         name="categoryproduct"
                                         autoComplete="off"
                                         placeholder="Categoría del producto"
                                         onChange={formik.handleChange}
-                                        required />
+                                    />
                                 </div>
 
                                 <div>
@@ -226,7 +252,7 @@ const NewProduct = () => {
                                         autoComplete="off"
                                         placeholder="Nombre del producto"
                                         onChange={formik.handleChange}
-                                        required />
+                                    />
                                 </div>
 
                                 <div>
@@ -237,7 +263,7 @@ const NewProduct = () => {
                                         autoComplete="off"
                                         placeholder="Marca del producto"
                                         onChange={formik.handleChange}
-                                        required />
+                                    />
                                 </div>
 
                                 <div>
@@ -248,7 +274,7 @@ const NewProduct = () => {
                                         autoComplete="off"
                                         placeholder="Precio del producto"
                                         onChange={formik.handleChange}
-                                        required />
+                                    />
                                 </div>
 
                                 <div>
@@ -259,7 +285,7 @@ const NewProduct = () => {
                                         autoComplete="off"
                                         placeholder="Color del producto"
                                         onChange={formik.handleChange}
-                                        required />
+                                    />
                                 </div>
 
                                 <div>
@@ -270,7 +296,7 @@ const NewProduct = () => {
                                         autoComplete="off"
                                         placeholder="Estilo del producto"
                                         onChange={formik.handleChange}
-                                        required />
+                                    />
                                 </div>
 
                                 <div>
@@ -280,35 +306,21 @@ const NewProduct = () => {
                                         name="descripcionproduct"
                                         placeholder="Descripcion del producto"
                                         onChange={formik.handleChange}
-                                        required>   
+                                    >   
                                     </Textarea>
                                 </div>
-                            </div>
-
-                            <div>
-                                <p><strong>Datos del vendedor</strong></p>
 
                                 <div>
-                                <input
-                                type="text"
-                                className="form-control mt-2"
-                                name="username"
-                                autoComplete="off"
-                                placeholder="Nombre del vendedor"
-                                onChange={formik.handleChange}
-                                required />
-                                </div>
-                            
-                                <div>
-                                <input
-                                type="text"
-                                className="form-control mt-2"
-                                name="useremail"
-                                autoComplete="off"
-                                placeholder="Correo electronico"
-                                onChange={formik.handleChange}
-                                required
-                                 />
+                                    <input
+                                        type="number"
+                                        className="form-control mt-2"
+                                        name="rate"
+                                        autoComplete="off"
+                                        placeholder="Puntuacion del producto (del 1 al 5)."
+                                        min="1"
+                                        max="5"
+                                        onChange={formik.handleChange}
+                                    />
                                 </div>
                             </div>
 

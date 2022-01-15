@@ -1,20 +1,33 @@
 import React from 'react';
+//import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import { searchProductAsync } from '../actions/actionProducts';
 import { FaSearch } from "react-icons/fa";
 import { ContainerBuscador, FormContainer, InputSearch, BtnSearch, SelectOption } from '../styles/NavBar.elements';
 
 const SearchWords = () => {
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    }
+    const dispatch = useDispatch();
+
+    const formik = useFormik({
+        initialValues: {
+            search: ''
+        },
+        validationSchema: Yup.object({
+            search: Yup.string().required()
+        }),
+        onSubmit: ({ search }) => {
+            dispatch(searchProductAsync(search))
+            console.log(search);
+        }
+    })
 
     return (
         <div>
             <ContainerBuscador>
-                <div>
-                    
-                </div>
-                <FormContainer onSubmit={handleSubmit}>
+                <FormContainer onSubmit={formik.handleSubmit}>
                   <SelectOption>
                        <option>Todos</option>
                        <option>Arte y artesanías</option>
@@ -46,10 +59,21 @@ const SearchWords = () => {
                        <option>Videojuegos</option>
                     </SelectOption>
                 <InputSearch
+                    id="search"
+                    name="search"
                     type="text"
-                    aria-label="Search Movies"
+                    aria-label="Search Products"
+                    onChange={formik.handleChange}
                 />
-                <BtnSearch bg="warning" variant="warning" className="me-5" type="submit"><FaSearch /></BtnSearch>
+                <BtnSearch
+                    bg="warning"
+                    variant="warning"
+                    className="me-5"
+                    type="submit"
+                >
+                    <FaSearch />
+                </BtnSearch>
+                
             </FormContainer>
             </ContainerBuscador>
         </div>

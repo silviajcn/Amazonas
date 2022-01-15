@@ -81,6 +81,7 @@ export const ContainerNewOp = styled.div`
   align-items: start;
   margin-right: 100px;
   margin-top: 24px;
+  padding: 20px 0px 40px 0px;
 `
 
 export const NewOpTitle = styled.h3`

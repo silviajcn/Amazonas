@@ -43,17 +43,12 @@ const NewComent = () => {
 
     return (
         <div>
-
-            <h2>Agregar Opinion</h2>
-
             <div className="container mt-5">
 
                 <hr />
                 <div className="row">
 
                     <div className="col-12">
-                        <h3 className="text-center"> Employees </h3>
-
                         <form className="form-group" onSubmit={formik.handleSubmit}>
                             <input
                                 id="fileSelector"

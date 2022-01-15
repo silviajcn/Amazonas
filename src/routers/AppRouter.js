@@ -34,6 +34,8 @@ const AppRouter = () => {
 
     }, [setIsLoggedIn, setChecking])
 
+
+    
     if (checking) {
         return (
             <IconSpinner />

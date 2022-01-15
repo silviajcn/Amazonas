@@ -34,7 +34,7 @@ const BackTop = () => {
                     className="back-top-container"
                     onClick={() => scrollToTop()}
                 >
-                    <p>Inicio de página</p>
+                    <p className="indication">Ir al nicio de página</p>
                 </div>
             )}
         </div>

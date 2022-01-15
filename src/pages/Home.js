@@ -2,11 +2,10 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../actions/actionLogin';
-import AllProducts from '../components/AllProducts';
 import CarouselHome from '../components/CarouselHome';
 import Categories from '../components/Categories';
+import CarouselTwo from '../components/CarouselTwo';
 import { Link } from "react-router-dom";
-//import NewComent from '../components/NewComent';
 
 const Home = () => {
 
@@ -22,15 +21,13 @@ const Home = () => {
     
 
     return (
-        <div>
+        <div className="first-container-home">
 
             <CarouselHome />
 
             <Categories />
 
-            {/* <NewComent /> */}
-
-            <AllProducts />
+            <CarouselTwo />
 
             <Link to="/details">
                 <button>
@@ -41,6 +38,12 @@ const Home = () => {
             <Link to="/registerp">
                 <button>
                     Ir a registrar producto
+                </button>
+            </Link>
+
+            <Link to="/products">
+                <button>
+                    Ver todos los productos
                 </button>
             </Link>
 

@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 //import { addItemCar } from '../actions/actionAddCar';
 import { RiShoppingCartLine, RiPlayFill } from "react-icons/ri";
 import { ContainerPrincipal, ContainerBack, Containers, ContainerOne, ImgsProduct, ContainerTwo, ContainerThree, DivOne, NameProduct, MarcaProduct, DivTwo, PriceInfo, PriceProduct, Price, Envio, LinksBlue, PagoInfo, PagoCuotas, TitleCaracteristicas, Caracteristicas, ContainerFour, ImgProduct, Buttons, BtnOne, BtnTwo, ContainerIcon, Transaccion, PlusContainer } from '../styles/ProductDetails.elements';
 import { RiArrowLeftSLine } from "react-icons/ri";
 import ReactImageMagnify from 'react-image-magnify';
+import { listProductsAsync } from '../actions/actionProducts';
 
 const ProductDetails = () => {
 
-    const { products } = useSelector(store => store.products);
+    const dispatch = useDispatch();
+
+    const { products } = useSelector((store) => store.products);
     console.log(products)
+
+    useEffect(() => {
+        dispatch(listProductsAsync());
+      }, []);
 
     //Agregar al carrito
     // const dispatch = useDispatch();

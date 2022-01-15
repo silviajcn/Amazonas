@@ -18,7 +18,7 @@ export const productsReducer = (state = initialState, action) => {
         
         case typesProducts.delete:
             return {
-                ...state
+                products: state.products.filter(prod => prod.useremail !== action.payload)
             }
     
         default:

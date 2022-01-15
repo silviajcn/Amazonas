@@ -1,6 +1,13 @@
 import React from 'react';
+import NewComent from './NewComent';
 import Rating from './Rating';
 import { ContainerPrincipal, ContainerTitle, Title, ContainerUser, ImgUser, NameUser, ContainerComent, Coment, Options, ContainerComentario, ContainerNewOp, NewOpTitle, NewOpText, BtnNew } from '../styles/Opinions.elements';
+
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const Opinions = () => {
     return (
@@ -11,7 +18,21 @@ const Opinions = () => {
 
                 <NewOpText>Comparte tu opinión con otros clientes</NewOpText>
 
-                <BtnNew type="button">Escribir mi opinión</BtnNew>
+                {/* <BtnNew type="button">Escribir mi opinión</BtnNew> */}
+
+                <Accordion>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                    >
+                        <Typography>Escribir mi opinión</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <NewComent />
+                    </AccordionDetails>
+                </Accordion>
+
             </ContainerNewOp>
 
             <div>

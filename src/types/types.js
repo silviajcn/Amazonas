@@ -7,7 +7,8 @@ export const typesLogin = {
 export const typesProducts = {
     register: 'Register',
     list: 'List',
-    delete: 'Delete'
+    delete: 'Delete',
+    search: 'Search'
 }
 
 export const typesComents = {

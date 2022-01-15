@@ -126,7 +126,7 @@ export const ContainerLinks = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-left: 40px;
+  margin-left: 50px;
 `
 
 export const LinksMenu = styled.p`
@@ -137,6 +137,7 @@ export const LinksMenu = styled.p`
   color: #fff;
   margin-right: 20px;
   text-decoration: none;
+  margin-top: 10px;
 
   &:hover {
     border: 1px solid #fff;
