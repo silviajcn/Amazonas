@@ -46,14 +46,14 @@ export const BtnLocation = styled.button`
   flex-direction: row;
   align-items: center;
   border: none;
-  border-radius: 3px;
   height: 30px;
   background: none;
   color: #fff;
+  border: 1px solid #131921;
+  border-radius: 2px;
+  padding: 3px;
   &:hover {
     border: 1px solid #fff;
-    border-radius: 2px;
-    padding: 3px;
     cursor: pointer;
   }
 `
@@ -144,25 +144,27 @@ export const ContainerAcount = styled.div`
   display: flex;
   flex-direction: column;
   color: #fff;
-  margin-right: 40px;
+  margin-right: 30px;
+  border: 1px solid #131921;
+  border-radius: 2px;
+  padding: 3px;
   &:hover {
     border: 1px solid #fff;
-    border-radius: 2px;
-    padding: 2px;
     cursor: pointer;
   }
 `
 
-// Acount -----------------------------------------------------------------------------------------------
+// Devolucion -----------------------------------------------------------------------------------------------
 export const ContainerDevolucion = styled.div`
   display: flex;
   flex-direction: column;
   color: #fff;
-  margin-right: 40px;
+  margin-right: 30px;
+  border: 1px solid #131921;
+  border-radius: 2px;
+  padding: 3px;
   &:hover {
     border: 1px solid #fff;
-    border-radius: 2px;
-    padding: 2px;
     cursor: pointer;
   }
 `
@@ -182,10 +184,11 @@ export const TextNegrita = styled.p`
 export const ContainerCar = styled.div`
   display: flex;
   flex-direction: row;
+  border: 1px solid #131921;
+  border-radius: 2px;
+  padding: 3px;
   &:hover {
     border: 1px solid #fff;
-    border-radius: 2px;
-    padding: 2x;
     cursor: pointer;
   }
 `
@@ -208,4 +211,5 @@ export const LinksMenu = styled.p`
   font-weight: 700;
   color: #fff;
   margin-right: 5px;
+  margin-top: 30px;
 `

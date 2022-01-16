@@ -3,21 +3,24 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 //import { addItemCar } from '../actions/actionAddCar';
 import { RiShoppingCartLine, RiPlayFill } from "react-icons/ri";
-import { ContainerPrincipal, ContainerBack, PBack, Containers, ContainerOne, ImgsProduct, ContainerTwo, ContainerThree, DivOne, NameProduct, MarcaProduct, DivTwo, PriceInfo, PriceProduct, Price, Envio, LinksBlue, PagoInfo, PagoCuotas, TitleCaracteristicas, Caracteristicas, ContainerFour, ImgProduct, Buttons, BtnOne, BtnTwo, ContainerIcon, Transaccion, PlusContainer } from '../styles/ProductDetails.elements';
+import { ContainerPrincipal, ContainerBack, PBack, Containers, ContainerOne, ImgsProduct, ContainerTwo, ContainerThree, DivOne, NameProduct, MarcaProduct, DivTwo, PriceInfo, PriceProduct, Price, Envio, LinksBlue, PagoInfo, PagoCuotas, TitleCaracteristicas, Caracteristicas, ContainerFour, ImgProduct, Buttons, BtnOne, BtnTwo, ContainerIcon, Transaccion, PlusContainer, ContainerBanner, ImgBanner } from '../styles/ProductDetails.elements';
 import { RiArrowLeftSLine } from "react-icons/ri";
 import ReactImageMagnify from 'react-image-magnify';
-//import { listProductsAsync } from '../actions/actionProducts';
+import { showDetailProductAsync } from '../actions/actionProducts';
 
 const ProductDetails = () => {
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-    // const { products } = useSelector((store) => store.products);
-    // console.log(products)
+    const { products } = useSelector((store) => store.products);
+    console.log(products);
 
-    // useEffect(() => {
-    //     dispatch(listProductsAsync());
-    //   }, []);
+    const { oneimage, twoimage, threeimage, banner, codeproduct, categoryproduct, nameproduct, marcaproduct, priceproduct, colorproduct, styleproduct, descripcionproduct, rate } = products
+    console.log(oneimage)
+
+    useEffect(() => {
+        dispatch(showDetailProductAsync())
+    }, []);
 
     //Agregar al carrito
     // const dispatch = useDispatch();
@@ -39,12 +42,13 @@ const ProductDetails = () => {
                 </ContainerBack>
             </Link>
 
-            <ContainerPrincipal>
+                    {/* <>
+                        <ContainerPrincipal>
             <Containers>
                 <ContainerOne>
-                    <ImgsProduct src="https://res.cloudinary.com/silviajcn/image/upload/v1641654716/SPRING-3/productos/camara/Rectangle_36_fvehjl.png" alt="product" />
-                    <ImgsProduct src="https://res.cloudinary.com/silviajcn/image/upload/v1641654752/SPRING-3/productos/camara/Frame_61_pgrtcp.png" alt="product" />
-                    <ImgsProduct src="https://res.cloudinary.com/silviajcn/image/upload/v1641654746/SPRING-3/productos/camara/Frame_61_1_f2tmgp.png" alt="product" />
+                    <ImgsProduct src={oneimage} alt="product" />
+                    <ImgsProduct src={twoimage} alt="product" />
+                    <ImgsProduct src={threeimage} alt="product" />
                 </ContainerOne>
 
                 <ContainerTwo>
@@ -54,12 +58,12 @@ const ProductDetails = () => {
                         smallImage: {
                             alt: 'product',
                             isFluidWidth: true,
-                            src: "https://res.cloudinary.com/silviajcn/image/upload/v1641654716/SPRING-3/productos/camara/Rectangle_36_fvehjl.png",
+                            src: oneimage,
                         },
                         largeImage: {
-                            src: "https://res.cloudinary.com/silviajcn/image/upload/v1641654716/SPRING-3/productos/camara/Rectangle_36_fvehjl.png",
-                            width: 1200,
-                            height: 1800
+                            src: oneimage,
+                            width: 2300,
+                            height: 2100
                         },
                         shouldUsePositiveSpaceLens: true,
                         enlargedImageContainerDimensions: {
@@ -73,20 +77,20 @@ const ProductDetails = () => {
 
                     <ContainerThree>
                         <DivOne>
-                            <NameProduct><strong>Canon EOS R6 - Cámara sin Espejo de Marco Completo + Lente RF24-105mm F4 L IS USM</strong></NameProduct>
-                            <MarcaProduct><strong>Marca: Canon</strong></MarcaProduct>
+                            <NameProduct><strong>{nameproduct}</strong></NameProduct>
+                            <MarcaProduct><strong>Marca: {marcaproduct}</strong></MarcaProduct>
                         </DivOne>
 
                         <DivTwo>
                             <PriceInfo>
                                 <PriceProduct>Precio:</PriceProduct>
-                                <Price><strong>$100,669.00</strong></Price>
+                                <Price><strong>${priceproduct}</strong></Price>
                                 <Envio><strong>Envío GRATIS.</strong></Envio>
                                 <LinksBlue><strong>Detalles</strong></LinksBlue>
                             </PriceInfo>
 
                             <PagoInfo>
-                                <PagoCuotas>Hasta <strong>18 meses sin intereses</strong> de $5,592.76.</PagoCuotas>
+                                <PagoCuotas>Hasta <strong>18 meses sin intereses</strong> de $5,592</PagoCuotas>
                                 <LinksBlue><strong>Ver mensualidades</strong></LinksBlue>
                             </PagoInfo>
 
@@ -96,27 +100,23 @@ const ProductDetails = () => {
                             </PagoInfo>
 
                             <PlusContainer>
-                                <PagoCuotas>Color: <strong>Negro</strong></PagoCuotas>
+                                <PagoCuotas>Color: <strong>{colorproduct}</strong></PagoCuotas>
                             </PlusContainer>
 
                             <PlusContainer>
-                                <PagoCuotas>Estilo: <strong>24-105mm USM Kit</strong></PagoCuotas>
+                                <PagoCuotas>Estilo: <strong>{styleproduct}</strong></PagoCuotas>
                             </PlusContainer>
                         </DivTwo>
 
                         <TitleCaracteristicas><strong>Acerca de este artículo</strong></TitleCaracteristicas>
 
                         <div>
-                            <Caracteristicas>- Alta calidad de imagen con un nuevo sensor CMOS de marco completo de 20 megapíxeles.</Caracteristicas>
-                            <Caracteristicas>- Procesador de imagen DIGIC X con una gama ISO de 100-102400; ampliable a 204800.</Caracteristicas>
-                            <Caracteristicas>- Disparo continuo de alta velocidad de hasta 12 fps con obturador mecánico y obturador electrónico (silencioso) de hasta 20 fps.</Caracteristicas>
-                            <Caracteristicas>- CMOS AF de doble pixel, cubre aproximadamente Área 100% con 1.053 AF.</Caracteristicas>
-                            <Caracteristicas>- Seguimiento de asuntos de personas y animales* utilizando tecnología de aprendizaje profundo.</Caracteristicas>
+                            <Caracteristicas>{descripcionproduct}</Caracteristicas>
                         </div>
                 </ContainerThree>
 
                 <ContainerFour>
-                    <Price><strong>$100,669.00</strong></Price>
+                    <Price><strong>${priceproduct}</strong></Price>
 
                     <PriceInfo>
                         <Envio><strong>Envío GRATIS.</strong></Envio>
@@ -130,6 +130,7 @@ const ProductDetails = () => {
 
                     <Buttons>
                         <BtnOne
+                           id={codeproduct}
                            type="button"
                         //    onClick={addItemToCar}
                         >
@@ -139,7 +140,10 @@ const ProductDetails = () => {
                             <strong>Agregar al Carrito</strong>
                         </BtnOne>
 
-                        <BtnTwo type="button">
+                        <BtnTwo
+                            id={codeproduct}
+                            type="button"
+                        >
                             <ContainerIcon>
                                 <RiPlayFill />
                             </ContainerIcon>
@@ -152,7 +156,11 @@ const ProductDetails = () => {
             </Containers>
             </ContainerPrincipal>
 
-            
+            <ContainerBanner>
+                <ImgBanner src={banner} alt="banner" />
+            </ContainerBanner>
+                    </> */}
+                
             
         </div>
     )

@@ -241,3 +241,15 @@ export const Transaccion = styled.p`
     cursor: pointer;
   }
 `
+
+export const ContainerBanner = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const ImgBanner = styled.img`
+  width: 100vw;
+  height: auto;
+  margin-bottom: 80px;
+`

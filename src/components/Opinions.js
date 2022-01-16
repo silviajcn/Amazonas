@@ -17,7 +17,7 @@ const Opinions = () => {
     const dispatch = useDispatch();
 
     const { coments } = useSelector((store) => store.coments);
-    console.log(coments)
+    //console.log(coments)
 
     useEffect(() => {
         dispatch(listComentsAsync());

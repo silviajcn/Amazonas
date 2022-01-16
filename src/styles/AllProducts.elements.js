@@ -11,6 +11,21 @@ export const ContainerPrincipal = styled.div`
   height: auto;
 `
 
+export const ContainerBack = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  margin-left: 30px;
+`
+
+export const PBack = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+`
+
 export const BtnShowDetail = styled.button`
   display: flex;
   flex-direction: row;

@@ -1,9 +1,13 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link, useNavigate } from "react-router-dom";
 import { listProductsAsync, deleteProductAsync, showDetailProductAsync } from '../actions/actionProducts';
-import { ContainerPrincipal, BtnShowDetail, ContainerImg, ImgProduct, ContainerSecond, TitleProduct, ContainerTres, PUno, PDos, ContainerBtn, BtnDelete } from '../styles/AllProducts.elements';
+import { ContainerBack, PBack, ContainerPrincipal, BtnShowDetail, ContainerImg, ImgProduct, ContainerSecond, TitleProduct, ContainerTres, PUno, PDos, ContainerBtn, BtnDelete } from '../styles/AllProducts.elements';
+import { RiArrowLeftSLine } from "react-icons/ri";
 
 const AllProducts = () => {
+
+    let history = useNavigate();
 
     const dispatch = useDispatch();
 
@@ -17,10 +21,23 @@ const AllProducts = () => {
     
     return (
         <>
+
+            <Link to="/" className="links-two">
+                <ContainerBack>
+                    <RiArrowLeftSLine />
+                    <PBack>Volver a la página de inicio</PBack>
+                </ContainerBack>
+            </Link>
+
             {
                 products.map((e, i) => (
                     <ContainerPrincipal key={i}>
-                        <BtnShowDetail onClick={() => dispatch(showDetailProductAsync(e.codeproduct))}>
+                        <BtnShowDetail
+                            onClick={() => {
+                                dispatch(showDetailProductAsync(e.codeproduct))
+                                history("/details")
+                            }}>
+                            
                             <ContainerImg>
                                 <ImgProduct src={e.oneimage} alt="producto" />
                             </ContainerImg>

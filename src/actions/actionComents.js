@@ -18,7 +18,7 @@ export const deleteComentAsync = (email) => {
 
         datos.forEach((docu) => {
             //console.log(docu);
-            console.log(docu.id);
+            //console.log(docu.id);
 
             deleteDoc(doc(db, "coments", docu.id));
         })
@@ -53,13 +53,13 @@ export const listComentsAsync = () => {
         const comentarios = [];
         querySnapshot.forEach((doc) => {
             //console.log(doc);
-            console.log(doc.data());
+            //console.log(doc.data());
 
             comentarios.push({
                 ...doc.data()
             })
         });
-        console.log(comentarios);
+        //console.log(comentarios);
         dispatch(listComentsSync(comentarios));
     }
 }

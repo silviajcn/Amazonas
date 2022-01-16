@@ -13,9 +13,9 @@ export const typesProducts = {
 }
 
 export const typesComents = {
-    register: 'Register',
-    list: 'List',
-    delete: 'Delete'
+    register: 'Register coment',
+    list: 'List coment',
+    delete: 'Delete coment'
 }
 
 export const typesAddCar = {

@@ -110,10 +110,11 @@ export const MobileIcon = styled.div`
   display: flex;
   align-items: center;
   font-size: 12px;
+  padding: 3px;
+  border: 1px solid #242F3E;
+  border-radius: 2px;
   &:hover {
     border: 1px solid #fff;
-    border-radius: 2px;
-    padding: 3px;
     cursor: pointer;
   }
     svg {
@@ -129,7 +130,7 @@ export const ContainerLinks = styled.div`
   margin-left: 50px;
 `
 
-export const LinksMenu = styled.p`
+export const LinksMenu = styled.div`
   display: flex;
   align-items: center;
   font-size: 12px;
@@ -137,12 +138,13 @@ export const LinksMenu = styled.p`
   color: #fff;
   margin-right: 20px;
   text-decoration: none;
-  margin-top: 10px;
+  background: none;
+  padding: 3px;
+  border: 1px solid #242F3E;
+  border-radius: 2px;
 
   &:hover {
     border: 1px solid #fff;
-    border-radius: 2px;
-    padding: 3px;
     cursor: pointer;
   }
 `
