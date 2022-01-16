@@ -80,13 +80,13 @@ export const deleteProductSync = (code) => {
 
          const productos = [];
          querySnapshot.forEach((doc) => {
-             //console.log(doc);
-            console.log(doc.data());
+            //console.log(doc);
+            //console.log(doc.data());
              productos.push({
                  ...doc.data()
              })
          });
-         console.log(productos);
+         //console.log(productos);
          dispatch(listProductsSync(productos));
      }
  }

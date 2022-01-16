@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { listProductsAsync } from '../actions/actionProducts';
 import Carousel from 'react-elastic-carousel';
+import { FirstContainer, ImgCarouselTwo } from '../styles/Carousel.elements';
 
 const CarouselTwo = () => {
 
@@ -15,17 +16,19 @@ const CarouselTwo = () => {
     }, []);
 
     return (
-        <div className="first-container">
-            <Carousel itemsToShow={5} showArrows={false} pagination={false}>
+        <FirstContainer>
+
+            <h3>Nuestros productos</h3>
+            <Carousel itemsToShow={5} pagination={false}>
                 {
                     products.map((e, i) => (
                         <div key={i}>
-                            <img src={e.oneimage} alt="products" className="img-carousel-two" />
+                            <ImgCarouselTwo src={e.oneimage} alt="products" />
                         </div>
                     ))
                 }
             </Carousel>
-        </div>
+        </FirstContainer>
     )
 }
 

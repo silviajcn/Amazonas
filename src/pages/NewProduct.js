@@ -4,7 +4,17 @@ import * as Yup from 'yup';
 import { fileUpload } from '../helpers/FileUpload';
 import { useDispatch } from 'react-redux';
 import { registerProductAsync, listProductsAsync } from '../actions/actionProducts';
-import { Textarea } from '../styles/New.elements';
+import { FirstContainerForm, ContainerTitle, ContainerForm, ContainerBtnImgs, BtnImgs, Textarea, DataProduct, BtnAddProduct, FinishStep, LogoAmazonas } from '../styles/NewProducts.elements';
+
+// Material UI-------------------
+import Box from '@mui/material/Box';
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+
+const steps = ['Carga las imagenes del producto', 'Carga la información del producto', 'Envia la información'];
 
 const NewProduct = () => {
 
@@ -124,25 +134,69 @@ const NewProduct = () => {
             })
     }
 
+
+
+    // Material UI-------------------------------------------------------------
+    const [activeStep, setActiveStep] = React.useState(0);
+    const [skipped, setSkipped] = React.useState(new Set());
+
+    const isStepSkipped = (step) => {
+        return skipped.has(step);
+    };
+
+  const handleNext = () => {
+    let newSkipped = skipped;
+    if (isStepSkipped(activeStep)) {
+      newSkipped = new Set(newSkipped.values());
+      newSkipped.delete(activeStep);
+    }
+
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setSkipped(newSkipped);
+  };
+
+// //   const handleBack = () => {
+// //     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+// //   };
+
+    const handleReset = () => {
+    setActiveStep(0);
+  };
+    // Material UI-------------------------------------------------------------
+
     return (
-        <div>
+        <FirstContainerForm>
 
-            <div>
-                <h1>Vender en Amazonas</h1>
-            </div>
+            <ContainerTitle>
+                <h1><strong>Vender en Amazonas</strong></h1>
+            </ContainerTitle>
 
-            <h2>Agregar un nuevo producto</h2>
-            <div className="container mt-5">
+        {/* // Material UI--------------------------------------------------------------------- */}
+        <Box sx={{ width: '100%' }}>
+      <Stepper activeStep={activeStep}>
+        {steps.map((label, index) => {
+          const stepProps = {};
+          const labelProps = {};
 
-                <hr />
-                <div className="row">
-
-                    <div className="col-12">
-
-                        <form className="form-group"
-                               onSubmit={formik.handleSubmit}>
-
-                            <div>
+          if (isStepSkipped(index)) {
+            stepProps.completed = false;
+          }
+          return (
+            <Step key={label} {...stepProps}>
+              <StepLabel {...labelProps}>{label}</StepLabel>
+            </Step>
+          );
+        })}
+      </Stepper>
+      
+      <ContainerForm>
+      <form className="form-group"
+            onSubmit={formik.handleSubmit}>
+                
+            {
+                activeStep === 0 &&
+                <>
+                     <ContainerBtnImgs>
                                 <p><strong>Imagenes del producto</strong></p>
 
                                 <div>
@@ -150,17 +204,17 @@ const NewProduct = () => {
                                         id="imageone"
                                         type="file"
                                         className="form-control"
-                                        placeholder="Imagen 1"
+                                        placeholder="Agregar imagen 1 del producto"
                                         name="oneimage"
                                         style={{ display: 'none' }}
                                         onChange={handleFileChanged1}
                                     />
 
-                                    <button
+                                    <BtnImgs
                                         onClick={() => handlePictureClick1()}
-                                        type="button">
-                                    Imagen 1
-                                    </button>
+                                            type="button">
+                                            <strong>Agregar imagen 1 del producto</strong>
+                                    </BtnImgs>
                                 </div>
 
                                 <div>
@@ -168,17 +222,17 @@ const NewProduct = () => {
                                         id="imagetwo"
                                         type="file"
                                         className="form-control "
-                                        placeholder="Imagen 2"
+                                        placeholder="Agregar imagen 2 del producto"
                                         name="twoimage"
                                         style={{ display: 'none' }}
                                         onChange={handleFileChanged2}
                                         />
 
-                                    <button
+                                    <BtnImgs
                                         onClick={() => handlePictureClick2()}
                                         type="button">
-                                    Imagen 2
-                                    </button>
+                                            <strong>Agregar imagen 2 del producto</strong>
+                                    </BtnImgs>
                                 </div>
 
                                 <div>
@@ -186,17 +240,17 @@ const NewProduct = () => {
                                         id="imagethree"
                                         type="file"
                                         className="form-control "
-                                        placeholder="Imagen 3"
+                                        placeholder="Agregar imagen 3 del producto"
                                         name="threeimage"
                                         style={{ display: 'none' }}
                                         onChange={handleFileChanged3}
                                          />
 
-                                    <button
+                                    <BtnImgs
                                         onClick={() => handlePictureClick3()}
                                         type="button">
-                                    Imagen 3
-                                    </button>
+                                            <strong>Agregar imagen 3 del producto</strong>
+                                    </BtnImgs>
                                 </div>
 
                                 <div>
@@ -204,22 +258,26 @@ const NewProduct = () => {
                                         id="imagebanner"
                                         type="file"
                                         className="form-control "
-                                        placeholder="Banner publicitario del producto"
+                                        placeholder="Agragar Banner publicitario del producto"
                                         name="banner"
                                         style={{ display: 'none' }}
                                         onChange={handleFileChangedBanner}
                                     />
 
-                                    <button
+                                    <BtnImgs
                                         onClick={() => handlePictureClickBanner()}
                                         type="button">
-                                    Banner del producto
-                                    </button>
+                                        <strong>Agregar Banner publicitario del producto</strong>
+                                    </BtnImgs>
                                 </div>
-                            </div>
-
-
-                            <div>
+                    </ContainerBtnImgs>   
+                </>
+            }
+            
+            {
+                activeStep === 1 &&
+                <>
+                    <DataProduct>
                                 <p><strong>Datos del producto</strong></p>
 
                                 <div>
@@ -322,25 +380,63 @@ const NewProduct = () => {
                                         onChange={formik.handleChange}
                                     />
                                 </div>
-                            </div>
+                    </DataProduct>
+                </>
+            }
+            
+            {
+                activeStep === 2 &&
+                <>
+                    {/* Boton enviar */}
+                        <div className="d-grid gap-2 mx-auto mt-2">
+                            <BtnAddProduct
+                                value="Agregar producto"
+                                type="submit"
+                                className="btn"
+                            />
+                        </div>
+                </>
+            }
+        </form>
+        </ContainerForm>
+                
+            {activeStep === steps.length ? (
+        <React.Fragment>
+            <FinishStep>
+                <p><strong>Completaste todos los pasos, ¡estas listo para vender tus productos en Amazonas!</strong></p>
+                <LogoAmazonas src="https://res.cloudinary.com/silviajcn/image/upload/v1641583841/SPRING-3/logo-footer_zysgvs.png" alt="logo" />
+            </FinishStep>
+            
+          <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+            <Box sx={{ flex: '1 1 auto' }} />
+          </Box>
+          <Button onClick={handleReset}>Reset</Button>
+        </React.Fragment>
+      ) : (
+        <React.Fragment>
+          <Typography sx={{ mt: 2, mb: 1 }}>Paso {activeStep + 1}</Typography>
+          <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+            {/* <Button
+              color="inherit"
+              disabled={activeStep === 0}
+              onClick={handleBack}
+              sx={{ mr: 1 }}
+            >
+              Atras
+            </Button> */}
+            <Box sx={{ flex: '1 1 auto' }} />
+            
+            <Button onClick={handleNext}>
+              {activeStep === steps.length - 1 ? 'Terminaste' : 'Siguiente'}
+            </Button>
+          </Box>
+        </React.Fragment>
+        )}
+        </Box>
+        
+        {/* // Material UI--------------------------------------------------------------------- */}
 
-                            
-
-                            {/* Boton enviar */}
-                            <div className="d-grid gap-2 mx-auto mt-2">
-                                <input
-                                    value="Agregar producto"
-                                    type="submit"
-                                    className="btn btn-outline-dark"
-                                />
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        </FirstContainerForm>
     )
 }
 

@@ -36,8 +36,13 @@ const GeoLocation = () => {
                         {details && (
                             <Location>
                                 <strong>
+                                {
+                                   useUser.name!==undefined? details.country_name:"Elige tu ubicacion"
+                                }
+                                </strong>    
+                                {/* <strong>
                                     {`${details.country_name}  (${details.country_code})`}
-                                </strong>
+                                </strong> */}
                             </Location>
                         )}
                     </ContainerGeolocation>

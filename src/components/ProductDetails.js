@@ -5,18 +5,18 @@ import { RiShoppingCartLine, RiPlayFill } from "react-icons/ri";
 import { ContainerPrincipal, ContainerBack, Containers, ContainerOne, ImgsProduct, ContainerTwo, ContainerThree, DivOne, NameProduct, MarcaProduct, DivTwo, PriceInfo, PriceProduct, Price, Envio, LinksBlue, PagoInfo, PagoCuotas, TitleCaracteristicas, Caracteristicas, ContainerFour, ImgProduct, Buttons, BtnOne, BtnTwo, ContainerIcon, Transaccion, PlusContainer } from '../styles/ProductDetails.elements';
 import { RiArrowLeftSLine } from "react-icons/ri";
 import ReactImageMagnify from 'react-image-magnify';
-import { listProductsAsync } from '../actions/actionProducts';
+//import { listProductsAsync } from '../actions/actionProducts';
 
 const ProductDetails = () => {
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
-    const { products } = useSelector((store) => store.products);
-    console.log(products)
+    // const { products } = useSelector((store) => store.products);
+    // console.log(products)
 
-    useEffect(() => {
-        dispatch(listProductsAsync());
-      }, []);
+    // useEffect(() => {
+    //     dispatch(listProductsAsync());
+    //   }, []);
 
     //Agregar al carrito
     // const dispatch = useDispatch();

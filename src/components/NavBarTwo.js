@@ -74,22 +74,23 @@ const NavBarTwo = () => {
                 </IconContext.Provider>
 
                 <ContainerLinks>
-                    <LinksMenu>Ofertas del día</LinksMenu>
+                    <Link to="/products" className="links">
+                        <LinksMenu>Todos los productos</LinksMenu>
+                    </Link>
+
+                    <Link to="/registerp" className="links">
+                        <LinksMenu>Vender producto</LinksMenu>
+                    </Link>
 
                     <Link to="/help" className="links">
                         <LinksMenu>Servicio al cliente</LinksMenu>
                     </Link>
 
-                    <LinksMenu>Listas</LinksMenu>
-
-                    <LinksMenu>Tarjetas de regalo</LinksMenu>
-
-                    <Link to="/registerp" className="links">
-                        <LinksMenu>Vender</LinksMenu>
+                    <Link to="/details" className="links">
+                        <LinksMenu>Detalles (provisional)</LinksMenu>
                     </Link>
-                    
 
-                    <LinksMenu>Prime</LinksMenu>
+                    
                 </ContainerLinks>
 
             </Wrapper>

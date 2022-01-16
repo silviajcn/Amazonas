@@ -40,6 +40,7 @@ const AllProducts = () => {
                         <ContainerBtn>
                             <BtnDelete
                                 type="button"
+                                value="Delete"
                                 onClick={() => dispatch(deleteProductAsync(e.codeproduct))}>
                                 <strong>Borrar producto</strong>
                             </BtnDelete>

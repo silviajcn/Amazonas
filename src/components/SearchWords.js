@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 //import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { searchProductAsync } from '../actions/actionProducts';
 import { FaSearch } from "react-icons/fa";
+import { listProductsAsync } from '../actions/actionProducts';
 import { ContainerBuscador, FormContainer, InputSearch, BtnSearch, SelectOption } from '../styles/NavBar.elements';
 
 const SearchWords = () => {
@@ -23,6 +24,10 @@ const SearchWords = () => {
             console.log(search);
         }
     })
+
+    useEffect(() => {
+        dispatch(listProductsAsync());
+    }, []);
 
     return (
         <div>

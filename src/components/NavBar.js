@@ -1,4 +1,7 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { logout } from '../actions/actionLogin';
 import { Link } from "react-router-dom";
 import UserData from '../hooks/dataUser';
 import GeoLocation from './GeoLocation';
@@ -10,6 +13,15 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 const NavBar = () => {
 
     const useUser = UserData();
+
+    const navigate = useNavigate();
+
+    const dispatch = useDispatch();
+
+    const handleLogout = () => {
+        dispatch(logout())
+        navigate("/login")
+    }
 
     return (
         <ContainerPrincipal>
@@ -32,7 +44,11 @@ const NavBar = () => {
                               }
                     </TextPequenio>
 
-                    <TextNegrita>Cuentas y Listas</TextNegrita>
+                    <TextNegrita onClick={() => handleLogout()}>
+                        {
+                            useUser.name!==undefined?"Logout":" Listas y cuentas"
+                        }
+                    </TextNegrita>
                 </ContainerAcount>
             </Link>
 

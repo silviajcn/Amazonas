@@ -13,12 +13,12 @@ export const comentsReducer = (state = initialState, action) => {
         
         case typesComents.list:
             return {
-                ...state
+                coments: [...action.payload]
             }
         
         case typesComents.delete:
             return {
-                ...state
+                coments: state.coments.filter(com => com.emailuser !== action.payload)
             }
     
         default:

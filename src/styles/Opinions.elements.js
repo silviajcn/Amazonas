@@ -34,6 +34,7 @@ export const ImgUser = styled.img`
   width: 56px;
   height: 56px;
   margin-right: 8px;
+  border-radius: 50%;
 `
 
 export const NameUser = styled.p`
@@ -45,9 +46,13 @@ export const NameUser = styled.p`
 `
 
 export const ContainerComent = styled.div`
-  margin-top: 32px;
+  margin-top: 20px;
   width: 757px;
   height: auto;
+`
+
+export const TitleComent = styled.h3`
+  font-size: 16px;
 `
 
 export const Coment = styled.p`
@@ -68,6 +73,14 @@ export const Options = styled.p`
   font-weight: normal;
   font-size: 12px;
   color: #565959;
+`
+
+export const BtnBorrar = styled.button`
+  border: none;
+  background: none;
+  color: #5C7AEA;
+  font-size: 12px;
+  margin-bottom: 30px;
 `
 
 // Agregar nueva opinion--------------------------

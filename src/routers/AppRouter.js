@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import BackTop from '../components/BackTop';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import { DashboardRoutes } from './DashboardRoutes';
@@ -71,7 +70,6 @@ const AppRouter = () => {
 
             </Routes>
 
-            <BackTop />
             <Footer />
         </Router>
     )
