@@ -9,7 +9,7 @@ export const searchProductAsync = (product) => {
 
     return async (dispatch) => {
         const prodCollections = collection(db, "productos");
-        const q = query(prodCollections, where("nameproduct", "==", product))
+        const q = query(prodCollections, where("categoryproduct", "==", product))
         const datos = await getDocs(q);
         //console.log(datos);
 
@@ -31,7 +31,33 @@ export const searchProductSync = (product) => {
 }
 
 
+//SHOW DETAILS PRODUCT ---------------------------------------------
 
+//Action Show Detail Product Async
+export const showDetailProductAsync = (code) => {
+
+    return async (dispatch) => {
+        const prodCollections = collection(db, "productos");
+        const q = query(prodCollections, where("codeproduct", "==", code))
+        const datos = await getDocs(q);
+        //console.log(datos);
+
+        const producto = [];
+        datos.forEach((doc) => {
+            producto.push(doc.data())
+        })
+        console.log(producto);
+        dispatch(showDetailProductSync(code))
+    }
+}
+
+//Action Show Detail Product Sync
+export const showDetailProductSync = (product) => {
+    return {
+        type: typesProducts.detail,
+        payload: product
+    }
+}
 
 
 

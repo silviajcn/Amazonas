@@ -27,7 +27,7 @@ const Opinions = () => {
         <ContainerPrincipal>
 
             <ContainerNewOp>
-                <NewOpTitle><strong>Escribir opinión de este producto</strong></NewOpTitle>
+                <NewOpTitle><strong>Escribir opinión de nuestros productos</strong></NewOpTitle>
 
                 <NewOpText>Comparte tu opinión con otros clientes</NewOpText>
 

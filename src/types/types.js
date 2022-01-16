@@ -8,7 +8,8 @@ export const typesProducts = {
     register: 'Register',
     list: 'List',
     delete: 'Delete',
-    search: 'Search'
+    search: 'Search',
+    detail: 'Detail'
 }
 
 export const typesComents = {

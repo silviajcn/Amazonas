@@ -11,6 +11,16 @@ export const ContainerPrincipal = styled.div`
   height: auto;
 `
 
+export const BtnShowDetail = styled.button`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  background: none;
+  border: none;
+  text-align: start;
+`
+
 export const ContainerImg = styled.div`
   display: flex;
   justify-content: center;

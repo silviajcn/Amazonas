@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from "react-router-dom";
 //import { addItemCar } from '../actions/actionAddCar';
 import { RiShoppingCartLine, RiPlayFill } from "react-icons/ri";
-import { ContainerPrincipal, ContainerBack, Containers, ContainerOne, ImgsProduct, ContainerTwo, ContainerThree, DivOne, NameProduct, MarcaProduct, DivTwo, PriceInfo, PriceProduct, Price, Envio, LinksBlue, PagoInfo, PagoCuotas, TitleCaracteristicas, Caracteristicas, ContainerFour, ImgProduct, Buttons, BtnOne, BtnTwo, ContainerIcon, Transaccion, PlusContainer } from '../styles/ProductDetails.elements';
+import { ContainerPrincipal, ContainerBack, PBack, Containers, ContainerOne, ImgsProduct, ContainerTwo, ContainerThree, DivOne, NameProduct, MarcaProduct, DivTwo, PriceInfo, PriceProduct, Price, Envio, LinksBlue, PagoInfo, PagoCuotas, TitleCaracteristicas, Caracteristicas, ContainerFour, ImgProduct, Buttons, BtnOne, BtnTwo, ContainerIcon, Transaccion, PlusContainer } from '../styles/ProductDetails.elements';
 import { RiArrowLeftSLine } from "react-icons/ri";
 import ReactImageMagnify from 'react-image-magnify';
 //import { listProductsAsync } from '../actions/actionProducts';
@@ -31,11 +32,12 @@ const ProductDetails = () => {
     return (
         <div>
 
-            <ContainerBack>
-                <RiArrowLeftSLine />
-                <p>Volver a los resultados</p>
-            </ContainerBack>
-
+            <Link to="/" className="links-two">
+                <ContainerBack>
+                    <RiArrowLeftSLine />
+                    <PBack>Volver a la página de inicio</PBack>
+                </ContainerBack>
+            </Link>
 
             <ContainerPrincipal>
             <Containers>

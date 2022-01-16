@@ -20,6 +20,16 @@ export const productsReducer = (state = initialState, action) => {
             return {
                 products: state.products.filter(prod => prod.codeproduct !== action.payload)
             }
+        
+        case typesProducts.search:
+            return {
+                products: action.payload
+            }
+        
+        case typesProducts.detail:
+            return {
+                products: action.payload
+            }
     
         default:
             return state;

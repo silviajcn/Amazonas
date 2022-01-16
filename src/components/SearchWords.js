@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
-//import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { searchProductAsync } from '../actions/actionProducts';
 import { FaSearch } from "react-icons/fa";
-import { listProductsAsync } from '../actions/actionProducts';
+//import { listProductsAsync } from '../actions/actionProducts';
 import { ContainerBuscador, FormContainer, InputSearch, BtnSearch, SelectOption } from '../styles/NavBar.elements';
 
 const SearchWords = () => {
+
+    let history = useNavigate();
 
     const dispatch = useDispatch();
 
@@ -26,7 +28,7 @@ const SearchWords = () => {
     })
 
     useEffect(() => {
-        dispatch(listProductsAsync());
+        dispatch(searchProductAsync());
     }, []);
 
     return (
@@ -68,6 +70,7 @@ const SearchWords = () => {
                     name="search"
                     type="text"
                     aria-label="Search Products"
+                    placeholder="Buscar producto por categoría"
                     onChange={formik.handleChange}
                 />
                 <BtnSearch
@@ -75,6 +78,7 @@ const SearchWords = () => {
                     variant="warning"
                     className="me-5"
                     type="submit"
+                    onClick={() => history("/searching")}
                 >
                     <FaSearch />
                 </BtnSearch>

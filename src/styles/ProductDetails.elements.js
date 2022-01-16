@@ -16,6 +16,13 @@ export const ContainerBack = styled.div`
   margin-left: 30px;
 `
 
+export const PBack = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+`
+
 export const Containers = styled.div`
   display: flex;
   flex-direction: row;
@@ -72,6 +79,7 @@ export const MarcaProduct = styled.p`
 export const DivTwo = styled.div`
   width: 415px;
   border-bottom: 1px solid #D3DEDC;
+  margin-top: 20px;
 `
 
 export const PriceInfo = styled.div`
@@ -153,6 +161,7 @@ export const TitleCaracteristicas = styled.h4`
   font-weight: bold;
   font-size: 18px;
   color: #333333;
+  margin-top: 20px;
 `
 
 export const Caracteristicas = styled.p`
