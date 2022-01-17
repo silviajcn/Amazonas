@@ -30,6 +30,11 @@ export const productsReducer = (state = initialState, action) => {
             return {
                 products: action.payload
             }
+
+        case typesProducts.category:
+            return {
+                products: action.payload
+            }
     
         default:
             return state;

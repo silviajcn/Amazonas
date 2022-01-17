@@ -2,6 +2,34 @@ import { typesProducts } from '../types/types';
 import { addDoc, collection, getDocs, query, where, doc, deleteDoc} from "@firebase/firestore";
 import { db } from '../firebase/firebaseConfig';
 
+//CATEGORIES PRODUCTS ---------------------------------------------
+
+//Action CATEGORY Product Async
+export const categoryProductAsync = (product) => {
+
+    return async (dispatch) => {
+        const prodCollections = collection(db, "productos");
+        const q = query(prodCollections, where("categoryproduct", "==", product))
+        const datos = await getDocs(q);
+        //console.log(datos);
+
+        const producto = [];
+        datos.forEach((doc) => {
+            producto.push(doc.data())
+        })
+        console.log(producto);
+        dispatch(categoryProductSync(producto))
+    }
+}
+
+//Action Category Product Sync
+export const categoryProductSync = (product) => {
+    return {
+        type: typesProducts.category,
+        payload: product
+    }
+}
+
 //SEARCH PRODUCT ---------------------------------------------
 
 //Action Search Product Async
@@ -47,7 +75,7 @@ export const showDetailProductAsync = (code) => {
             producto.push(doc.data())
         })
         console.log(producto);
-        dispatch(showDetailProductSync(code))
+        dispatch(showDetailProductSync(producto))
     }
 }
 

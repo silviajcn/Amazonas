@@ -38,10 +38,13 @@ const NavBarTwo = () => {
                         <MenuItem>
                             <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
                                 <div>
-                                    <SubTitles>Contenido Y Dispositivos Digitales</SubTitles>
-                                    <Items>Amazonas music</Items>
-                                    <Items>E-Readers Kindle y libros</Items>
-                                    <Items>Appstore Para Android</Items>
+                                    <SubTitles><strong>Amazonas, tu tienda digital</strong></SubTitles>
+                                    <Link to="/products" className="links">
+                                        <Items>Nuestros productos</Items>
+                                    </Link>
+                                    <Link to="/registerp" className="links">
+                                        <Items>Vende con nosotros</Items>
+                                    </Link>
                                 </div>
                             </MenuItemLink>
                         </MenuItem>
@@ -49,13 +52,13 @@ const NavBarTwo = () => {
                         <MenuItem>
                             <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
                                 <div>
-                                    <SubTitles>Buscar Por Departamento</SubTitles>
-                                    <Items>Electrónicos</Items>
-                                    <Items>Software</Items>
-                                    <Items>Salud y Hogar</Items>
-                                    <Items>Moda para mujer</Items>
-                                    <Items>Moda para hombre</Items>
-                                    <Items>Juguetes y juegos</Items>
+                                    <SubTitles><strong>Buscar Por Categoría</strong></SubTitles>
+                                    <Items>Computadoras</Items>
+                                    <Items>Celulares</Items>
+                                    <Items>Camaras</Items>
+                                    <Items>Tablets</Items>
+                                    <Items>Audifonos</Items>
+                                    <Items>Accesorios</Items>
                                 </div>
                             </MenuItemLink>
                         </MenuItem>
@@ -63,10 +66,9 @@ const NavBarTwo = () => {
                         <MenuItem>
                             <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
                                 <div>
-                                    <SubTitles>Ayuda Y Configuración</SubTitles>
+                                    <SubTitles><strong>Ayuda Y Configuración</strong></SubTitles>
                                     <Items>Tu cuenta</Items>
                                     <Link to="/help" className="links"><Items>Servicio al cliente</Items></Link>
-                                    <Items>Identifícate</Items>
                                 </div>
                             </MenuItemLink>
                         </MenuItem>
@@ -84,13 +86,7 @@ const NavBarTwo = () => {
 
                     <Link to="/help" className="links">
                         <LinksMenu>Servicio al cliente</LinksMenu>
-                    </Link>
-
-                    <Link to="/details" className="links">
-                        <LinksMenu>Detalles (provisional)</LinksMenu>
-                    </Link>
-
-                    
+                    </Link>    
                 </ContainerLinks>
 
             </Wrapper>

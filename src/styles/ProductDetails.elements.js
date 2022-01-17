@@ -31,13 +31,13 @@ export const Containers = styled.div`
 `
 
 export const ContainerOne = styled.div`
-  width: 40px;
-  height: 112px;
+  width: 60px;
+  height: 212px;
 `
 
 export const ImgsProduct = styled.img`
-  width: 34px;
-  height: 32px;
+  width: 54px;
+  height: 52px;
   border: 2px solid #D3DEDC;
   margin-bottom: 6px;
 `
@@ -50,7 +50,7 @@ export const ContainerThree = styled.div`
 
 export const ImgProduct = styled.div`
   width: 550px;
-  height: auto;
+  height: 500px;
 `
 
 export const ContainerTwo = styled.div`

@@ -326,7 +326,7 @@ const NewProduct = () => {
 
                                 <div>
                                     <input
-                                        type="text"
+                                        type="number"
                                         className="form-control mt-2"
                                         name="priceproduct"
                                         autoComplete="off"

@@ -92,6 +92,7 @@ export const SubTitles = styled.h4`
 `
 
 export const Items = styled.p`
+  margin: 0px;
   width: 100%;
   color: #000000;
   font-size: 12px;

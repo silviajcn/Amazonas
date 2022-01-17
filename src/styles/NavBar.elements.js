@@ -46,12 +46,12 @@ export const BtnLocation = styled.button`
   flex-direction: row;
   align-items: center;
   border: none;
-  height: 30px;
+  height: 40px;
   background: none;
   color: #fff;
   border: 1px solid #131921;
   border-radius: 2px;
-  padding: 3px;
+  padding: 6px 3px;
   &:hover {
     border: 1px solid #fff;
     cursor: pointer;

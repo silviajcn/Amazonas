@@ -16,7 +16,6 @@ const AllProducts = () => {
 
     useEffect(() => {
         dispatch(listProductsAsync());
-        dispatch(showDetailProductAsync())
     }, []);
     
     return (
@@ -33,10 +32,15 @@ const AllProducts = () => {
                 products.map((e, i) => (
                     <ContainerPrincipal key={i}>
                         <BtnShowDetail
+                            // onClick={() => {
+                            //     localStorage.setItem('codeProduct', e.codeproduct)
+                            //     //history("/details")
+                            // }}
                             onClick={() => {
                                 dispatch(showDetailProductAsync(e.codeproduct))
                                 history("/details")
-                            }}>
+                            }}
+                        >
                             
                             <ContainerImg>
                                 <ImgProduct src={e.oneimage} alt="producto" />

@@ -9,7 +9,8 @@ export const typesProducts = {
     list: 'List',
     delete: 'Delete',
     search: 'Search',
-    detail: 'Detail'
+    detail: 'Detail',
+    category: 'Category'
 }
 
 export const typesComents = {

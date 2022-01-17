@@ -5,7 +5,6 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { searchProductAsync } from '../actions/actionProducts';
 import { FaSearch } from "react-icons/fa";
-//import { listProductsAsync } from '../actions/actionProducts';
 import { ContainerBuscador, FormContainer, InputSearch, BtnSearch, SelectOption } from '../styles/NavBar.elements';
 
 const SearchWords = () => {
