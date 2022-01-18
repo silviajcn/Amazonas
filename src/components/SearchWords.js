@@ -36,33 +36,12 @@ const SearchWords = () => {
                 <FormContainer onSubmit={formik.handleSubmit}>
                   <SelectOption>
                        <option>Todos</option>
-                       <option>Arte y artesanías</option>
-                       <option>Automotríz</option>
-                       <option>Bebé</option>
-                       <option>Belleza y cuidado personal</option>
                        <option>Computadoras</option>
-                       <option>Deportes y actividades al aire libre</option>
-                       <option>Electrónicos</option>
-                       <option>Equipaje</option>
-                       <option>Herramientas y mejoramiento del hogar</option>
-                       <option>Hogar y cocina</option>
-                       <option>Industrial y científico</option>
-                       <option>Insumos para mascotas</option>
-                       <option>Juguetes y juegos</option>
-                       <option>Libros</option>
-                       <option>Moda de niñas</option>
-                       <option>Moda de niños</option>
-                       <option>Moda para hombre</option>
-                       <option>Moda para mujer</option>
-                       <option>Movies-tv</option>
-                       <option>Música MP3</option>
-                       <option>Música, CD y Vinilos</option>
-                       <option>Ofertas</option>
-                       <option>Prime video</option>
-                       <option>Salud y productos para el hogar</option>
-                       <option>Software</option>
-                       <option>Tienda Kindle</option>
-                       <option>Videojuegos</option>
+                       <option>Tablets</option>
+                       <option>Celulares</option>
+                       <option>Camaras</option>
+                       <option>Audifonos</option>
+                       <option>Accesorios</option>
                     </SelectOption>
                 <InputSearch
                     id="search"

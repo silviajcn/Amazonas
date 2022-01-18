@@ -10,6 +10,7 @@ import NewProduct from '../pages/NewProduct';
 import Searching from '../pages/Searching';
 import Car from '../pages/Car';
 import UseConditions from '../pages/UseConditions';
+import EditComent from '../components/EditComent';
 
 export const DashboardRoutes = () => {
     return (
@@ -24,6 +25,7 @@ export const DashboardRoutes = () => {
                 <Route path='/car' element={<Car />} />
                 <Route path='/help' element={<CustomerService />} />
                 <Route path='/conditions' element={<UseConditions />} />
+                <Route path='/editco' element={<EditComent />} />
                 <Route path='*' element={<Navigate to="/" />} />
             </Routes>
 

@@ -16,6 +16,12 @@ export const comentsReducer = (state = initialState, action) => {
                 coments: [...action.payload]
             }
         
+        case typesComents.update:
+            return {
+                ...state,
+                coments: action.payload
+            }
+        
         case typesComents.delete:
             return {
                 coments: state.coments.filter(com => com.emailuser !== action.payload)

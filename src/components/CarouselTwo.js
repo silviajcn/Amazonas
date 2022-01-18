@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import { listProductsAsync } from '../actions/actionProducts';
+import { listProductsAsync, showDetailProductAsync } from '../actions/actionProducts';
 import Carousel from 'react-elastic-carousel';
-import { FirstContainer, ImgCarouselTwo } from '../styles/Carousel.elements';
+import { FirstContainer, ImgCarouselTwo, BtnShowDetail } from '../styles/Carousel.elements';
 
 const CarouselTwo = () => {
+
+    let history = useNavigate();
 
     const dispatch = useDispatch();
 
@@ -23,7 +26,20 @@ const CarouselTwo = () => {
                 {
                     products.map((e, i) => (
                         <div key={i}>
-                            <ImgCarouselTwo src={e.oneimage} alt="products" />
+                            <BtnShowDetail
+                                // onClick={() => {
+                                // localStorage.setItem('codeProduct', e.codeproduct)
+                                // history("/details")
+                                // }}
+
+                                onClick={() => {
+                                dispatch(showDetailProductAsync(e.codeproduct))
+                                localStorage.setItem('codeProduct', e.codeproduct)
+                                 history("/details")
+                             }}
+                            >
+                                <ImgCarouselTwo src={e.oneimage} alt="products" />
+                            </BtnShowDetail>
                         </div>
                     ))
                 }

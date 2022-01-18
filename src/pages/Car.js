@@ -1,14 +1,26 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+import { ContainerBack, PBack, ContainerPrincipal, ContainerSecond, ContainerCar, ContainerSubtotal, ContainerTitulo } from '../styles/Car.elements';
+import { RiArrowLeftSLine } from "react-icons/ri";
 
 const Car = () => {
     return (
-        <div>
-            <div>
-                <div>
+        <ContainerPrincipal>
+
+                <Link to="/" className="links-two">
+                    <ContainerBack>
+                        <RiArrowLeftSLine />
+                        <PBack>Volver a la página de inicio</PBack>
+                    </ContainerBack>
+                </Link>
+
+                <ContainerSecond>
+                    <ContainerCar>
+                <ContainerTitulo>
                     <h2>Carrito</h2>
                     <p>Anular la seleccion de todos los elementos</p>
                     <p>Precio</p>
-                </div>
+                </ContainerTitulo>
                 
                 <div>
                     <div>
@@ -31,14 +43,15 @@ const Car = () => {
                         <h2>US$9.08</h2>
                     </div>
                 </div>
+            </ContainerCar>
 
+            <ContainerSubtotal>
                 <div>
                     <h3>Subtotal (1 producto): US$9.08</h3>
                 </div>
-            </div>
-
-            <div></div>
-        </div>
+            </ContainerSubtotal>
+                </ContainerSecond>
+        </ContainerPrincipal>
     )
 }
 

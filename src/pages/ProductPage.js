@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBarThree from '../components/NavBarThree';
 import ProductDetails from '../components/ProductDetails';
-import Opinions from '../components/Opinions';
+import NewComent from '../components/NewComent';
 
 const ProductPage = () => {
     return (
@@ -10,7 +10,9 @@ const ProductPage = () => {
 
             <ProductDetails />
 
-            <Opinions />
+            <div>
+                <NewComent />
+            </div>
         </div>
     )
 }

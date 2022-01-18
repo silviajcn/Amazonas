@@ -83,8 +83,9 @@ export const PDos = styled.p`
 
 export const ContainerBtn = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
   margin-right: 0px;
 `
 
@@ -93,5 +94,14 @@ export const BtnDelete = styled.button`
   border: 1px solid #000000;
   font-size: 12px;
   background: rgba(252, 110, 110, 0.753);
+  padding: 5px;
+  margin-bottom: 10px;
+`
+
+export const BtnEdit = styled.button`
+  border-radius: 10px;
+  border: 1px solid #000000;
+  font-size: 12px;
+  background: #D3DEDC;
   padding: 5px;
 `

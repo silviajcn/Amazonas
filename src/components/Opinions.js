@@ -1,19 +1,15 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import NewComent from './NewComent';
+import { useNavigate } from "react-router-dom";
 import Rating from './Rating';
-import { ContainerPrincipal, ContainerTitle, Title, ContainerUser, ImgUser, NameUser, ContainerComent, TitleComent, Coment, Options, ContainerComentario, ContainerNewOp, NewOpTitle, NewOpText, BtnBorrar } from '../styles/Opinions.elements';
-
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
-import { listComentsAsync, deleteComentAsync } from '../actions/actionComents';
+import { ContainerPrincipal, ContainerTitle, Title, ContainerUser, ImgUser, NameUser, ContainerComent, TitleComent, Coment, Options, ContainerComentario, BtnBorrar, BtnEdit } from '../styles/Opinions.elements';
+import { listComentsAsync, deleteComentAsync, updateComentAsync } from '../actions/actionComents';
 
 const Opinions = () => {
 
+    let history = useNavigate();
+
+    //show coments
     const dispatch = useDispatch();
 
     const { coments } = useSelector((store) => store.coments);
@@ -26,26 +22,6 @@ const Opinions = () => {
     return (
         <ContainerPrincipal>
 
-            <ContainerNewOp>
-                <NewOpTitle><strong>Escribir opinión de nuestros productos</strong></NewOpTitle>
-
-                <NewOpText>Comparte tu opinión con otros clientes</NewOpText>
-
-                <Accordion>
-                    <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel1a-content"
-                        id="panel1a-header"
-                    >
-                        <Typography>Escribir mi opinión</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        <NewComent />
-                    </AccordionDetails>
-                </Accordion>
-
-            </ContainerNewOp>
-
             <div>
             <ContainerTitle>
                 <Title>Opiniones de clientes</Title>
@@ -56,7 +32,7 @@ const Opinions = () => {
                     <ContainerComentario key={i}>
                 <ContainerUser>
                     <ImgUser src="https://res.cloudinary.com/silviajcn/image/upload/v1641498305/Perfil%20Usuarios/default-user-image_lhg8yd.png" alt="user" />
-                            <NameUser>{e.nameuser}</NameUser>
+                    <NameUser>{e.nameuser}</NameUser>
                 </ContainerUser>
 
                 <ContainerComent>
@@ -68,12 +44,26 @@ const Opinions = () => {
                     <Rating />
                     <Options>A 45 personas les resultó útil</Options>
                     <Options>Informar de un abuso</Options>
-                    <BtnBorrar type="button"
-                               value="Delete"
-                               onClick={() => dispatch(deleteComentAsync(e.emailuser))}
-                    >
-                        Borrar comentario
-                    </BtnBorrar>
+                    
+                    <div>
+                        <BtnEdit type="button"
+                            value="update"
+                            onClick={() => {
+                                dispatch(updateComentAsync(e.nameuser))
+                                history("/editco")
+                            }}
+                        >
+                            Editar comentario
+                        </BtnEdit>
+                        
+                        <BtnBorrar type="button"
+                            value="delete"
+                            onClick={() => dispatch(deleteComentAsync(e.emailuser))}
+                        >
+                            Borrar comentario
+                        </BtnBorrar>
+                    </div>
+                    
                 </div>
                     </ContainerComentario>
                 ))

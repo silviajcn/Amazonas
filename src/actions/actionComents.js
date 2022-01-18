@@ -1,6 +1,6 @@
 import { typesComents } from '../types/types';
 import { db } from "../firebase/firebaseConfig";
-import { addDoc,collection,getDocs,query,where,doc,deleteDoc} from "@firebase/firestore";
+import { addDoc,collection,getDocs,query,where,doc,deleteDoc, updateDoc } from "@firebase/firestore";
 
 
 //DELETE COMENT---------------------------------------------
@@ -26,6 +26,8 @@ export const deleteComentAsync = (email) => {
     }
 }
 
+
+
 //Action Delete Coment Sync
 export const deleteComentSync = (email) => {
     return {
@@ -35,6 +37,59 @@ export const deleteComentSync = (email) => {
 }
 
 
+
+//UPDATE PRODUCT ---------------------------------------------
+
+
+//Action Update Product Async
+export const updateComentAsync = (name) => {
+    console.log(name);
+
+    return async (dispatch) => {
+
+        const comCollection = collection(db, "coments");
+        const q = query(comCollection, where("nameuser", "==", name.nameuser))
+        //console.log(q);
+
+        const datos = await getDocs(q);
+        console.log(datos);
+
+        datos.forEach((docu) => {
+            //console.log(docu);
+            //console.log(docu.id);
+
+            deleteDoc(doc(db, "coments", docu.id));
+        })
+        //dispatch(updateComentSync(email));
+    }
+}
+
+// export const searchProductAsync = (product) => {
+
+//     return async (dispatch) => {
+//         const prodCollections = collection(db, "productos");
+//         const q = query(prodCollections, where("categoryproduct", "==", product))
+//         const datos = await getDocs(q);
+//         //console.log(datos);
+
+//         const producto = [];
+//         datos.forEach((doc) => {
+//             producto.push(doc.data())
+//         })
+//         console.log(producto);
+//         dispatch(searchProductSync(producto))
+//     }
+// }
+
+//UPDATE PRODUCT ---------------------------------------------
+
+//Action update Product Sync
+export const updateComentSync = (coment) => {
+    return{
+        type: typesComents.update,
+        payload: coment
+    }
+}
 
 
 

@@ -9,6 +9,7 @@ import { showDetailProductAsync } from '../actions/actionProducts';
 
 const ProductDetails = () => {
 
+    // show detail redux
     const dispatch = useDispatch();
 
     const { products } = useSelector((store) => store.products);
@@ -25,6 +26,16 @@ const ProductDetails = () => {
         setImagen(element)
     }
 
+
+    // show detail localstorage
+    // let productCode = localStorage.getItem('codeProduct');
+    // const artSelected = (codeproduct) => {
+    //     return products.find(ele=> ele.codeproduct === codeproduct)
+    // }
+    // let prod = artSelected(productCode);
+    // console.log(prod);
+
+
     return (
         <div>
 
@@ -35,7 +46,8 @@ const ProductDetails = () => {
                 </ContainerBack>
             </Link>
 
-            {
+
+                    {
                 products.map((e, i) => (
                     <>
             <ContainerPrincipal key={i}>
@@ -170,6 +182,7 @@ const ProductDetails = () => {
                     </>
                 ))
             }
+                
             
                 
             

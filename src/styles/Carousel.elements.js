@@ -17,10 +17,20 @@ export const FirstContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  margin: 450px 0px 20px 60px;
+  margin: 450px 0px 60px 60px;
   border-bottom: 2px solid #D3DEDC;
   width: 90%;
   height: auto;
+`
+
+export const BtnShowDetail = styled.button`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  background: none;
+  border: none;
+  text-align: start;
 `
 
 export const ImgCarouselTwo = styled.img`

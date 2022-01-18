@@ -78,6 +78,14 @@ export const Options = styled.p`
 export const BtnBorrar = styled.button`
   border: none;
   background: none;
+  color: red;
+  font-size: 12px;
+  margin-bottom: 30px;
+`
+
+export const BtnEdit = styled.button`
+  border: none;
+  background: none;
   color: #5C7AEA;
   font-size: 12px;
   margin-bottom: 30px;

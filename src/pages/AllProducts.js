@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from "react-router-dom";
 import { listProductsAsync, deleteProductAsync, showDetailProductAsync } from '../actions/actionProducts';
-import { ContainerBack, PBack, ContainerPrincipal, BtnShowDetail, ContainerImg, ImgProduct, ContainerSecond, TitleProduct, ContainerTres, PUno, PDos, ContainerBtn, BtnDelete } from '../styles/AllProducts.elements';
+import { ContainerBack, PBack, ContainerPrincipal, BtnShowDetail, ContainerImg, ImgProduct, ContainerSecond, TitleProduct, ContainerTres, PUno, PDos, ContainerBtn, BtnDelete, BtnEdit } from '../styles/AllProducts.elements';
 import { RiArrowLeftSLine } from "react-icons/ri";
 
 const AllProducts = () => {
@@ -17,7 +17,7 @@ const AllProducts = () => {
     useEffect(() => {
         dispatch(listProductsAsync());
     }, []);
-    
+
     return (
         <>
 
@@ -34,14 +34,15 @@ const AllProducts = () => {
                         <BtnShowDetail
                             // onClick={() => {
                             //     localStorage.setItem('codeProduct', e.codeproduct)
-                            //     //history("/details")
+                            //     history("/details")
                             // }}
+                            
                             onClick={() => {
                                 dispatch(showDetailProductAsync(e.codeproduct))
                                 history("/details")
                             }}
                         >
-                            
+
                             <ContainerImg>
                                 <ImgProduct src={e.oneimage} alt="producto" />
                             </ContainerImg>
@@ -60,16 +61,23 @@ const AllProducts = () => {
                                 </ContainerTres>
                             </ContainerSecond>
                         </BtnShowDetail>
-                        
 
-                        {/* <ContainerBtn>
+
+                        <ContainerBtn>
                             <BtnDelete
                                 type="button"
                                 value="Delete"
                                 onClick={() => dispatch(deleteProductAsync(e.codeproduct))}>
                                 <strong>Borrar producto</strong>
                             </BtnDelete>
-                        </ContainerBtn> */}
+
+                            <BtnEdit
+                                type="button"
+                                value="Delete"
+                            >
+                                <strong>Editar producto</strong>
+                            </BtnEdit>
+                        </ContainerBtn>
                     </ContainerPrincipal>
                 ))
             }

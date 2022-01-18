@@ -1,11 +1,21 @@
-import React, { useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { registerComentAsync, listComentsAsync } from '../actions/actionComents';
+import { ContainerNewOp, NewOpTitle, NewOpText } from '../styles/Opinions.elements';
+import Opinions from './Opinions';
+
+//material ui
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const NewComent = () => {
 
+    //register form----------------------------------------
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -35,7 +45,24 @@ const NewComent = () => {
 
     return (
         <div>
-            <div className="container">
+
+            <ContainerNewOp>
+                <NewOpTitle><strong>Escribir opinión de nuestros productos</strong></NewOpTitle>
+
+                <NewOpText>Comparte tu opinión con otros clientes</NewOpText>
+
+                <Accordion>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                    >
+                        <Typography>Escribir mi opinión</Typography>
+                    </AccordionSummary>
+
+                    <AccordionDetails>
+                        
+                        <div className="container">
 
                 <hr />
                 <div className="row">
@@ -98,75 +125,18 @@ const NewComent = () => {
                                 />
                             </div>
                         </form>
+                        </div>
                     </div>
                 </div>
+                    </AccordionDetails>
+                </Accordion>
+            </ContainerNewOp>
+
+            <div>
+                <Opinions />
             </div>
         </div>
     )
 }
 
 export default NewComent
-
-
-
-
-// {/* <div className="container mt-5">
-
-//                 <hr />
-//                 <div className="row">
-
-//                     <div className="col-12">
-//                         <form className="form-group" onSubmit={formik.handleSubmit}>
-//                             <input
-//                                 id="fileSelector"
-//                                 type="file"
-//                                 className="form-control "
-//                                 placeholder="url image"
-//                                 name="url"
-//                                 style={{ display: 'none' }}
-//                                 onChange={handleFileChanged}
-//                                  />
-
-//                             <button
-//                                 className="btn btn-dark"
-//                                 onClick={() => handlePictureClick()}
-//                                 type="button">Imagen</button>
-
-//                             <input
-//                                 type="text"
-//                                 className="form-control mt-2"
-//                                 name="nombre"
-//                                 autoComplete="off"
-//                                 placeholder="user name"
-//                                 onChange={formik.handleChange}
-//                                 required />
-
-//                             <input
-//                                 type="text"
-//                                 className="form-control mt-2"
-//                                 name="correo"
-//                                 autoComplete="off"
-//                                 placeholder="email"
-//                                 onChange={formik.handleChange}
-//                                 required />
-
-//                             <textarea
-//                                 className="form-control mt-2"
-//                                 autoComplete="off"
-//                                 name="descripcion"
-//                                 placeholder="description"
-//                                 onChange={formik.handleChange}
-//                                 required
-//                             ></textarea>
-
-//                             <div className="d-grid gap-2 mx-auto mt-2">
-//                                 <Input
-//                                     value="Save"
-//                                     type="submit"
-//                                     className="btn btn-outline-dark"
-//                                 />
-//                             </div>
-//                         </form>
-//                     </div>
-//                 </div>
-//             </div> */}

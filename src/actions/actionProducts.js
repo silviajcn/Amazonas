@@ -1,5 +1,5 @@
 import { typesProducts } from '../types/types';
-import { addDoc, collection, getDocs, query, where, doc, deleteDoc} from "@firebase/firestore";
+import { addDoc, collection, getDocs, query, where, doc, deleteDoc, updateDoc } from "@firebase/firestore";
 import { db } from '../firebase/firebaseConfig';
 
 //CATEGORIES PRODUCTS ---------------------------------------------
@@ -121,6 +121,27 @@ export const deleteProductSync = (code) => {
 
 
 
+//UPDATE PRODUCT ---------------------------------------------
+
+//Action Update Product Async
+ export const updateProductsAsync = (code) => {
+    console.log(code);
+     
+    return async (dispatch) => {
+        
+    }
+ }
+
+
+//UPDATE PRODUCT ---------------------------------------------
+
+//Action update Product Sync
+export const updateProduct = (products) =>{
+    return{
+        type: typesProducts.update,
+        payload: products
+    }
+}
 
 
 //LIST PRODUCT ---------------------------------------------

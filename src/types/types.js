@@ -10,13 +10,15 @@ export const typesProducts = {
     delete: 'Delete',
     search: 'Search',
     detail: 'Detail',
-    category: 'Category'
+    category: 'Category',
+    update: 'Update'
 }
 
 export const typesComents = {
     register: 'Register coment',
     list: 'List coment',
-    delete: 'Delete coment'
+    delete: 'Delete coment',
+    update: 'Update coment'
 }
 
 export const typesAddCar = {
