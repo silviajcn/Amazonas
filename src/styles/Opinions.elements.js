@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: start;
+  margin-bottom: 30px;
+`
+
 export const ContainerPrincipal = styled.div`
   display: flex;
   flex-direction: row;
@@ -100,7 +108,7 @@ export const ContainerNewOp = styled.div`
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  margin-right: 100px;
+  margin-right: 20px;
   margin-top: 24px;
   padding: 20px 0px 40px 0px;
 `
@@ -125,7 +133,7 @@ export const BtnNew = styled.button`
   border: 1px solid #D3DEDC;
   box-sizing: border-box;
   border-radius: 4px;
-  width: 300px;
+  width: 450px;
   height: 32px;
   margin-bottom: 30px;
   box-shadow: 0px 10px 20px -15px black;

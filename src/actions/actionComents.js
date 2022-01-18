@@ -41,26 +41,29 @@ export const deleteComentSync = (email) => {
 //UPDATE PRODUCT ---------------------------------------------
 
 
-//Action Update Product Async
-export const updateComentAsync = (name) => {
-    console.log(name);
+
+//Action Update coment Async
+export const updateComentAsync = (email) => {
+    console.log(email);
 
     return async (dispatch) => {
 
         const comCollection = collection(db, "coments");
-        const q = query(comCollection, where("nameuser", "==", name.nameuser))
+        const q = query(comCollection, where("emailuser", "==", email))
         //console.log(q);
 
         const datos = await getDocs(q);
-        console.log(datos);
+        //console.log(datos);
 
+        //const comentario = [];
         datos.forEach((docu) => {
             //console.log(docu);
-            //console.log(docu.id);
+            console.log(docu.id);
 
-            deleteDoc(doc(db, "coments", docu.id));
+            updateDoc(doc(db, "coments", docu.id));
         })
-        //dispatch(updateComentSync(email));
+        //dispatch(updateComentSync(datos));
+        console.log(datos);
     }
 }
 
@@ -83,7 +86,7 @@ export const updateComentAsync = (name) => {
 
 //UPDATE PRODUCT ---------------------------------------------
 
-//Action update Product Sync
+//Action update coment Sync
 export const updateComentSync = (coment) => {
     return{
         type: typesComents.update,
@@ -99,12 +102,9 @@ export const updateComentSync = (coment) => {
 
 //Action List Coments Async
 export const listComentsAsync = () => {
-
     return async (dispatch) => {
-
         const querySnapshot = await getDocs(collection(db, "coments"));
         //console.log(querySnapshot);
-
         const comentarios = [];
         querySnapshot.forEach((doc) => {
             //console.log(doc);

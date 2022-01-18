@@ -1,23 +1,19 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from "react-router-dom";
-import Rating from './Rating';
+//import Rating from './Rating';
 import { ContainerPrincipal, ContainerTitle, Title, ContainerUser, ImgUser, NameUser, ContainerComent, TitleComent, Coment, Options, ContainerComentario, BtnBorrar, BtnEdit } from '../styles/Opinions.elements';
-import { listComentsAsync, deleteComentAsync, updateComentAsync } from '../actions/actionComents';
+import { listComentAsync, deleteAsync } from '../actions/actionCom';
 
-const Opinions = () => {
+const Opinions = ({ handleUpdate }) => {
 
-    let history = useNavigate();
+    const { coments } = useSelector((store) => store.coments)
+    console.log(coments);
 
-    //show coments
-    const dispatch = useDispatch();
-
-    const { coments } = useSelector((store) => store.coments);
-    //console.log(coments)
+    const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(listComentsAsync());
-    }, []);
+        dispatch(listComentAsync())
+    }, [])
 
     return (
         <ContainerPrincipal>
@@ -28,7 +24,12 @@ const Opinions = () => {
             </ContainerTitle>
             
             {
-                coments.map((e, i) => (
+
+                (coments) ?
+                
+                    (
+                        
+                        coments.map((e, i) => (
                     <ContainerComentario key={i}>
                 <ContainerUser>
                     <ImgUser src="https://res.cloudinary.com/silviajcn/image/upload/v1641498305/Perfil%20Usuarios/default-user-image_lhg8yd.png" alt="user" />
@@ -37,28 +38,25 @@ const Opinions = () => {
 
                 <ContainerComent>
                     <TitleComent><strong>{e.title}</strong></TitleComent>
-                    <Coment>{e.descripcion}</Coment>
+                    <Coment>{e.opinion}</Coment>
                 </ContainerComent>
 
                 <div>
-                    <Rating />
+                    {/* <Rating /> */}
                     <Options>A 45 personas les resultó útil</Options>
                     <Options>Informar de un abuso</Options>
                     
                     <div>
                         <BtnEdit type="button"
-                            value="update"
-                            onClick={() => {
-                                dispatch(updateComentAsync(e.nameuser))
-                                history("/editco")
-                            }}
+                                 value="update"
+                                 onClick={() => handleUpdate(e)}
                         >
                             Editar comentario
                         </BtnEdit>
                         
                         <BtnBorrar type="button"
-                            value="delete"
-                            onClick={() => dispatch(deleteComentAsync(e.emailuser))}
+                                   value="delete"
+                                   onClick={() => dispatch(deleteAsync(e.emailuser))}
                         >
                             Borrar comentario
                         </BtnBorrar>
@@ -66,7 +64,10 @@ const Opinions = () => {
                     
                 </div>
                     </ContainerComentario>
-                ))
+                        ))
+                            
+                    ) :
+                    <p>Unavailable data</p>
             }
             </div>
         </ContainerPrincipal>

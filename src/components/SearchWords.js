@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
@@ -26,9 +26,7 @@ const SearchWords = () => {
         }
     })
 
-    useEffect(() => {
-        dispatch(searchProductAsync());
-    }, []);
+
 
     return (
         <div>

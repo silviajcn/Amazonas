@@ -21,7 +21,6 @@ const ProductDetails = () => {
 
     // cambio de imagenes
     const [imagen, setImagen] = useState();
-
     const cambiarImagen =(element) => {
         setImagen(element)
     }

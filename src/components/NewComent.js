@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import { registerComentAsync, listComentsAsync } from '../actions/actionComents';
-import { ContainerNewOp, NewOpTitle, NewOpText } from '../styles/Opinions.elements';
+import { useForm } from '../hooks/useForm';
+import { registerComentAsync, updateComentAsync, updateComentSync } from '../actions/actionCom';
+import { Container,  ContainerNewOp, NewOpTitle, NewOpText } from '../styles/Opinions.elements';
 import Opinions from './Opinions';
+import { Form, FloatingLabel } from 'react-bootstrap';
 
 //material ui
 import Accordion from '@mui/material/Accordion';
@@ -15,43 +15,72 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const NewComent = () => {
 
-    //register form----------------------------------------
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
 
-    useEffect(() => {
-        dispatch(listComentsAsync())
-     }, [])
-
-    const formik = useFormik({
-        initialValues: {
-            emailuser: "",
-            nameuser: "",
-            title: "",
-            descripcion: ""
-        },
-        validationSchema: Yup.object({
-            emailuser: Yup.string().required(),
-            nameuser: Yup.string().required(),
-            title: Yup.string().required(),
-            descripcion: Yup.string().required()
-        }),
-        onSubmit: (data) => {
-            console.log(data);
-            dispatch(registerComentAsync(data))
-        },
-
+    const [ values, handleInputChange, reset, setValues ] = useForm({
+        nameuser: '',
+        emailuser: '',
+        title: '',
+        opinion: '',
     })
+
+    const { nameuser, emailuser, title, opinion } = values
+
+    
+
+    // const handlePictureClick = () => {
+    //     document.getElementById('fileSelector').click()
+    // }
+    // const handleFileChanged = (e) => {
+    //     console.log(e.target.files[0])
+    //     console.log(image)
+    //     const file = e.target.files[0];
+    //     fileUpload(file)
+    //         .then(response => {
+    //             values.image = response
+    //             console.log(values.image)
+    //             console.log(response)
+    //         })
+    //         .catch(error => {
+    //             console.log(error)
+    //         })
+    // }
+
+    const [updateForm, setUpdateForm] = useState(false)
+
+    const handleUpdate = (coments) => {
+        dispatch(updateComentSync(coments.id, coments))
+        setUpdateForm(true)
+        setValues({
+            ...coments
+        })
+    }
+    const handlePut = (e) => {
+        e.preventDefault()
+        dispatch(updateComentAsync(values))
+        console.log(values)
+        reset()
+        setUpdateForm(false)
+    }
+    const handlePost = (e) => {
+        e.preventDefault()
+        console.log(values)
+        //console.log(image)
+        dispatch(registerComentAsync(nameuser, emailuser, title, opinion))
+        reset()
+    }
+
 
 
     return (
-        <div>
+        <Container>
 
             <ContainerNewOp>
                 <NewOpTitle><strong>Escribir opinión de nuestros productos</strong></NewOpTitle>
 
                 <NewOpText>Comparte tu opinión con otros clientes</NewOpText>
 
-                <Accordion>
+                <Accordion style={{width: "320px"}}>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
@@ -61,81 +90,95 @@ const NewComent = () => {
                     </AccordionSummary>
 
                     <AccordionDetails>
-                        
-                        <div className="container">
+                        <Form>
 
-                <hr />
-                <div className="row">
-
-                    <div className="col-12">
-
-                        <form className="form-group" onSubmit={formik.handleSubmit}>
-
-                            <div>
-                                <input
+                    <Form.Group>
+                        <div className="form-group col-md-0">
+                            <Form.Label htmlFor="nameuser">Nombre de usuario</Form.Label>
+                            <Form.Control
                                 type="text"
-                                className="form-control mt-2"
-                                name="emailuser"
-                                autoComplete="off"
-                                placeholder="Correo electrónico"
-                                onChange={formik.handleChange}
-                                />
-                            </div>
-                            
-                            <div>
-                                <input
-                                type="text"
-                                className="form-control mt-2"
                                 name="nameuser"
-                                autoComplete="off"
-                                placeholder="Nombre de usuario"
-                                onChange={formik.handleChange}
-                                />
-                            </div>
-                            
-                            <div>
-                                <input
-                                type="text"
-                                className="form-control mt-2"
-                                name="title"
-                                autoComplete="off"
-                                placeholder="Título para su opinión"
-                                onChange={formik.handleChange} />
-                            </div>
-                            
-                            <div>
-                                <textarea
-                                style={{resize: "none", height: "200px"}}
-                                className="form-control mt-2"
-                                autoComplete="off"
-                                name="descripcion"
-                                placeholder="¿Por qué le gustan o disgustan nuestros productos?"
-                                onChange={formik.handleChange}
-                            ></textarea>
-                            </div>
-                            
-
-                            
-
-                            <div className="d-grid gap-2 mx-auto mt-2">
-                                <input
-                                    value="Publicar opinión"
-                                    type="submit"
-                                    className="btn btn-outline-dark"
-                                />
-                            </div>
-                        </form>
+                                
+                                value={nameuser}
+                                onChange={handleInputChange}
+                                required
+                            />
                         </div>
-                    </div>
-                </div>
+
+                        <div className="form-group col-md-0">
+                            <Form.Label htmlFor="emailuser">Correo electrónico</Form.Label>
+                            <Form.Control
+
+                                type="text"
+                                name="emailuser"
+                                
+                                value={emailuser}
+                                onChange={handleInputChange}
+                                required
+                            />
+                        </div>
+
+                        <div className="form-group col-md-0">
+                            <Form.Label htmlFor="title">Título para su opinión</Form.Label>
+                            <Form.Control
+
+                                type="text"
+                                name="title"
+                                
+                                value={title}
+                                onChange={handleInputChange}
+                                required
+                            />
+                        </div>
+
+                        <div className="form-group col-md-0">
+                            <Form.Label htmlFor="opinion">¿Por qué le gustan o disgustan nuestros productos?</Form.Label>
+                            <FloatingLabel controlId="floatingTextarea2" label="">
+                                <Form.Control
+                                    as="textarea"
+                                    name="opinion"
+                                    
+                                    value={opinion}
+                                    placeholder="Leave a comment here"
+                                    style={{ height: '100px' }}
+                                    onChange={handleInputChange}
+                                />
+                            </FloatingLabel>
+                        </div>
+
+                        <br />
+
+                        <div>
+
+
+                            <div className="d-flex gap-2 my-3">
+
+                                {
+                                    !updateForm
+                                        ?
+                                        <button
+                                            className="btn2 btn-light"
+                                            type="submit" onClick={handlePost}>Publicar opinión <i className="fas fa-upload"></i></button>
+                                        :
+                                        <button
+                                            className="btn2 btn-light"
+                                            type="submit" onClick={handlePut}>Editar Comentario <i className="fas fa-edit"></i></button>
+
+                                }
+                            </div>
+                        </div>
+
+
+                    </Form.Group>
+                </Form>
                     </AccordionDetails>
                 </Accordion>
             </ContainerNewOp>
 
             <div>
-                <Opinions />
+                <Opinions handleUpdate={handleUpdate} />
             </div>
-        </div>
+        </Container>
     )
 }
 

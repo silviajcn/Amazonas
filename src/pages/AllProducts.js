@@ -12,7 +12,7 @@ const AllProducts = () => {
     const dispatch = useDispatch();
 
     const { products } = useSelector((store) => store.products);
-    console.log(products)
+    console.log(products);
 
     useEffect(() => {
         dispatch(listProductsAsync());
@@ -71,12 +71,12 @@ const AllProducts = () => {
                                 <strong>Borrar producto</strong>
                             </BtnDelete>
 
-                            <BtnEdit
+                            {/* <BtnEdit
                                 type="button"
                                 value="Delete"
                             >
                                 <strong>Editar producto</strong>
-                            </BtnEdit>
+                            </BtnEdit> */}
                         </ContainerBtn>
                     </ContainerPrincipal>
                 ))

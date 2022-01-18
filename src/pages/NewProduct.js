@@ -1,9 +1,9 @@
-import React, { useEffect} from 'react';
+import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { fileUpload } from '../helpers/FileUpload';
 import { useDispatch } from 'react-redux';
-import { registerProductAsync, listProductsAsync } from '../actions/actionProducts';
+import { registerProductAsync } from '../actions/actionProducts';
 import { FirstContainerForm, ContainerTitle, ContainerForm, ContainerBtnImgs, BtnImgs, Textarea, DataProduct, BtnAddProduct, FinishStep, LogoAmazonas } from '../styles/NewProducts.elements';
 
 // Material UI-------------------
@@ -19,10 +19,6 @@ const steps = ['Carga las imagenes del producto', 'Carga la información del pro
 const NewProduct = () => {
 
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(listProductsAsync())
-    }, [])
 
     const formik = useFormik({
         initialValues: {

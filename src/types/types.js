@@ -16,7 +16,15 @@ export const typesProducts = {
 
 export const typesComents = {
     register: 'Register coment',
-    list: 'List coment',
+    list: 'List',
+    delete: 'Delete coment',
+    update: 'Update coment'
+}
+
+//prueba
+export const typesCom = {
+    register: 'Register coment',
+    list: 'List comentario',
     delete: 'Delete coment',
     update: 'Update coment'
 }
