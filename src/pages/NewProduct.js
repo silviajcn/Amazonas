@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { fileUpload } from '../helpers/FileUpload';
 import { useDispatch } from 'react-redux';
+import { Link } from "react-router-dom";
 import { registerProductAsync } from '../actions/actionProducts';
 import { FirstContainerForm, ContainerTitle, ContainerForm, ContainerBtnImgs, BtnImgs, Textarea, DataProduct, BtnAddProduct, FinishStep, LogoAmazonas } from '../styles/NewProducts.elements';
 
@@ -401,6 +402,11 @@ const NewProduct = () => {
             <FinishStep>
                 <p><strong>Completaste todos los pasos, ¡estas listo para vender tus productos en Amazonas!</strong></p>
                 <LogoAmazonas src="https://res.cloudinary.com/silviajcn/image/upload/v1641583841/SPRING-3/logo-footer_zysgvs.png" alt="logo" />
+                <Link to="/list" className="links-two">
+                    <div>
+                        <h3>Ver productos agregados</h3>
+                    </div>
+                </Link>
             </FinishStep>
             
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>

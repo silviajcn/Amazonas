@@ -60,7 +60,7 @@ export const BtnContinue = styled.button`
   }
 `
 
-export const Pconditions = styled.p`
+export const Pconditions = styled.div`
   font-size: 12px;
   color: #000000;
   width: 310px;

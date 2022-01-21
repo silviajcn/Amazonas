@@ -83,7 +83,7 @@ const Register = () => {
                     </BtnContinue>
 
                     <div>
-                        <Pconditions>Al crear una cuenta, aceptas las Condiciones de Uso y el Aviso de Privacidad de Amazonas.</Pconditions>
+                        <Pconditions>Al crear una cuenta, aceptas las <Link to="/conditions" className="links-three">Condiciones de Uso y el Aviso de Privacidad de Amazonas.</Link></Pconditions>
                     </div>
 
                 </form>

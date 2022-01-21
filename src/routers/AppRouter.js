@@ -10,6 +10,10 @@ import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 import IconSpinner from '../components/IconSpinner';
 import NavBarTwo from '../components/NavBarTwo';
+import Home from '../pages/Home';
+import AllProducts from '../pages/AllProducts';
+import CustomerService from '../pages/CustomerService';
+import UseConditions from '../pages/UseConditions';
 
 const AppRouter = () => {
 
@@ -48,6 +52,15 @@ const AppRouter = () => {
             <NavBarTwo />
 
             <Routes>
+
+                <Route path='/' element={<Home />} />
+
+                <Route path='/products' element={<AllProducts />} />
+
+                <Route path='/help' element={<CustomerService />} />
+
+                <Route path='/conditions' element={<UseConditions />} />
+
                 <Route path="/*" element={
                     <PrivateRoute isAuthenticated={isLoggedIn}>
                         <DashboardRoutes />

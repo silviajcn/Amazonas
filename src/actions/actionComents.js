@@ -1,96 +1,33 @@
-import { typesComents } from '../types/types';
-import { db } from "../firebase/firebaseConfig";
-import { addDoc,collection,getDocs,query,where,doc,deleteDoc, updateDoc } from "@firebase/firestore";
+import { addDoc, collection, deleteDoc, getDocs, query, where, doc, updateDoc } from 'firebase/firestore'
+import { db } from '../firebase/firebaseConfig'
+import {typesCom} from '../types/types'
 
 
-//DELETE COMENT---------------------------------------------
-
-//Action Delete Coment Async
-export const deleteComentAsync = (email) => {
-    return async (dispatch) => {
-
-        const comCollection = collection(db, "coments");
-        const q = query(comCollection, where("emailuser", "==", email))
-        //console.log(q);
-
-        const datos = await getDocs(q);
-        console.log(datos);
-
-        datos.forEach((docu) => {
-            //console.log(docu);
-            //console.log(docu.id);
-
-            deleteDoc(doc(db, "coments", docu.id));
-        })
-        dispatch(deleteComentSync(email));
+// Asyn action register comentario
+export const registerComentAsync = (nameuser, emailuser, title, opinion) =>{
+    return(dispatch)=>{
+    const item = {
+        nameuser,
+        emailuser,
+        title,
+        opinion,
+    }
+    addDoc(collection(db, "comentarios"), item)
+    .then(resp =>{
+        dispatch(registerComentSync(item))
+        dispatch(listComentAsync())
+    })
+    .catch(error => {
+        console.log(error)
+    })
     }
 }
 
-
-
-//Action Delete Coment Sync
-export const deleteComentSync = (email) => {
-    return {
-        type: typesComents.delete,
-        payload: email
-    }
-}
-
-
-
-//UPDATE PRODUCT ---------------------------------------------
-
-
-
-//Action Update coment Async
-export const updateComentAsync = (email) => {
-    console.log(email);
-
-    return async (dispatch) => {
-
-        const comCollection = collection(db, "coments");
-        const q = query(comCollection, where("emailuser", "==", email))
-        //console.log(q);
-
-        const datos = await getDocs(q);
-        //console.log(datos);
-
-        //const comentario = [];
-        datos.forEach((docu) => {
-            //console.log(docu);
-            console.log(docu.id);
-
-            updateDoc(doc(db, "coments", docu.id));
-        })
-        //dispatch(updateComentSync(datos));
-        console.log(datos);
-    }
-}
-
-// export const searchProductAsync = (product) => {
-
-//     return async (dispatch) => {
-//         const prodCollections = collection(db, "productos");
-//         const q = query(prodCollections, where("categoryproduct", "==", product))
-//         const datos = await getDocs(q);
-//         //console.log(datos);
-
-//         const producto = [];
-//         datos.forEach((doc) => {
-//             producto.push(doc.data())
-//         })
-//         console.log(producto);
-//         dispatch(searchProductSync(producto))
-//     }
-// }
-
-//UPDATE PRODUCT ---------------------------------------------
-
-//Action update coment Sync
-export const updateComentSync = (coment) => {
+// Sync action register comentario --------------------------------------
+export const registerComentSync = (item) =>{
     return{
-        type: typesComents.update,
-        payload: coment
+        type: typesCom.register,
+        payload: item
     }
 }
 
@@ -98,57 +35,87 @@ export const updateComentSync = (coment) => {
 
 
 
-//LIST COMENTS ---------------------------------------------
+// Asyn action list comentario
+export const listComentAsync = () => {
 
-//Action List Coments Async
-export const listComentsAsync = () => {
-    return async (dispatch) => {
-        const querySnapshot = await getDocs(collection(db, "coments"));
-        //console.log(querySnapshot);
-        const comentarios = [];
-        querySnapshot.forEach((doc) => {
-            //console.log(doc);
-            //console.log(doc.data());
+    return async (dispatch)  => {
+        const querySnapshot = await getDocs(collection(db, "comentarios"));
 
-            comentarios.push({
+        const comentarios = []
+        querySnapshot.forEach((doc)=> {
+        comentarios.push({
                 ...doc.data()
             })
-        });
+        })
         //console.log(comentarios);
-        dispatch(listComentsSync(comentarios));
+        dispatch(listComentSync(comentarios))
     }
 }
 
-//Action List Coments Sync
-export const listComentsSync = (coments) => {
-    return {
-        type: typesComents.list,
+// Sycn action list comentario ------------------------------------------
+export const listComentSync = (coments) =>{
+    return{
+        type: typesCom.list,
         payload: coments
     }
 }
 
-//CREATE COMENT
 
-//Action Create Coment Async
-export const registerComentAsync = (newComent) => {
 
-    return (dispatch) => {
-        
-        addDoc(collection(db, "coments"), newComent)
-        .then(resp => {
-            dispatch(registerComentSync(newComent))
-            dispatch(listComentsAsync())
-        })
-        .catch(error => {
-            console.log(error);
-        })
+// Sycn action delete comentario----------------------------------------
+export const deleteSync = (email) => {
+    return{
+        type: typesCom.delete,
+        payload: email
     }
 }
 
-//Action Create Coment Sync
-export const registerComentSync = (coment) => {
-    return {
-        type: typesComents.register,
-        payload: coment
+// Asyn action delete comentario
+export const deleteAsync = (email) =>{
+    return async(dispatch) =>{
+        const artCollection = collection(db, "comentarios")
+        const q = query(artCollection, where('emailuser','==',email))
+        const data = await getDocs(q)
+        data.forEach((docu)=>{
+            deleteDoc(doc(db, "comentarios",docu.id))
+        })
+        dispatch(deleteSync(email))
+        dispatch(listComentAsync())
+    }
+}
+
+
+
+
+// Sycn action update comentario----------------------------------------
+export const updateComentSync = (id, coments) =>{
+    return{
+        type: typesCom.update,
+        payload:{
+            id,
+            ...coments
+        }
+    }
+}
+
+// Asyn action update comentario
+export const updateComentAsync = (coments) =>{
+    console.log(coments);
+
+    return async (dispatch) => {
+
+        const artCollection = collection(db, "comentarios")
+        const q = query(artCollection,where('nameuser','==', coments.nameuser))
+        const data = await getDocs(q)
+
+        data.forEach((docu) =>{
+            updateDoc(doc(db, "comentarios", docu.id),{
+                nameuser: coments.nameuser,
+                emailuser: coments.emailuser,
+                title: coments.title,
+                opinion: coments.opinion,
+            })
+        })
+        dispatch(listComentAsync())
     }
 }

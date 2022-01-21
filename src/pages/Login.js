@@ -87,7 +87,7 @@ const Login = () => {
                     </div>
 
                     <div>
-                        <Pconditions>Al continuar, aceptas las Condiciones de uso y el Aviso de privacidad de Amazonas.</Pconditions>
+                        <Pconditions>Al continuar, aceptas las <Link to="/conditions" className="links-three">Condiciones de uso y el Aviso de privacidad de Amazonas.</Link></Pconditions>
                     </div>
 
                 </form>

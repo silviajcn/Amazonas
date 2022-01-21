@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from '../hooks/useForm';
-import { registerComentAsync, updateComentAsync, updateComentSync } from '../actions/actionCom';
+import { registerComentAsync, updateComentAsync, updateComentSync } from '../actions/actionComents';
 import { Container,  ContainerNewOp, NewOpTitle, NewOpText } from '../styles/Opinions.elements';
 import Opinions from './Opinions';
 import { Form, FloatingLabel } from 'react-bootstrap';

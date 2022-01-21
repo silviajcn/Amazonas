@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 //import Rating from './Rating';
 import { ContainerPrincipal, ContainerTitle, Title, ContainerUser, ImgUser, NameUser, ContainerComent, TitleComent, Coment, Options, ContainerComentario, BtnBorrar, BtnEdit } from '../styles/Opinions.elements';
-import { listComentAsync, deleteAsync } from '../actions/actionCom';
+import { listComentAsync, deleteAsync } from '../actions/actionComents';
 
 const Opinions = ({ handleUpdate }) => {
 
