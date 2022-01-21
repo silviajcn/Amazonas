@@ -5,7 +5,7 @@ import { registerReducer } from '../reducers/registerReducer';
 import { productsReducer } from '../reducers/productsReducer';
 //import { comentsReducer } from '../reducers/comentsReducer';
 import { comReducer } from '../reducers/comReducer';
-import { carReducer } from '../reducers/carReducer';
+import { cartReducer } from '../reducers/cartReducer';
 import { categoriesReducer } from '../reducers/categoriesReducer';
 
 //Redux Devtools
@@ -16,7 +16,7 @@ const reducers = combineReducers({
     login: loginReducer,
     register: registerReducer,
     products: productsReducer,
-    car: carReducer,
+    shopping: cartReducer,
     coments: comReducer,
     categories: categoriesReducer
 })

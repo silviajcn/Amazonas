@@ -18,7 +18,7 @@ const NavBar = () => {
 
     //USER
     const { name } = useSelector(state => state.login)
-    console.log(name);
+    //console.log(name);
     const [isLoggedIn, setIsLoggedIn] = React.useState(false);
     React.useEffect(() => {
         const auth = getAuth();
@@ -36,6 +36,16 @@ const NavBar = () => {
     const handleLogout = () => {
         dispatch(logout())
         navigate("/login")
+    }
+
+    //PRODUCTS IN CART
+    const { cart } = useSelector((store) => store.shopping);
+
+    const totalItems = () => {
+        const reducer = (counter, currentValue) => counter + currentValue.quantity
+        const add = cart.reduce(reducer, 0)
+        
+        return add
     }
     
     return (
@@ -76,12 +86,12 @@ const NavBar = () => {
                 </ContainerDevolucion>
             </Link>
 
-            <Link to="/car" className="links">
+            <Link to="/carrito" className="links">
                 <ContainerCar>
                     <BtnCar>
                         <div>
                             <ShoppingCartOutlinedIcon />
-                            <BadgeI><strong>0</strong></BadgeI>
+                            <BadgeI><strong>{totalItems()}</strong></BadgeI>
                         </div>
                         <LinksMenu>Carrito</LinksMenu>
                     </BtnCar>

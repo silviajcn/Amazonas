@@ -7,7 +7,7 @@ import { listComentAsync, deleteAsync } from '../actions/actionCom';
 const Opinions = ({ handleUpdate }) => {
 
     const { coments } = useSelector((store) => store.coments)
-    console.log(coments);
+    //console.log(coments);
 
     const dispatch = useDispatch()
 

@@ -20,7 +20,7 @@ const GeoLocation = () => {
     
     //USER
     const { name } = useSelector(state => state.login)
-    console.log(name);
+    //console.log(name);
     const [isLoggedIn, setIsLoggedIn] = React.useState(false);
     React.useEffect(() => {
         const auth = getAuth();

@@ -24,3 +24,12 @@ body {
     color: #000000;
 }
 
+.good{
+    color: orange;
+    font-size: 16px;
+}
+
+.bad{
+    color: gray;
+    font-size: 16px;
+}

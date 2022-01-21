@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 import { RiShoppingCartLine, RiPlayFill } from "react-icons/ri";
-import { ContainerPrincipal, ContainerBack, PBack, Containers, ContainerOne, ImgsProduct, ContainerTwo, ContainerThree, DivOne, NameProduct, MarcaProduct, DivTwo, PriceInfo, PriceProduct, Price, Delivery, LinksBlue, PagoInfo, PagoCuotas, TitleCaracteristicas, Caracteristicas, ContainerFour, ImgProduct, Buttons, BtnOne, BtnTwo, ContainerIcon, Transaccion, PlusContainer, ContainerBanner, ImgBanner } from '../styles/ProductDetails.elements';
+import { ContainerPrincipal, ContainerBack, PBack, Containers, ContainerOne, ImgsProduct, ContainerTwo, ContainerThree, DivOne, NameProduct, MarcaProduct, DivTwo, PriceInfo, PriceProduct, Price, Delivery, LinksBlue, PagoInfo, PagoCuotas, TitleCaracteristicas, Caracteristicas, ContainerFour, ImgProduct, Buttons, BtnOne, BtnTwo, ContainerIcon, Transaccion, PlusContainer, ContainerBanner, ImgBanner, ContainerTres } from '../styles/ProductDetails.elements';
 import { RiArrowLeftSLine } from "react-icons/ri";
+import { FaStar } from "react-icons/fa";
 import ReactImageMagnify from 'react-image-magnify';
 import { showDetailProductAsync } from '../actions/actionProducts';
+import { addCartSync } from '../actions/actionAddCart';
 
 const ProductDetails = () => {
 
@@ -58,10 +60,10 @@ const ProductDetails = () => {
             </Link>
 
 
-                    {
-                products.map((e, i) => (
-                    <>
-            <ContainerPrincipal key={i}>
+            {
+            products.map((e, i) => (
+            <div key={i}>
+            <ContainerPrincipal>
             <Containers>
                 <ContainerOne>
                     <ImgsProduct src={e.oneimage} alt="product" onClick={()=>cambiarImagen(e.oneimage)}/>
@@ -110,6 +112,13 @@ const ProductDetails = () => {
                         <DivOne>
                             <NameProduct><strong>{e.nameproduct}</strong></NameProduct>
                             <MarcaProduct><strong>Marca: {e.marcaproduct}</strong></MarcaProduct>
+                            <ContainerTres>
+                                <p className={e.rate > 1 ? 'good' : 'bad'}><FaStar /></p>
+                                <p className={e.rate > 2 ? 'good' : 'bad'}><FaStar /></p>
+                                <p className={e.rate > 3 ? 'good' : 'bad'}><FaStar /></p>
+                                <p className={e.rate > 4 ? 'good' : 'bad'}><FaStar /></p>
+                                <p className={e.rate >= 5 ? 'good' : 'bad'}><FaStar /></p>
+                            </ContainerTres>
                         </DivOne>
 
                         <DivTwo>
@@ -163,7 +172,9 @@ const ProductDetails = () => {
                         <BtnOne
                            id={e.codeproduct}
                            type="button"
-                        //    onClick={addItemToCar}
+                           onClick={() => 
+                                dispatch(addCartSync(e))
+                            }
                         >
                             <ContainerIcon>
                                 <RiShoppingCartLine />
@@ -190,7 +201,7 @@ const ProductDetails = () => {
             <ContainerBanner>
                 <ImgBanner src={e.banner} alt="banner" />
             </ContainerBanner>
-                    </>
+                    </div>
                 ))
             }
                 

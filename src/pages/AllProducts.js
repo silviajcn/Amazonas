@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from "react-router-dom";
 import { listProductsAsync, deleteProductAsync, showDetailProductAsync } from '../actions/actionProducts';
-import { ContainerBack, PBack, ContainerPrincipal, BtnShowDetail, ContainerImg, ImgProduct, ContainerSecond, TitleProduct, ContainerTres, PUno, PDos, ContainerBtn, BtnDelete, BtnEdit } from '../styles/AllProducts.elements';
+import { ContainerBack, PBack, ContainerPrincipal, BtnShowDetail, ContainerImg, ImgProduct, ContainerSecond, TitleProduct, ContainerTres, PUno, PDos, ContainerBtn, BtnDelete, ContainerRate, BtnEdit } from '../styles/AllProducts.elements';
 import { RiArrowLeftSLine } from "react-icons/ri";
+import { FaStar } from "react-icons/fa";
+import '../styles/index.css';
 
 const AllProducts = () => {
 
@@ -12,7 +14,7 @@ const AllProducts = () => {
     const dispatch = useDispatch();
 
     const { products } = useSelector((store) => store.products);
-    console.log(products);
+    //console.log(products);
 
     useEffect(() => {
         dispatch(listProductsAsync());
@@ -54,6 +56,14 @@ const AllProducts = () => {
                                     <PUno>US$</PUno>
                                     <PDos><strong>{e.priceproduct}.00</strong></PDos>
                                 </ContainerTres>
+
+                                <ContainerRate>
+                                    <p className={e.rate > 1 ? 'good' : 'bad'}><FaStar /></p>
+                                    <p className={e.rate > 2 ? 'good' : 'bad'}><FaStar /></p>
+                                    <p className={e.rate > 3 ? 'good' : 'bad'}><FaStar /></p>
+                                    <p className={e.rate > 4 ? 'good' : 'bad'}><FaStar /></p>
+                                    <p className={e.rate >= 5 ? 'good' : 'bad'}><FaStar /></p>
+                                </ContainerRate>
 
                                 <ContainerTres>
                                     <p>Envío gratis a</p>

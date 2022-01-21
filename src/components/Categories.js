@@ -11,7 +11,7 @@ const Categories = () => {
     const dispatch = useDispatch();
 
     const { categories } = useSelector((store) => store.categories);
-    console.log(categories)
+    //console.log(categories)
 
     useEffect(() => {
         dispatch(listCategoriesAsync());

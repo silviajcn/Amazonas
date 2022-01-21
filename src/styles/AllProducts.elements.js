@@ -68,6 +68,14 @@ export const ContainerTres = styled.div`
   align-items: start;
 `
 
+export const ContainerRate = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  font-size: 10px;
+`
+
 export const PUno = styled.p`
   display: flex;
   justify-content: start;

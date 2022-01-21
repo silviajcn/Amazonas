@@ -47,7 +47,7 @@ export const listComentAsync = () => {
                 ...doc.data()
             })
         })
-        console.log(comentarios);
+        //console.log(comentarios);
         dispatch(listComentSync(comentarios))
     }
 }

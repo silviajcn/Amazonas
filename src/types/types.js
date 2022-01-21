@@ -30,8 +30,10 @@ export const typesCom = {
     update: 'Update coment'
 }
 
-export const typesAddCar = {
-    add: 'Add',
-    delete: 'Delete',
-    update: 'Update'
+//types cart
+export const typesCart = {
+    addcart: 'Add to Car',
+    removeone: 'Remove One',
+    removeall: 'Remove All',
+    clearcart: 'Clear Cart'
 }

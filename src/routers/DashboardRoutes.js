@@ -8,7 +8,7 @@ import AllProducts from '../pages/AllProducts';
 import ProductPage from '../pages/ProductPage';
 import NewProduct from '../pages/NewProduct';
 import Searching from '../pages/Searching';
-import Car from '../pages/Car';
+import Carrito from '../pages/Carrito';
 import UseConditions from '../pages/UseConditions';
 import Category from '../pages/Category';
 
@@ -23,7 +23,7 @@ export const DashboardRoutes = () => {
                 <Route path='/details' element={<ProductPage />} />
                 <Route path='/searching' element={<Searching />} />
                 <Route path='/category' element={<Category />} />
-                <Route path='/car' element={<Car />} />
+                <Route path='/carrito' element={<Carrito />} />
                 <Route path='/help' element={<CustomerService />} />
                 <Route path='/conditions' element={<UseConditions />} />
                 <Route path='*' element={<Navigate to="/" />} />

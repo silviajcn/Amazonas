@@ -77,6 +77,16 @@ export const MarcaProduct = styled.p`
   color: #0E7184;
 `
 
+//RATE
+export const ContainerTres = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  margin-top: 0px;
+  font-size: 10px;
+`
+
 export const DivTwo = styled.div`
   width: 450px;
   border-bottom: 1px solid #D3DEDC;
@@ -254,3 +264,4 @@ export const ImgBanner = styled.img`
   height: auto;
   margin-bottom: 80px;
 `
+

@@ -113,7 +113,7 @@ export const showDetailProductAsync = (code) => {
         datos.forEach((doc) => {
             producto.push(doc.data())
         })
-        console.log(producto);
+        //console.log(producto);
         dispatch(showDetailProductSync(producto))
     }
 }
