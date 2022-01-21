@@ -1,28 +1,43 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../actions/actionLogin';
 import { Link } from "react-router-dom";
-import UserData from '../hooks/dataUser';
 import GeoLocation from './GeoLocation';
 import SearchWords from './SearchWords';
-import { ContainerPrincipal, LogoContainer, ImgLogo, ContainerCar, BtnCar, LinksMenu, ContainerAcount, TextPequenio, TextNegrita, TextEnviar, Location, ContainerDevolucion } from '../styles/NavBar.elements';
+import { ContainerPrincipal, LogoContainer, ImgLogo, ContainerCar, BtnCar, BadgeI, LinksMenu, ContainerAcount, TextPequenio, TextNegrita, TextEnviar, Location, ContainerDevolucion } from '../styles/NavBar.elements';
 import '../styles/index.css';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const NavBar = () => {
 
-    const useUser = UserData();
-
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
 
+    //USER
+    const { name } = useSelector(state => state.login)
+    console.log(name);
+    const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+    React.useEffect(() => {
+        const auth = getAuth();
+        onAuthStateChanged(auth, (name) => {
+            if (name?.uid) {
+                setIsLoggedIn(true);
+            } else {
+                setIsLoggedIn(false);
+            }
+        });
+    }, [setIsLoggedIn]);
+
+    
+    //LOGOUT
     const handleLogout = () => {
         dispatch(logout())
         navigate("/login")
     }
-
+    
     return (
         <ContainerPrincipal>
           
@@ -38,17 +53,18 @@ const NavBar = () => {
 
             <Link to="/login" className="links">
                 <ContainerAcount>
-                    <TextPequenio>
-                        Hola, {
-                              useUser.name!==undefined?useUser.name:" identifícate"
-                              }
-                    </TextPequenio>
-
-                    <TextNegrita onClick={() => handleLogout()}>
-                        {
-                            useUser.name!==undefined?"Logout":" Listas y cuentas"
-                        }
-                    </TextNegrita>
+                    { isLoggedIn ? (
+                        <div>
+                            <TextPequenio>
+                                Hola, {name}
+                            </TextPequenio>
+                            <TextNegrita onClick={() => handleLogout()}>Logout</TextNegrita>
+                        </div>
+                    ) : (
+                           <TextPequenio>
+                            Hola, Identifícate
+                           </TextPequenio> 
+                    )}
                 </ContainerAcount>
             </Link>
 
@@ -60,10 +76,13 @@ const NavBar = () => {
                 </ContainerDevolucion>
             </Link>
 
-            <Link to="car" className="links">
+            <Link to="/car" className="links">
                 <ContainerCar>
                     <BtnCar>
-                        <ShoppingCartOutlinedIcon />
+                        <div>
+                            <ShoppingCartOutlinedIcon />
+                            <BadgeI><strong>0</strong></BadgeI>
+                        </div>
                         <LinksMenu>Carrito</LinksMenu>
                     </BtnCar>
                 </ContainerCar>

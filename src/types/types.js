@@ -10,6 +10,7 @@ export const typesProducts = {
     delete: 'Delete',
     search: 'Search',
     detail: 'Detail',
+    categories: 'Categories',
     category: 'Category',
     update: 'Update'
 }

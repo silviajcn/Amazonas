@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Button, Form, FormControl} from "react-bootstrap";
+import { Badge } from '@mui/material';
 
 export const ContainerPrincipal = styled.div`
   width: 100%;
@@ -25,9 +26,12 @@ export const LogoContainer = styled.div`
 export const ImgLogo = styled.img`
   width: 110px;
   height: auto;
-  @media screen and (max-width: 850px) {
-    margin-bottom: 0px;
-    width: 120px;
+  border: 1px solid #131921;
+  border-radius: 2px;
+  padding: 3px;
+  &:hover {
+    border: 1px solid #fff;
+    cursor: pointer;
   }
 `
 
@@ -202,7 +206,7 @@ export const BtnCar = styled.button`
   background: none;
   svg {
       fill: #fff;
-      font-size: 40px;
+      font-size: 45px;
     }
 `
 
@@ -210,6 +214,21 @@ export const LinksMenu = styled.p`
   font-size: 15px;
   font-weight: 700;
   color: #fff;
-  margin-right: 5px;
   margin-top: 30px;
+`
+
+export const BadgeI = styled(Badge)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  background: #F0AD64;
+  border-radius: 100%;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  margin-left: -18px;
+  margin-bottom: 30px;
+  font-size: 12px;
+  font-weight: bold;
 `

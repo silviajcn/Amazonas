@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 import { RiShoppingCartLine, RiPlayFill } from "react-icons/ri";
-import { ContainerPrincipal, ContainerBack, PBack, Containers, ContainerOne, ImgsProduct, ContainerTwo, ContainerThree, DivOne, NameProduct, MarcaProduct, DivTwo, PriceInfo, PriceProduct, Price, Envio, LinksBlue, PagoInfo, PagoCuotas, TitleCaracteristicas, Caracteristicas, ContainerFour, ImgProduct, Buttons, BtnOne, BtnTwo, ContainerIcon, Transaccion, PlusContainer, ContainerBanner, ImgBanner } from '../styles/ProductDetails.elements';
+import { ContainerPrincipal, ContainerBack, PBack, Containers, ContainerOne, ImgsProduct, ContainerTwo, ContainerThree, DivOne, NameProduct, MarcaProduct, DivTwo, PriceInfo, PriceProduct, Price, Delivery, LinksBlue, PagoInfo, PagoCuotas, TitleCaracteristicas, Caracteristicas, ContainerFour, ImgProduct, Buttons, BtnOne, BtnTwo, ContainerIcon, Transaccion, PlusContainer, ContainerBanner, ImgBanner } from '../styles/ProductDetails.elements';
 import { RiArrowLeftSLine } from "react-icons/ri";
 import ReactImageMagnify from 'react-image-magnify';
 import { showDetailProductAsync } from '../actions/actionProducts';
 
 const ProductDetails = () => {
 
-    // show detail redux
+    //Show Detail Redux
     const dispatch = useDispatch();
 
     const { products } = useSelector((store) => store.products);
@@ -19,14 +19,26 @@ const ProductDetails = () => {
         dispatch(showDetailProductAsync())
     }, []);
 
-    // cambio de imagenes
+    //Image Exchange
     const [imagen, setImagen] = useState();
     const cambiarImagen =(element) => {
         setImagen(element)
     }
 
+    //Delivery Date
+    const today = new Date();
+    function deliveryDate(date, format,days) {
+        const map = {
+            dd: date.getDate() + days,
+            mm: date.getMonth() + 1,
+            yy: date.getFullYear().toString().slice(-2),
+            yyyy: date.getFullYear()
+        }
+        return format.replace(/dd|mm|yy|yyy/gi, matched => map[matched])
+    }
 
-    // show detail localstorage
+
+    //Show Detail LocalStorage
     // let productCode = localStorage.getItem('codeProduct');
     // const artSelected = (codeproduct) => {
     //     return products.find(ele=> ele.codeproduct === codeproduct)
@@ -103,8 +115,8 @@ const ProductDetails = () => {
                         <DivTwo>
                             <PriceInfo>
                                 <PriceProduct>Precio:</PriceProduct>
-                                <Price><strong>${e.priceproduct}</strong></Price>
-                                <Envio><strong>Envío GRATIS.</strong></Envio>
+                                <Price><strong>${e.priceproduct}</strong>.00</Price>
+                                <Delivery><strong>Envío GRATIS.</strong></Delivery>
                                 <LinksBlue><strong>Detalles</strong></LinksBlue>
                             </PriceInfo>
 
@@ -135,16 +147,16 @@ const ProductDetails = () => {
                 </ContainerThree>
 
                 <ContainerFour>
-                    <Price><strong>${e.priceproduct}</strong></Price>
+                    <Price><strong>${e.priceproduct}.00</strong></Price>
 
                     <PriceInfo>
-                        <Envio><strong>Envío GRATIS.</strong></Envio>
+                        <Delivery><strong>Envío GRATIS.</strong></Delivery>
                         <LinksBlue><strong>Detalles</strong></LinksBlue>
                     </PriceInfo>
 
                     <PriceInfo>
                         <Caracteristicas>Llega:</Caracteristicas>
-                        <Envio><strong>dic 15 - 28</strong></Envio>
+                        <Delivery><strong>entre el {deliveryDate(today, 'dd/mm/yy',5)} y el {deliveryDate(today, 'dd/mm/yy',10)}</strong></Delivery>
                     </PriceInfo>
 
                     <Buttons>

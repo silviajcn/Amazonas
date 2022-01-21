@@ -38,7 +38,7 @@ export const productsReducer = (state = initialState, action) => {
 
         case typesProducts.category:
             return {
-                products: action.payload
+                products: state.products.filter((prod) => prod.categoryproduct === action.payload)
             }
     
         default:
@@ -47,3 +47,4 @@ export const productsReducer = (state = initialState, action) => {
 }
 
 
+// 

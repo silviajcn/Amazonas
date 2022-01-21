@@ -42,14 +42,8 @@ export const ImgsProduct = styled.img`
   margin-bottom: 6px;
 `
 
-export const ContainerThree = styled.div`
-  width: 423px;
-  height: auto;
-  margin-right: 10px;
-`
-
 export const ImgProduct = styled.div`
-  width: 550px;
+  width: 480px;
   height: 500px;
 `
 
@@ -57,8 +51,15 @@ export const ContainerTwo = styled.div`
   margin-right: 10px;
 `
 
+export const ContainerThree = styled.div`
+  width: 463px;
+  height: auto;
+  margin-right: 10px;
+  margin-left: 20px;
+`
+
 export const DivOne = styled.div`
-  width: 415px;
+  width: 450px;
   border-bottom: 1px solid #D3DEDC;
 `
 
@@ -77,7 +78,7 @@ export const MarcaProduct = styled.p`
 `
 
 export const DivTwo = styled.div`
-  width: 415px;
+  width: 450px;
   border-bottom: 1px solid #D3DEDC;
   margin-top: 20px;
 `
@@ -86,7 +87,7 @@ export const PriceInfo = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: start;
-  align-items: center;
+  align-items: start;
 `
 
 export const PlusContainer = styled.div`
@@ -115,7 +116,7 @@ export const Price = styled.h4`
   margin-right: 10px;
 `
 
-export const Envio = styled.p`
+export const Delivery = styled.p`
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -173,7 +174,7 @@ export const Caracteristicas = styled.p`
 `
 
 export const ContainerFour = styled.div`
-  width: 200px;
+  width: 240px;
   height: auto;
   border: 1px solid #D3DEDC;
   border-radius: 3px;

@@ -52,7 +52,7 @@ const AllProducts = () => {
 
                                 <ContainerTres>
                                     <PUno>US$</PUno>
-                                    <PDos><strong>{e.priceproduct}</strong></PDos>
+                                    <PDos><strong>{e.priceproduct}.00</strong></PDos>
                                 </ContainerTres>
 
                                 <ContainerTres>

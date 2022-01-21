@@ -5,11 +5,11 @@ import { db } from '../firebase/firebaseConfig';
 //CATEGORIES PRODUCTS ---------------------------------------------
 
 //Action CATEGORY Product Async
-export const categoryProductAsync = (product) => {
+export const categoryProductAsync = (category) => {
 
     return async (dispatch) => {
         const prodCollections = collection(db, "productos");
-        const q = query(prodCollections, where("categoryproduct", "==", product))
+        const q = query(prodCollections, where("categoryproduct", "==", category))
         const datos = await getDocs(q);
         //console.log(datos);
 
@@ -23,12 +23,51 @@ export const categoryProductAsync = (product) => {
 }
 
 //Action Category Product Sync
-export const categoryProductSync = (product) => {
+export const categoryProductSync = (category) => {
     return {
         type: typesProducts.category,
-        payload: product
+        payload: category
     }
 }
+
+
+
+
+//LIST CATEGORIES ---------------------------------------------
+
+//Action List CATEGORIES Async
+ export const listCategoriesAsync = () => {
+     return async (dispatch) => {
+
+         const querySnapshot = await getDocs(collection(db, "categories"));
+         //console.log(querySnapshot);
+
+         const categories = [];
+         querySnapshot.forEach((doc) => {
+            //console.log(doc);
+            //console.log(doc.data());
+             categories.push({
+                 ...doc.data()
+             })
+         });
+         //console.log(productos);
+         dispatch(listCategoriesSync(categories));
+     }
+ }
+
+
+//Action List Product Sync
+export const listCategoriesSync = (categories) => {
+    return {
+        type: typesProducts.categories,
+        payload: categories
+    }
+}
+
+
+
+
+
 
 //SEARCH PRODUCT ---------------------------------------------
 

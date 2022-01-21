@@ -48,7 +48,7 @@ export const loginFacebook = () => {
         const auth = getAuth();
         signInWithPopup(auth,facebook)
             .then(({ user }) => {
-                console.log(user);
+                //console.log(user);
                 dispatch(loginSync(user.uid,user.displayName))
         })
             .catch(e => {
@@ -63,7 +63,7 @@ export const loginGoogle = () => {
         const auth = getAuth();
         signInWithPopup(auth, google)
             .then(({ user }) => {
-                console.log(user);
+                //console.log(user);
                 dispatch(loginSync(user.uid,user.displayName))
         })
             .catch(e => {

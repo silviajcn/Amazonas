@@ -1,8 +1,21 @@
 import React, { useEffect } from 'react';
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+import { listCategoriesAsync, categoryProductAsync } from '../actions/actionProducts';
 import { ContainerPrincipal, Containers, ImgProduct, LinksBlue, TitleProduct } from '../styles/Categories.elements';
 
 const Categories = () => {
+
+    let history = useNavigate();
+
+    const dispatch = useDispatch();
+
+    const { categories } = useSelector((store) => store.categories);
+    console.log(categories)
+
+    useEffect(() => {
+        dispatch(listCategoriesAsync());
+    }, []);
 
     return (
         <ContainerPrincipal>
@@ -30,7 +43,28 @@ const Categories = () => {
                 </Link>
             </Containers>
 
-            <Containers>
+            <>
+                {
+                    categories.map((e, i) => (
+                        <div key={i}>
+                            <Containers id={e.id}>
+                                <TitleProduct>{e.title}</TitleProduct>
+                                <ImgProduct src={e.image} alt="..." />
+                                <LinksBlue
+                                    onClick={() => {
+                                        dispatch(categoryProductAsync(e.id))
+                                        history("/category")
+                                    }}
+                                >
+                                    Comprar ahora
+                                </LinksBlue>
+                            </Containers>
+                        </div>
+                    ))
+               }
+            </>
+
+            {/* <Containers>
                 <TitleProduct>Camaras</TitleProduct>
                 <ImgProduct src="https://res.cloudinary.com/silviajcn/image/upload/v1642372375/SPRING-3/categories/camaras_ojsv1p.jpg" alt="..." />
                 <LinksBlue>Comprar ahora</LinksBlue>
@@ -64,7 +98,7 @@ const Categories = () => {
                 <TitleProduct>Accesorios</TitleProduct>
                 <ImgProduct src="https://res.cloudinary.com/silviajcn/image/upload/v1642090444/SPRING-3/categories/img7_c3oayc.png" alt="..." />
                 <LinksBlue>Comprar ahora</LinksBlue>
-            </Containers>
+            </Containers> */}
         </ContainerPrincipal>
     )
 }

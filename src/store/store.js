@@ -6,6 +6,7 @@ import { productsReducer } from '../reducers/productsReducer';
 //import { comentsReducer } from '../reducers/comentsReducer';
 import { comReducer } from '../reducers/comReducer';
 import { carReducer } from '../reducers/carReducer';
+import { categoriesReducer } from '../reducers/categoriesReducer';
 
 //Redux Devtools
 const composeEnhancers = (typeof window !== 'undefined' && 
@@ -16,7 +17,8 @@ const reducers = combineReducers({
     register: registerReducer,
     products: productsReducer,
     car: carReducer,
-    coments: comReducer
+    coments: comReducer,
+    categories: categoriesReducer
 })
 
 export const store = createStore(
