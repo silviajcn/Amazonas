@@ -33,6 +33,7 @@ const AllProducts = () => {
             {
                 products.map((e, i) => (
                     <ContainerPrincipal key={i}>
+                        <Link to={"/details/" + e.codeproduct} className="links">
                         <BtnShowDetail
                             // onClick={() => {
                             //     localStorage.setItem('codeProduct', e.codeproduct)
@@ -41,7 +42,7 @@ const AllProducts = () => {
                             
                             onClick={() => {
                                 dispatch(showDetailProductAsync(e.codeproduct))
-                                history("/details")
+                                //history("/details")
                             }}
                         >
 
@@ -71,6 +72,7 @@ const AllProducts = () => {
                                 </ContainerTres>
                             </ContainerSecond>
                         </BtnShowDetail>
+                        </Link>
                     </ContainerPrincipal>
                 ))
             }

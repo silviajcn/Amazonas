@@ -135,8 +135,8 @@ export const ContainerBtnsItems = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: start;
-  width: 340px;
+  align-items: end;
+  width: 600px;
 `
 
 export const BtnAgregarMas = styled.button`
@@ -188,7 +188,7 @@ export const ContainerSubtotal = styled.div`
   margin: 0px 5px 20px 5px;
   border-bottom: 2px solid #D3DEDC;
   width: 250px;
-  height: 300px;
+  height: 250px;
   background: #fff;
 `
 
@@ -214,4 +214,17 @@ export const ContainerEnvioGratis = styled.div`
 
 export const EnvioGratisP = styled.p`
   margin-left: 10px;
+`
+
+export const BtnComprar = styled.button`
+  margin: 30px 0px 0px 20px;
+  border: 1px solid #000000;
+  background: #F0AD64;
+  border-radius: 3px;
+  padding: 3px 40px;
+`
+
+export const ImgLogo = styled.img`
+  width: 150px;
+  margin: 80px 40px 80px 50px;
 `

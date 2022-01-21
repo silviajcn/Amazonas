@@ -1,33 +1,38 @@
-import { typesComents } from '../types/types';
+import { typesCom} from "../types/types";
 
 const initialState = {
-    coments: []
+    coments: [],
+    updateItem: {
+        nameuser: '',
+        emailuser: '',
+        title: '',
+        opinion: '',
+    }
 }
 
 export const comentsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case typesComents.register:
+        case typesCom.register:
             return {
                 coments: [action.payload]
             }
-        
-        case typesComents.list:
+        case typesCom.list:
             return {
                 coments: [...action.payload]
             }
-        
-        case typesComents.update:
+        case typesCom.update:
             return {
                 ...state,
-                coments: action.payload
+                updateItem: action.payload
             }
-        
-        case typesComents.delete:
+        case typesCom.delete:
             return {
+                ...state,
                 coments: state.coments.filter(com => com.emailuser !== action.payload)
             }
-    
+
         default:
-            return state;
+            return state
+
     }
 }

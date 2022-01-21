@@ -11,7 +11,7 @@ const Category = () => {
     const dispatch = useDispatch();
 
     const { products } = useSelector((store) => store.products);
-    console.log(products)
+    //console.log(products)
 
     useEffect(() => {
         dispatch(categoryProductSync());

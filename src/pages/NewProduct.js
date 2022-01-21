@@ -5,7 +5,7 @@ import { fileUpload } from '../helpers/FileUpload';
 import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 import { registerProductAsync } from '../actions/actionProducts';
-import { FirstContainerForm, ContainerTitle, ContainerForm, ContainerBtnImgs, BtnImgs, Textarea, DataProduct, BtnAddProduct, FinishStep, LogoAmazonas } from '../styles/NewProducts.elements';
+import { FirstContainerForm, ContainerTitle, ContainerForm, ContainerBtnImgs, BtnImgs, Textarea, DataProduct, BtnAddProduct, FinishStep, LogoAmazonas, ContainerSeeList } from '../styles/NewProducts.elements';
 
 // Material UI-------------------
 import Box from '@mui/material/Box';
@@ -403,9 +403,9 @@ const NewProduct = () => {
                 <p><strong>Completaste todos los pasos, ¡estas listo para vender tus productos en Amazonas!</strong></p>
                 <LogoAmazonas src="https://res.cloudinary.com/silviajcn/image/upload/v1641583841/SPRING-3/logo-footer_zysgvs.png" alt="logo" />
                 <Link to="/list" className="links-two">
-                    <div>
+                    <ContainerSeeList>
                         <h3>Ver productos agregados</h3>
-                    </div>
+                    </ContainerSeeList>
                 </Link>
             </FinishStep>
             

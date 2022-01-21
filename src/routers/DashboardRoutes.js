@@ -16,7 +16,7 @@ export const DashboardRoutes = () => {
             <Routes>
                 <Route path='/registerp' element={<NewProduct />} />
                 <Route path='/list' element={<ListProducts />} />
-                <Route path='/details' element={<ProductPage />} />
+                <Route path='/details/:codeproduct' element={<ProductPage />} />
                 <Route path='/searching' element={<Searching />} />
                 <Route path='/category' element={<Category />} />
                 <Route path='/carrito' element={<Carrito />} />

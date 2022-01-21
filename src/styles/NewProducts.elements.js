@@ -76,10 +76,16 @@ export const BtnAddProduct = styled.input`
 export const FinishStep = styled.div`
   margin-top: 80px;
   margin-bottom: 100px;
-  margin-left: 300px;
+  margin-left: 320px;
 `
 
 export const LogoAmazonas = styled.img`
   width: 200px;
-  margin-left: 200px;
+  margin-left: 210px;
+  margin-top: 20px;
+`
+
+export const ContainerSeeList = styled.div`
+  margin-top: 40px;
+  margin-left: 150px;
 `

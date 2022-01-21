@@ -10,13 +10,13 @@ export function cartReducer(state = initialState, action) {
             let newItem = action.payload
             //console.log(newItem);
 
-            let itemInCart = state.cart.find((item) => item.id === newItem.id);
+            let itemInCart = state.cart.find((item) => item.codeproduct === newItem.codeproduct);
 
            return itemInCart
            ? {
                 ...state,
                 cart: state.cart.map((item) =>
-                item.id === newItem.id
+                item.codeproduct === newItem.codeproduct
                 ? { ...item, quantity: item.quantity + 1 }
                 : item
                 ),
@@ -31,27 +31,27 @@ export function cartReducer(state = initialState, action) {
         
         case typesCart.removeone: {
 
-            let itemToDelete = state.cart.find((item) => item.id === action.payload);
+            let itemToDelete = state.cart.find((item) => item.codeproduct === action.payload);
 
             return itemToDelete.quantity > 1
                 ? {
                     ...state,
                     cart: state.cart.map((item) =>
-                    item.id === action.payload
+                    item.codeproduct === action.payload
                 ? { ...item, quantity: item.quantity - 1 }
                 :    item
                     ),
                   }
                 : {
                     ...state,
-                    cart: state.cart.filter((item) => item.id !== action.payload),
+                    cart: state.cart.filter((item) => item.codeproduct !== action.payload),
                   };
         }
         
         case typesCart.removeall: {
             return {
                 ...state,
-                cart: state.cart.filter((item) => item.id !== action.payload),
+                cart: state.cart.filter((item) => item.codeproduct !== action.payload),
             };
         }
         

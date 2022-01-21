@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 import { deleteCartSync, clearCartSync, addCartSync } from '../actions/actionAddCart';
-import { ContainerBack, PBack, ContainerPrincipal, ContainerSecond, ContainerCar, ContainerSubtotal, ContainerTitulo, ContainerTitleCart, RemoveAllLink, MarginTitlePrice, ContainerProductInCart, BtnShowDetail, ContainerImgProduct, ImgProduct, ContainerSecondary, TitleProduct, ContainerTres, PUno, PDos, BtnAgregarMas, ContainerBtnMas, ContainerBtn, ContainerEnvioGratis, TitleSubTotal, EnvioGratisP, ContainerBtnsItems } from '../styles/Cart.elements';
+import { ContainerBack, PBack, ContainerPrincipal, ContainerSecond, ContainerCar, ContainerSubtotal, ContainerTitulo, ContainerTitleCart, RemoveAllLink, MarginTitlePrice, ContainerProductInCart, BtnShowDetail, ContainerImgProduct, ImgProduct, ContainerSecondary, TitleProduct, ContainerTres, PUno, PDos, BtnAgregarMas, ContainerBtnMas, ContainerBtn, ContainerEnvioGratis, TitleSubTotal, EnvioGratisP, BtnComprar, ContainerBtnsItems, ImgLogo } from '../styles/Cart.elements';
 import { RiArrowLeftSLine } from "react-icons/ri";
 import { FaCheckCircle, FaPlus, FaMinus, FaTimes } from "react-icons/fa";
 
@@ -60,7 +60,7 @@ const Carrito = () => {
 
                 {
                     cart.map((prod) => (
-                        <ContainerProductInCart key={prod.id}>
+                        <ContainerProductInCart key={prod.codeproduct}>
                             <BtnShowDetail>
                                 <ContainerImgProduct>
                                     <ImgProduct src={prod.oneimage} alt="producto" />
@@ -77,7 +77,7 @@ const Carrito = () => {
                                     </ContainerTres>
 
                                     <ContainerBtnsItems>
-                                    {
+                                    {/* {
                                         products.map((e, i) => (
                                             <ContainerTres key={i}>
                                                 <BtnAgregarMas onClick={() =>
@@ -88,17 +88,21 @@ const Carrito = () => {
                                                 </BtnAgregarMas>
                                             </ContainerTres>
                                         ))
-                                    }
+                                    } */}
+
+                                    
+                                    <p>Precio por cantidad: {prod.priceproduct} x {prod.quantity} = <strong>{prod.priceproduct * prod.quantity }</strong>.00 $</p>
+                                    
 
                                     <ContainerTres>
-                                            <BtnAgregarMas onClick={() => dispatch(deleteCartSync(prod.id))}>
+                                            <BtnAgregarMas onClick={() => dispatch(deleteCartSync(prod.codeproduct))}>
                                             <ContainerBtnMas><FaMinus /></ContainerBtnMas>
                                             Disminuir cantidad
                                         </BtnAgregarMas>
                                     </ContainerTres>
 
                                     <ContainerTres>
-                                        <BtnAgregarMas onClick={()=> dispatch(deleteCartSync(prod.id, true))}>
+                                        <BtnAgregarMas onClick={()=> dispatch(deleteCartSync(prod.codeproduct, true))}>
                                             <ContainerBtnMas><FaTimes /></ContainerBtnMas>
                                             Eliminar
                                         </BtnAgregarMas>
@@ -119,14 +123,23 @@ const Carrito = () => {
                 }
                 </ContainerCar>  
                 
-                <ContainerSubtotal>
-                    <ContainerEnvioGratis>
-                        <FaCheckCircle />
-                        <EnvioGratisP><strong>¡Tu pedido es elegible para envío GRATIS!</strong></EnvioGratisP>
-                    </ContainerEnvioGratis>
+                {cart.length === 0 ?
+                    <ContainerSubtotal>
+                        <ImgLogo src="https://res.cloudinary.com/silviajcn/image/upload/v1641583841/SPRING-3/logo-footer_zysgvs.png" alt="logo" />
+                    </ContainerSubtotal>
+                        :
+                    <ContainerSubtotal>
+                        <ContainerEnvioGratis>
+                            <FaCheckCircle />
+                            <EnvioGratisP><strong>¡Tu pedido es elegible para envío GRATIS!</strong></EnvioGratisP>
+                        </ContainerEnvioGratis>
 
-                    <TitleSubTotal>Subtotal ({totalItems()} producto(s)): <strong>{totalPrice()}.00</strong> $</TitleSubTotal>
-                </ContainerSubtotal>
+                        <TitleSubTotal>Subtotal ({totalItems()} producto(s)): <strong>{totalPrice()}.00</strong> $</TitleSubTotal>
+
+                        <BtnComprar>Proceder al pago</BtnComprar>
+                    </ContainerSubtotal>
+                }
+                
                 </ContainerSecond>
         </ContainerPrincipal>
     )

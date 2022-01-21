@@ -170,7 +170,6 @@ const ProductDetails = () => {
 
                     <Buttons>
                         <BtnOne
-                           id={e.codeproduct}
                            type="button"
                            onClick={() => 
                                 dispatch(addCartSync(e))

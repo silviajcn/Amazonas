@@ -35,7 +35,7 @@ const CarouselTwo = () => {
                                 onClick={() => {
                                 dispatch(showDetailProductAsync(e.codeproduct))
                                 localStorage.setItem('codeProduct', e.codeproduct)
-                                 history("/details")
+                                history("/details/" + e.codeproduct)
                              }}
                             >
                                 <ImgCarouselTwo src={e.oneimage} alt="products" />

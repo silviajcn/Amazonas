@@ -10,10 +10,10 @@ export const addCartSync = (item) => {
 }
 
 //Action CREATE Product Sync
-export const deleteCartSync = (id, all = false) =>
+export const deleteCartSync = (codeproduct, all = false) =>
     all
-        ? { type: typesCart.removeall, payload: id }  
-        : { type: typesCart.removeone, payload: id };
+        ? { type: typesCart.removeall, payload: codeproduct }  
+        : { type: typesCart.removeone, payload: codeproduct };
     
 ////Action DELETE Product Sync
 export const clearCartSync = () => {
