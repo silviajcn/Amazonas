@@ -22,7 +22,7 @@ const SearchWords = () => {
         }),
         onSubmit: ({ search }) => {
             dispatch(searchProductAsync(search))
-            console.log(search);
+            //console.log(search);
         }
     })
 

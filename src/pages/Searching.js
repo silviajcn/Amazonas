@@ -13,7 +13,7 @@ const Searching = () => {
     const dispatch = useDispatch();
 
     const { products } = useSelector((store) => store.products);
-    console.log(products)
+    //console.log(products)
 
     useEffect(() => {
         dispatch(categoryProductAsync());
@@ -33,6 +33,7 @@ const Searching = () => {
             {
                 products.map((e, i) => (
                     <ContainerPrincipal key={i}>
+                        
                         <BtnShowDetail
                             // onClick={() => {
                             //     localStorage.setItem('codeProduct', e.codeproduct)
@@ -42,7 +43,7 @@ const Searching = () => {
                             onClick={() => {
                                 dispatch(showDetailProductAsync(e.codeproduct))
                                 localStorage.setItem('codeProduct', e.codeproduct)
-                                 history("/details")
+                                 history("/details/" + e.codeproduct)
                             }}
                         >
                             <ContainerImg>

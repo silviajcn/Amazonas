@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from "react-router-dom";
-import { categoryProductSync } from '../actions/actionProducts';
+import { Link,  useNavigate } from "react-router-dom";
+import { categoryProductAsync, showDetailProductAsync } from '../actions/actionProducts';
 import { ContainerPrincipal, BtnShowDetail, ContainerImg, ImgProduct, ContainerSecond, TitleProduct, ContainerTres, PUno, PDos } from '../styles/AllProducts.elements';
 import { ContainerBack, PBack } from '../styles/ProductDetails.elements';
 import { RiArrowLeftSLine } from "react-icons/ri";
@@ -10,11 +10,13 @@ const Category = () => {
 
     const dispatch = useDispatch();
 
+    let history = useNavigate();
+
     const { products } = useSelector((store) => store.products);
     //console.log(products)
 
     useEffect(() => {
-        dispatch(categoryProductSync());
+        dispatch(categoryProductAsync());
     }, []);
 
     return (
@@ -31,7 +33,13 @@ const Category = () => {
             {
                 products.map((e, i) => (
                     <ContainerPrincipal key={i}>
-                        <BtnShowDetail>
+                        <BtnShowDetail
+                            onClick={() => {
+                                dispatch(showDetailProductAsync(e.codeproduct))
+                                localStorage.setItem('codeProduct', e.codeproduct)
+                                history("/details/" + e.codeproduct)
+                            }}
+                        >
                             <ContainerImg>
                                 <ImgProduct src={e.oneimage} alt="producto" />
                             </ContainerImg>

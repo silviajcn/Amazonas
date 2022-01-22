@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 import UserData from '../hooks/dataUser';
-import { Container, Wrapper, Menu, MenuIdentification, ContainerIconIdent, Identification, MenuItem, MenuItemLink, MobileIcon, SubTitles, Items, ContainerLinks, LinksMenu } from "../styles/NavBarTwo.elements";
+import { useSelector, useDispatch } from 'react-redux';
+import { Link, useNavigate } from "react-router-dom";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { listCategoriesAsync, searchProductAsync } from '../actions/actionProducts';
+import { Container, Wrapper, Menu, MenuIdentification, ContainerIconIdent, Identification, MenuItem, MenuItemLink, MobileIcon, SubTitles, ContainerItemsCat, Items, ContainerLinks, LinksMenu } from "../styles/NavBarTwo.elements";
 import '../styles/index.css';
 import { FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
 import { IconContext } from "react-icons";
@@ -11,6 +14,33 @@ const NavBarTwo = () => {
     const [showMobileMenu, setShowMobileMenu] = useState(false);
 
     const useUser = UserData();
+
+    let history = useNavigate();
+
+    const dispatch = useDispatch();
+
+    const { categories } = useSelector((store) => store.categories);
+    //console.log(categories)
+
+    useEffect(() => {
+        dispatch(listCategoriesAsync());
+    }, []);
+
+    //USER
+    const { name } = useSelector(state => state.login)
+    //console.log(name);
+    const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+    React.useEffect(() => {
+        const auth = getAuth();
+        onAuthStateChanged(auth, (name) => {
+            if (name?.uid) {
+                setIsLoggedIn(true);
+            } else {
+                setIsLoggedIn(false);
+            }
+        });
+    }, [setIsLoggedIn]);
+
 
     return (
         <Container>
@@ -28,11 +58,20 @@ const NavBarTwo = () => {
                                     <FaUserCircle />
                             </ContainerIconIdent>
                             
-                            <Identification>
+                            { isLoggedIn ? (
+                                <Identification>
+                                    Hola, {name}
+                                </Identification>
+                            ) : (
+                                <Identification>
+                                    Hola, Identifícate
+                                </Identification> 
+                            )}
+                            {/* <Identification>
                                 Hola, {
                                         useUser.name!==undefined?useUser.name:" identifícate"
                                       }
-                            </Identification>
+                            </Identification> */}
                         </MenuIdentification>
 
                         <MenuItem>
@@ -51,15 +90,32 @@ const NavBarTwo = () => {
                         
                         <MenuItem>
                             <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                                <div>
+                                <SubTitles><strong>Categorias</strong></SubTitles>
+                                <>
+                                    {
+                                        categories.map((e, i) => (
+                                            <ContainerItemsCat key={i}>
+                                                <Items
+                                                    onClick={() => {
+                                                        dispatch(searchProductAsync(e.id))
+                                                        history("/category")
+                                                    }}
+                                                >
+                                                    {e.title}
+                                                </Items>
+                                            </ContainerItemsCat>
+                                        ))
+                                    }
+                                </>
+                                {/* <div>
                                     <SubTitles><strong>Buscar Por Categoría</strong></SubTitles>
-                                    <Items>Computadoras</Items>
+                                    
                                     <Items>Celulares</Items>
                                     <Items>Camaras</Items>
                                     <Items>Tablets</Items>
                                     <Items>Audifonos</Items>
                                     <Items>Accesorios</Items>
-                                </div>
+                                </div> */}
                             </MenuItemLink>
                         </MenuItem>
 

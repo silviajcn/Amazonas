@@ -17,7 +17,7 @@ export const categoryProductAsync = (category) => {
         datos.forEach((doc) => {
             producto.push(doc.data())
         })
-        console.log(producto);
+        //console.log(producto);
         dispatch(categoryProductSync(producto))
     }
 }

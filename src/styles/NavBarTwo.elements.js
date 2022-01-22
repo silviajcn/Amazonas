@@ -4,6 +4,10 @@ export const Container = styled.div`
   width: 100%;
   height: 40px;
   background-color: #242F3E;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
 `
 
 export const Wrapper = styled.div`
@@ -71,10 +75,11 @@ export const MenuItem = styled.li`
 `
 
 export const MenuItemLink = styled.div`
-  width: 100%;
+  width: 200px;
   display: flex;
+  flex-direction: column;
   justify-content: start;
-  align-items: center;
+  align-items: start;
   color: #000000;
   font-size: 15px;
   font-weight: bold;
@@ -85,20 +90,28 @@ export const MenuItemLink = styled.div`
 export const SubTitles = styled.h4`
   width: 100%;
   color: #000000;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 900;
   text-decoration: none;
   padding: 2px;
 `
 
-export const Items = styled.p`
-  margin: 0px;
+export const ContainerItemsCat = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 200px;
+`
+
+export const Items = styled.div`
+  margin-top: 6px;
   width: 100%;
   color: #000000;
   font-size: 12px;
   font-weight: bold;
   text-decoration: none;
-  padding: 2px;
+  padding: 4px;
   cursor: pointer;
   transition: 0.5s all ease;
   &:hover {
