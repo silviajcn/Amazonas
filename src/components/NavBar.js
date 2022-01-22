@@ -80,9 +80,9 @@ const NavBar = () => {
 
             <Link to="/login" className="links">
                 <ContainerDevolucion>
-                    <TextEnviar>Devoluciones</TextEnviar>
+                    <TextEnviar>Amazonas</TextEnviar>
 
-                    <Location>y Pedidos</Location>
+                    <Location>Ventas</Location>
                 </ContainerDevolucion>
             </Link>
 

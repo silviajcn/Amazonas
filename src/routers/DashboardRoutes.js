@@ -7,6 +7,7 @@ import ProductPage from '../pages/ProductPage';
 import NewProduct from '../pages/NewProduct';
 import Searching from '../pages/Searching';
 import Carrito from '../pages/Carrito';
+import Checkout from '../pages/Checkout';
 import Category from '../pages/Category';
 
 export const DashboardRoutes = () => {
@@ -20,6 +21,7 @@ export const DashboardRoutes = () => {
                 <Route path='/searching' element={<Searching />} />
                 <Route path='/category' element={<Category />} />
                 <Route path='/carrito' element={<Carrito />} />
+                <Route path="/pay" element={<Checkout />} />
                 <Route path='*' element={<Navigate to="/" />} />
             </Routes>
 

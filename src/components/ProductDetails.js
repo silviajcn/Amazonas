@@ -181,15 +181,20 @@ const ProductDetails = () => {
                             <strong>Agregar al Carrito</strong>
                         </BtnOne>
 
-                        <BtnTwo
-                            id={e.codeproduct}
-                            type="button"
-                        >
-                            <ContainerIcon>
-                                <RiPlayFill />
-                            </ContainerIcon>
-                            <strong>Comprar ahora</strong>
-                        </BtnTwo>
+                        <Link to="/pay" className="links">
+                            <BtnTwo
+                                type="button"
+                                onClick={() => 
+                                    dispatch(addCartSync(e))
+                                }
+                            >
+                                <ContainerIcon>
+                                    <RiPlayFill />
+                                </ContainerIcon>
+                                <strong>Comprar ahora</strong>
+                            </BtnTwo>
+                        </Link>
+                        
                     </Buttons>
 
                     <Transaccion><strong>Transacción segura</strong></Transaccion>

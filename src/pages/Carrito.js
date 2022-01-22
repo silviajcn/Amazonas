@@ -136,7 +136,9 @@ const Carrito = () => {
 
                         <TitleSubTotal>Subtotal ({totalItems()} producto(s)): <strong>{totalPrice()}.00</strong> $</TitleSubTotal>
 
-                        <BtnComprar>Proceder al pago</BtnComprar>
+                        <Link to="/pay" className="links">
+                            <BtnComprar>Proceder al pago</BtnComprar>
+                        </Link>
                     </ContainerSubtotal>
                 }
                 

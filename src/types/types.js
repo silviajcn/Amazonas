@@ -15,13 +15,6 @@ export const typesProducts = {
     update: 'Update'
 }
 
-export const typesComents = {
-    register: 'Register coment',
-    list: 'List',
-    delete: 'Delete coment',
-    update: 'Update coment'
-}
-
 //prueba
 export const typesCom = {
     register: 'Register coment',
@@ -36,4 +29,10 @@ export const typesCart = {
     removeone: 'Remove One',
     removeall: 'Remove All',
     clearcart: 'Clear Cart'
+}
+
+//types compras
+export const typesCompras = {
+    register: 'Register compra',
+    list: 'List compras'
 }

@@ -228,3 +228,50 @@ export const ImgLogo = styled.img`
   width: 150px;
   margin: 80px 40px 80px 50px;
 `
+
+
+
+///form agregar compra
+export const BtnAddProduct = styled.input`
+  background: #F0AD64;
+  border-radius: 4px;
+  border: 1px solid #000000;
+  padding: 10px;
+  color: #000000;
+  margin-top: 40px;
+  margin-bottom: 100px;
+
+  &:hover{
+    background: #F3D184;
+    color: #000000;
+  }
+`
+
+export const Logo = styled.img`
+  width: 100px;
+  height: auto;
+  margin-left: 170px;
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+export const Delivery = styled.p`
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333333;
+  margin-right: 10px;
+`
+
+export const BtnOne = styled.button`
+  background: #F3D184;
+  border: 0.5px solid #F0AD64;
+  border-radius: 4px;
+  width: 320px;
+  height: 32px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  text-decoration: none;
+`

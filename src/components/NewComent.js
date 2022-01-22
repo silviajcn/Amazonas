@@ -64,7 +64,7 @@ const NewComent = () => {
     }
     const handlePost = (e) => {
         e.preventDefault()
-        console.log(values)
+        //console.log(values)
         //console.log(image)
         dispatch(registerComentAsync(nameuser, emailuser, title, opinion))
         reset()
@@ -158,11 +158,11 @@ const NewComent = () => {
                                         ?
                                         <button
                                             className="btn2 btn-light"
-                                            type="submit" onClick={handlePost}>Publicar opinión <i className="fas fa-upload"></i></button>
+                                            type="submit" onClick={handlePost}>Publicar opinión</button>
                                         :
                                         <button
                                             className="btn2 btn-light"
-                                            type="submit" onClick={handlePut}>Editar Comentario <i className="fas fa-edit"></i></button>
+                                            type="submit" onClick={handlePut}>Editar Comentario</button>
 
                                 }
                             </div>
