@@ -41,7 +41,7 @@ export const listComprasAsync = () => {
                 ...doc.data()
             })
         })
-        console.log(compras);
+        //console.log(compras);
         dispatch(listComprasSync(compras))
     }
 }

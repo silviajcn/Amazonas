@@ -1,12 +1,34 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { ContainerPrincipal, ContainerTitle, Title, SecondTitle, ContainerBtns, Btns, ImgBtn, TextItems, ContainerInput, ContainerTextInput, TitleInput, InputContainer, ContainerIcon, Input } from '../styles/CustomerService.elements';
 import { RiSearchLine } from "react-icons/ri";
 
 const CustomerService = () => {
+
+    //USER
+    const { name } = useSelector(state => state.login)
+    //console.log(name);
+    const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+    React.useEffect(() => {
+        const auth = getAuth();
+        onAuthStateChanged(auth, (name) => {
+            if (name?.uid) {
+                setIsLoggedIn(true);
+            } else {
+                setIsLoggedIn(false);
+            }
+        });
+    }, [setIsLoggedIn]);
+
     return (
         <ContainerPrincipal>
             <ContainerTitle>
-                <Title>Hola. ¿Cómo podemos ayudarte?</Title>
+                { isLoggedIn ? (
+                    <Title>Hola {name}. ¿Cómo podemos ayudarte?</Title>
+                    ) : (
+                    <Title>Hola. ¿Cómo podemos ayudarte?</Title>
+                )}
             </ContainerTitle>
 
             <SecondTitle>Algunas cosas que puedes hacer aquí</SecondTitle>

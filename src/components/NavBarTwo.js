@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import UserData from '../hooks/dataUser';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -12,8 +11,6 @@ import { IconContext } from "react-icons";
 const NavBarTwo = () => {
 
     const [showMobileMenu, setShowMobileMenu] = useState(false);
-
-    const useUser = UserData();
 
     let history = useNavigate();
 
@@ -67,11 +64,6 @@ const NavBarTwo = () => {
                                     Hola, Identifícate
                                 </Identification> 
                             )}
-                            {/* <Identification>
-                                Hola, {
-                                        useUser.name!==undefined?useUser.name:" identifícate"
-                                      }
-                            </Identification> */}
                         </MenuIdentification>
 
                         <MenuItem>
@@ -107,15 +99,6 @@ const NavBarTwo = () => {
                                         ))
                                     }
                                 </>
-                                {/* <div>
-                                    <SubTitles><strong>Buscar Por Categoría</strong></SubTitles>
-                                    
-                                    <Items>Celulares</Items>
-                                    <Items>Camaras</Items>
-                                    <Items>Tablets</Items>
-                                    <Items>Audifonos</Items>
-                                    <Items>Accesorios</Items>
-                                </div> */}
                             </MenuItemLink>
                         </MenuItem>
 

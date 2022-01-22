@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { listProductsAsync, showDetailProductAsync } from '../actions/actionProducts';
 import { ContainerBack, PBack, ContainerPrincipal, BtnShowDetail, ContainerImg, ImgProduct, ContainerSecond, TitleProduct, ContainerTres, PUno, PDos, ContainerRate } from '../styles/AllProducts.elements';
 import { RiArrowLeftSLine } from "react-icons/ri";
@@ -8,8 +8,6 @@ import { FaStar } from "react-icons/fa";
 import '../styles/index.css';
 
 const AllProducts = () => {
-
-    let history = useNavigate();
 
     const dispatch = useDispatch();
 

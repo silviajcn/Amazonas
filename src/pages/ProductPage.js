@@ -10,9 +10,7 @@ const ProductPage = () => {
 
             <ProductDetails />
 
-            <div>
-                <NewComent />
-            </div>
+            <NewComent />
         </div>
     )
 }

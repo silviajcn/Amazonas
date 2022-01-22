@@ -9,6 +9,7 @@ import Searching from '../pages/Searching';
 import Carrito from '../pages/Carrito';
 import Checkout from '../pages/Checkout';
 import Category from '../pages/Category';
+import Sales from '../pages/Sales';
 
 export const DashboardRoutes = () => {
     return (
@@ -22,6 +23,7 @@ export const DashboardRoutes = () => {
                 <Route path='/category' element={<Category />} />
                 <Route path='/carrito' element={<Carrito />} />
                 <Route path="/pay" element={<Checkout />} />
+                <Route path="/sales" element={<Sales />} />
                 <Route path='*' element={<Navigate to="/" />} />
             </Routes>
 

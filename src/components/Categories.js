@@ -48,16 +48,16 @@ const Categories = () => {
                     categories.map((e, i) => (
                         <div key={i}>
                             <Containers id={e.id}>
+                                <Link to="/category" className="links">
+                                    <div onClick={() => {
+                                        dispatch(searchProductAsync(e.id))
+                                        //history("/category")
+                                    }}>
                                 <TitleProduct>{e.title}</TitleProduct>
                                 <ImgProduct src={e.image} alt="..." />
-                                <LinksBlue
-                                    onClick={() => {
-                                        dispatch(searchProductAsync(e.id))
-                                        history("/category")
-                                    }}
-                                >
-                                    Comprar ahora
-                                </LinksBlue>
+                                <LinksBlue>Comprar ahora</LinksBlue>
+                                </div>
+                                </Link>
                             </Containers>
                         </div>
                     ))

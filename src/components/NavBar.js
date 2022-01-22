@@ -78,7 +78,7 @@ const NavBar = () => {
                 </ContainerAcount>
             </Link>
 
-            <Link to="/login" className="links">
+            <Link to="/sales" className="links">
                 <ContainerDevolucion>
                     <TextEnviar>Amazonas</TextEnviar>
 
