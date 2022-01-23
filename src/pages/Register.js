@@ -10,10 +10,10 @@ const Register = () => {
     const dispatch = useDispatch();
 
     const [formValues, handleInputChange] = useForm({
-        name: 'Silvi',
-        email: 'silvi@gmail.com',
-        pass1: '123456789',
-        pass2: '123456789'
+        name: '',
+        email: '',
+        pass1: '',
+        pass2: ''
     });
 
     const { name, email, pass1, pass2 } = formValues;
