@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Amazonas  🙌
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img width="35%" align="right" style="margin-right:5%" alt="logo" src="https://res.cloudinary.com/silviajcn/image/upload/v1641583841/SPRING-3/logo-footer_zysgvs.png" />
 
-## Available Scripts
+## 📌 ¿Qué es Amazonas? 
+Amazonas es una página de comercio electrónico. La página obtendrá la ubicación por país del usuario. El usuario podrá navegar en la página, en donde encontrará los productos que vende la página, al hacer click en las imágenes del home se le mostrarán los productos de la categoría seleccionada, podrá realizar búsquedas por categoría de productos en el buscador ubicado en la barra de navegación. Podrá agregar productos al carrito, aumentar la cantidad de un mismo producto, así como disminuir la cantidad o eliminar el producto del carrito. La página permite dejar comentarios, además, el usuario que desee vender productos en la página de Amazon, podrá registrarlos en la sección Vender producto.
 
-In the project directory, you can run:
+Para la compra en la pagina el usuario debe iniciar sesión, para ello, tiene la opción de hacerlo con Google, Facebook o puede registrarse con correo y contraseña.
 
-### `npm start`
+## Puede visitar la tienda aquí: https://prueba-tecnica-3.web.app/ 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![home](https://user-images.githubusercontent.com/88461234/150698098-c27325cb-0ec5-40cb-915d-a3d4feeca2f7.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    
+# 💎 Amazonas Proyecto
 
-### `npm test`
+Para la creación del proyecto se utilizaron las siguientes herramientas de desarrollo:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* ```react```
+* ```react-router-dom```
+* ```redux```
+* ```react-redux```
+* ```redux-thunk```
+* ```firebase```
+* ```formik```
+* ```yup```
+* ```styled-components```
+* ```@mui/material```
+* ```@mui/icons-material```
+* ```bootstrap```
+* ```react-bootstrap```
+* ```react-icons```
+* ```react-elastic-carousel```
 
-### `npm run build`
+## 🔥 Descarga del proyecto e Instalación
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Clonar el repositorio
+* Abrir el proyecto en Visual Studio Code (o editor de confianza)
+* Abrir la terminal del editor
+* Correr el comando ```npm install``` para instalar correctamente las dependencias del proyecto
+* Para levantar el servidor local se debe correr el comando ```npm start```
+* Se debe tener en cuenta que para la utilización de Firebase, se deben cambiar los datos de la constante firebaseConfig con datos de una cuenta personal de Firebase. Esta constante se encuentra en la siguiente direccion: src > firebase > firebaseConfig.js > firebaseConfig (leer nota 1).
+* De igual modo, se debe cambiar la configuracion dentro de la constante fileUpload con datos personales de Cloudinary. Esta constante se encuentra en la siguiente direccion: src > helpers > FileUpload.js > fileUpload (leer nota 2).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Nota 1 : para cambiar estos datos es necesario contar con una cuenta en Firebase, crear un nuevo proyecto, y en la opcion de Configuracion del proyecto, encontrara la opcion de aplicaciones web, al selecionar esta ocpion optendra la configuracion del SDK del proyecto, en el SDK encontrara su confirguracion personal de la constante firebaseConfig.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Nota 2: para cambiar estos datos es necesario contar con una cuenta de developer en Cloudinary, obtener la url de la api de cloudinary (a esta url se le debe agregar al final lo siguiente: /upload), ir a la seccion settings, luego a la seccion Upload, y en el apartado de Upload presets, agregar un nuevo Udloap preset, en este paso es necesario darle el nombre que se desee, cambiar el Signing Mode a Unsigned, darle un nombre a la carpeta donde se subiran las imagenes y guardar dicha configuracion. Hacer los cambios respectivos dentro del proyecto con estos datos.
 
-### `npm run eject`
+## 🔍 Vistas 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Lista de productos
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![list](https://user-images.githubusercontent.com/88461234/150698393-d042a2fd-f748-4720-a42d-4e11371cd247.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* Busquedas
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![search](https://user-images.githubusercontent.com/88461234/150698404-becee03e-3144-4555-bd66-710f1c3c4076.png)
 
-## Learn More
+* Detalles del producto seleccionado
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![product](https://user-images.githubusercontent.com/88461234/150698427-07a91775-41d8-4c61-b78e-f3e305a164e7.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Carrito de compras
 
-### Code Splitting
+![carritoo](https://user-images.githubusercontent.com/88461234/150698444-cfd25405-37de-4336-b780-66837eea2640.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Comentarios
 
-### Analyzing the Bundle Size
+![coments](https://user-images.githubusercontent.com/88461234/150698468-622f12c6-38c8-4162-8f5f-2ce22f0eb883.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🌟 Autor
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* **Silvia C. Navarro**  - [@silviajcn](https://github.com/silviajcn)
