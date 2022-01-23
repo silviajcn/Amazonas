@@ -60,6 +60,9 @@ Nota 2: para cambiar estos datos es necesario contar con una cuenta de developer
 
 ![product](https://user-images.githubusercontent.com/88461234/150698427-07a91775-41d8-4c61-b78e-f3e305a164e7.png)
 
+* Carrito de compras
+
+![carritoo](https://user-images.githubusercontent.com/88461234/150698444-cfd25405-37de-4336-b780-66837eea2640.png)
 
 
 ## 🌟 Autor
