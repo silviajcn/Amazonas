@@ -49,7 +49,7 @@ Nota 2: para cambiar estos datos es necesario contar con una cuenta de developer
 ## 🔍 Vistas 
 
 * Lista de productos
-* 
+
 ![list](https://user-images.githubusercontent.com/88461234/150698393-d042a2fd-f748-4720-a42d-4e11371cd247.png)
 
 * Busquedas
