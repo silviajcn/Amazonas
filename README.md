@@ -7,7 +7,7 @@ Amazonas es una página de comercio electrónico. La página obtendrá la ubicac
 
 Para la compra en la pagina el usuario debe iniciar sesión, para ello, tiene la opción de hacerlo con Google, Facebook o puede registrarse con correo y contraseña.
 
-## Puede visitar la tienda aquí: https://prueba-tecnica-3.web.app/ 
+## Puede visitar Amazonas aquí: https://spring3-a9826.web.app/
 
 ![home](https://user-images.githubusercontent.com/88461234/150698098-c27325cb-0ec5-40cb-915d-a3d4feeca2f7.png)
 
