@@ -1,4 +1,4 @@
-# Amazonas  🙌
+# 🌍 Amazonas
 
 <img width="35%" align="right" style="margin-right:5%" alt="logo" src="https://res.cloudinary.com/silviajcn/image/upload/v1641583841/SPRING-3/logo-footer_zysgvs.png" />
 
