@@ -48,15 +48,17 @@ Nota 2: para cambiar estos datos es necesario contar con una cuenta de developer
 
 ## 🔍 Vistas 
 
-* Home
+* Lista de productos
+* 
+![list](https://user-images.githubusercontent.com/88461234/150698393-d042a2fd-f748-4720-a42d-4e11371cd247.png)
 
+* Busquedas
 
+![search](https://user-images.githubusercontent.com/88461234/150698404-becee03e-3144-4555-bd66-710f1c3c4076.png)
 
-* Menu seleccionado
+* Detalles del producto seleccionado
 
-
-
-* Carrito
+![product](https://user-images.githubusercontent.com/88461234/150698427-07a91775-41d8-4c61-b78e-f3e305a164e7.png)
 
 
 
