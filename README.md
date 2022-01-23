@@ -64,6 +64,11 @@ Nota 2: para cambiar estos datos es necesario contar con una cuenta de developer
 
 ![carritoo](https://user-images.githubusercontent.com/88461234/150698444-cfd25405-37de-4336-b780-66837eea2640.png)
 
+* Comentarios
+
+![coments](https://user-images.githubusercontent.com/88461234/150698468-622f12c6-38c8-4162-8f5f-2ce22f0eb883.png)
+
+
 
 ## 🌟 Autor
 
