@@ -3,7 +3,7 @@
 <img width="35%" align="right" style="margin-right:5%" alt="logo" src="https://res.cloudinary.com/silviajcn/image/upload/v1641583841/SPRING-3/logo-footer_zysgvs.png" />
 
 ## 📌 ¿Qué es Amazonas? 
-Amazonas es una página de comercio electrónico. La página obtendrá la ubicación por país del usuario. El usuario podrá navegar en la página, en donde encontrará los productos que vende la página, al hacer click en las imágenes del home se le mostrarán los productos de la categoría seleccionada, podrá realizar búsquedas por categoría de productos en el buscador ubicado en la barra de navegación. Podrá agregar productos al carrito, aumentar la cantidad de un mismo producto, así como disminuir la cantidad o eliminar. La página permite dejar comentarios, además, el usuario que desee vender productos en la página de Amazon, podrá registrarlos en la sección Vender producto.
+Amazonas es una página de comercio electrónico. La página obtendrá la ubicación por país del usuario. El usuario podrá navegar en la página, en donde encontrará los productos que vende la página, al hacer click en las imágenes del home se le mostrarán los productos de la categoría seleccionada, podrá realizar búsquedas por categoría de productos en el buscador ubicado en la barra de navegación. Podrá agregar productos al carrito, aumentar la cantidad de un mismo producto, así como disminuir la cantidad o eliminar el producto del carrito. La página permite dejar comentarios, además, el usuario que desee vender productos en la página de Amazon, podrá registrarlos en la sección Vender producto.
 
 Para la compra en la pagina el usuario debe iniciar sesión, para ello, tiene la opción de hacerlo con Google, Facebook o puede registrarse con correo y contraseña.
 
