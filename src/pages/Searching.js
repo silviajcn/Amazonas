@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from "react-router-dom";
 import { categoryProductAsync, showDetailProductAsync } from '../actions/actionProducts';
-import { ContainerPrincipal, BtnShowDetail, ContainerImg, ImgProduct, ContainerSecond, TitleProduct, ContainerTres, PUno, PDos } from '../styles/AllProducts.elements';
+import { ContainerPrincipal, TitleSearching, BtnShowDetail, ContainerImg, ImgProduct, ContainerSecond, TitleProduct, ContainerTres, PUno, PDos } from '../styles/AllProducts.elements';
 import { ContainerBack, PBack } from '../styles/ProductDetails.elements';
 import { RiArrowLeftSLine } from "react-icons/ri";
 
@@ -28,6 +28,8 @@ const Searching = () => {
                     <PBack>Volver a la página de inicio</PBack>
                 </ContainerBack>
             </Link>
+
+            <TitleSearching>Resultados de su búsqueda</TitleSearching>
 
             <>
             {

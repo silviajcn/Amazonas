@@ -68,12 +68,12 @@ const Footer = () => {
                 </Containers>
 
                 <Containers>
-                    <Link to="/car" className="links"><Title>Métodos de pago</Title></Link>
-                    <Link to="/car" className="links"><Items>Tarjetas de crédito y débito</Items></Link>
-                    <Link to="/car" className="links"><Items>Tarjetas de regalo</Items></Link>
-                    <Link to="/car" className="links"><Items>Meses sin intereses</Items></Link>
-                    <Link to="/car" className="links"><Items>Amazonas Cash</Items></Link>
-                    <Link to="/car" className="links"><Items>Amazonas Recargable</Items></Link>  
+                    <Link to="/carrito" className="links"><Title>Métodos de pago</Title></Link>
+                    <Link to="/carrito" className="links"><Items>Tarjetas de crédito y débito</Items></Link>
+                    <Link to="/carrito" className="links"><Items>Tarjetas de regalo</Items></Link>
+                    <Link to="/carrito" className="links"><Items>Meses sin intereses</Items></Link>
+                    <Link to="/carrito" className="links"><Items>Amazonas Cash</Items></Link>
+                    <Link to="/carrito" className="links"><Items>Amazonas Recargable</Items></Link>  
                 </Containers>
             </FirstContainer>
 

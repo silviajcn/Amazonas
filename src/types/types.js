@@ -15,7 +15,7 @@ export const typesProducts = {
     update: 'Update'
 }
 
-//prueba
+//coments
 export const typesCom = {
     register: 'Register coment',
     list: 'List comentario',

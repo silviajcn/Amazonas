@@ -113,3 +113,9 @@ export const BtnEdit = styled.button`
   background: #D3DEDC;
   padding: 5px;
 `
+
+
+// searching------------------------------------------------------------------------------------------------------
+export const TitleSearching = styled.h2`
+  margin-left: 180px;
+`

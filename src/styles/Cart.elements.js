@@ -70,7 +70,7 @@ export const MarginTitlePrice = styled.p`
 `
 
 
-//PRODUCTS IN CART
+//PRODUCTS IN CART -----------------------------------------------------------------------------------------
 export const ContainerProductInCart = styled.div`
   display: flex;
   flex-direction: row;
@@ -231,7 +231,7 @@ export const ImgLogo = styled.img`
 
 
 
-///form agregar compra
+///form agregar compra ----------------------------------------------------------------------------------------
 export const BtnAddProduct = styled.input`
   background: #F0AD64;
   border-radius: 4px;

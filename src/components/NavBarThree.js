@@ -6,12 +6,12 @@ import { Container, ContainerLinks, LinksMenu } from "../styles/NavBarThree.elem
 
 const NavBarThree = () => {
 
-    let history = useNavigate();
+    // let history = useNavigate();
 
     const dispatch = useDispatch();
 
     const { categories } = useSelector((store) => store.categories);
-    //console.log(categories)
+    //console.log(categories)ñ
 
     useEffect(() => {
         dispatch(listCategoriesAsync());
