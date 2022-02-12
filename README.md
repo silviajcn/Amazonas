@@ -49,26 +49,12 @@ Nota 2: para cambiar estos datos es necesario contar con una cuenta de developer
 ## 🔍 Vistas 
 
 * Lista de productos
-
-![list](https://user-images.githubusercontent.com/88461234/150698393-d042a2fd-f748-4720-a42d-4e11371cd247.png)
-
 * Busquedas
-
-![search](https://user-images.githubusercontent.com/88461234/150698404-becee03e-3144-4555-bd66-710f1c3c4076.png)
-
 * Detalles del producto seleccionado
-
-![product](https://user-images.githubusercontent.com/88461234/150698427-07a91775-41d8-4c61-b78e-f3e305a164e7.png)
-
 * Carrito de compras
-
-![carritoo](https://user-images.githubusercontent.com/88461234/150698444-cfd25405-37de-4336-b780-66837eea2640.png)
-
 * Comentarios
 
-![coments](https://user-images.githubusercontent.com/88461234/150698468-622f12c6-38c8-4162-8f5f-2ce22f0eb883.png)
-
-
+<img width="35%" alt="vistas" src="https://media.giphy.com/media/eWgsjqbA6Zn6B7z2wf/giphy.gif" />
 
 ## 🌟 Autor
 
