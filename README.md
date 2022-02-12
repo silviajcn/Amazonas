@@ -54,7 +54,7 @@ Nota 2: para cambiar estos datos es necesario contar con una cuenta de developer
 * Carrito de compras
 * Comentarios
 
-<img width="35%" alt="vistas" src="https://media.giphy.com/media/eWgsjqbA6Zn6B7z2wf/giphy.gif" />
+<img alt="vistas" src="https://media.giphy.com/media/eWgsjqbA6Zn6B7z2wf/giphy.gif" />
 
 ## 🌟 Autor
 
